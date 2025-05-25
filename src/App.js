@@ -40,7 +40,7 @@ function App() {
         </ul>
       </section>
 
-      
+      {/* Add more sections below as needed */}
 
       <footer className="footer">
         <p>© {new Date().getFullYear()} Nevil Biju</p>
