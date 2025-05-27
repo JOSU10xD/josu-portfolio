@@ -21,7 +21,7 @@ function App() {
         <h1 className="name">Nevil Biju</h1>
         <p className="title">Software &amp; Web Developer</p>
       </header>
-
+      
       <section className="about">
         <h2>About Me</h2>
         <p>
