@@ -1,4 +1,7 @@
 import Beams from '@/components/Beams'
+import SplitText from "@/components/SplitText";
+import TimelineDemo from "@/components/ui/timeline-demo";
+
 
 export const Home = () => {
   return (
@@ -16,7 +19,7 @@ export const Home = () => {
           beamNumber={10}
           lightColor="#ffffff"
           speed={2}
-          noiseIntensity={1.75}
+          noiseIntensity={1}
           scale={0.2}
           rotation={30}
         />
@@ -30,12 +33,29 @@ export const Home = () => {
       */}
       <div className="relative z-10">
         <section className="min-h-screen flex items-center justify-center p-8 text-white">
-          <h1 className="text-4xl font-bold">Welcome to my portfolio</h1>
+        <SplitText
+          text="Welcome To The Portfolio"
+          className="text-7xl font-poppins font-bold text-center tracking-wide text-neutral-200"
+          delay={100}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
         </section>
 
         <section className="min-h-screen flex items-center justify-center p-8 text-white">
           <h2 className="text-3xl">About Me</h2>
         </section>
+
+ {/* —— Timeline section —— */}
+      <section className="min-h-screen p-8 bg-transparent">
+        <TimelineDemo />
+      </section>
 
         <section className="min-h-screen flex items-center justify-center p-8 text-white">
           <h2 className="text-3xl">Projects</h2>
