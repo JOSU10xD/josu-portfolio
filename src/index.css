@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 
+
+
 html {
   scroll-snap-type: y mandatory;
 }
