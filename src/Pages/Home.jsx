@@ -31,7 +31,7 @@ export const Home = () => {
           className="min-h-screen flex items-center justify-center p-8 text-white"
         >
           <SplitText
-            text="Welcome To The Portfolio"
+            text="Hi, I'm Nevil Biju"
             className="text-7xl font-poppins font-bold text-center tracking-wide text-neutral-200"
             delay={100}
             duration={0.6}
