@@ -7,15 +7,15 @@ export default function TimelineDemo() {
       title: "2022-26",
       content: (
         <div>
-          {"BTech. IT"}
+          {"BTech. IT, Viswajyothi College of Eng. & Tech., Vazhakulam, Kerala, India"}
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "2021-2022",
       content: (
         <div>
-          {/* …your JSX content from Early 2023… */}
+          {"XII at St. Joseph's HSS, Paingottoor, Kerala, India"}
         </div>
       ),
     },
