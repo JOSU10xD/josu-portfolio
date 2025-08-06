@@ -4,10 +4,10 @@ import { Timeline } from "@/components/ui/timeline";
 export default function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "2022-26",
       content: (
         <div>
-          {/* …your JSX content from 2024… */}
+          {"BTech. IT"}
         </div>
       ),
     },
