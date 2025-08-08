@@ -7,7 +7,28 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-/* set your accent color var */
+/* Define silver color palette */
 :root {
   --accent: #ff4081;
+  --silver-100: #f8f9fa;
+  --silver-200: #e9ecef;
+  --silver-300: #dee2e6;
+  --silver-400: #ced4da;
+  --silver-500: #adb5bd;
 }
+
+.text-silver-100 { color: var(--silver-100); }
+.text-silver-200 { color: var(--silver-200); }
+.text-silver-300 { color: var(--silver-300); }
+.text-silver-400 { color: var(--silver-400); }
+.text-silver-500 { color: var(--silver-500); }
+
+.bg-silver-100 { background-color: var(--silver-100); }
+.bg-silver-200 { background-color: var(--silver-200); }
+.bg-silver-300 { background-color: var(--silver-300); }
+.bg-silver-400 { background-color: var(--silver-400); }
+.bg-silver-500 { background-color: var(--silver-500); }
+
+.border-silver-300 { border-color: var(--silver-300); }
+.border-silver-400 { border-color: var(--silver-400); }
+.border-silver-500 { border-color: var(--silver-500); }
