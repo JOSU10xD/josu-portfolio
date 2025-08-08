@@ -32,3 +32,10 @@ html {
 .border-silver-300 { border-color: var(--silver-300); }
 .border-silver-400 { border-color: var(--silver-400); }
 .border-silver-500 { border-color: var(--silver-500); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}

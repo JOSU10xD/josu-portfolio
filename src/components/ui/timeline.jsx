@@ -26,18 +26,18 @@ export function Timeline({ data }) {
       className="w-full bg-transparent font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-silver-200 max-w-4xl">
+      {/* Increased font sizes and shifted right */}
+      <div className="max-w-7xl mx-auto py-20 px-6 md:px-12 lg:px-16">
+        <h2 className="text-xl md:text-5xl mb-6 text-silver-200 max-w-5xl ml-4">
           Professional Journey Timeline
         </h2>
-        <p className="text-silver-400 text-sm md:text-base max-w-sm">
-          My career progression and key milestones in technology and education
+        <p className="text-silver-400 text-base md:text-lg max-w-md ml-4">
+          My career progression and key milestones in education
         </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-
-        {/* Timeline Line (behind everything) */}
+        {/* Timeline Line (unchanged) */}
         <div
           style={{ height: `${height}px` }}
           className="absolute md:left-8 left-8 top-0 w-[2px] z-0"
@@ -51,7 +51,7 @@ export function Timeline({ data }) {
           />
         </div>
 
-        {/* Timeline Entries */}
+        {/* Timeline Entries with increased content font sizes */}
         {data.map((item, i) => (
           <div
             key={i}
@@ -61,24 +61,19 @@ export function Timeline({ data }) {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center z-20">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <div className="flex flex-col md:pl-20">
-                <h3 className="hidden md:block text-xl md:text-3xl font-bold text-silver-100">
-                  {item.title}
-                </h3>
-                <div className="hidden md:block relative pl-0 pr-4 w-full mt-4">
-                  <div className="bg-neutral-800/40 backdrop-blur-sm p-5 rounded-xl border border-neutral-600/30 shadow-lg shadow-neutral-900/20 hover:shadow-neutral-700/30 transition-all">
-                    {item.content}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:hidden relative pl-16 pr-4 w-full">
-              <h3 className="text-2xl mb-4 text-left font-bold text-silver-100">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-silver-100">
                 {item.title}
               </h3>
-              <div className="bg-neutral-800/40 backdrop-blur-sm p-5 rounded-xl border border-neutral-600/30 shadow-lg shadow-neutral-900/20 hover:shadow-neutral-700/30 transition-all">
-                {item.content}
+            </div>
+
+            <div className="relative pl-16 pr-4 md:pl-4 w-full">
+              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-silver-100">
+                {item.title}
+              </h3>
+              <div className="bg-neutral-800/40 backdrop-blur-sm p-6 rounded-xl border border-neutral-600/30 shadow-lg shadow-neutral-900/20 hover:shadow-neutral-700/30 transition-all">
+                {React.cloneElement(item.content, {
+                  className: `${item.content.props.className || ''} text-lg`
+                })}
               </div>
             </div>
           </div>

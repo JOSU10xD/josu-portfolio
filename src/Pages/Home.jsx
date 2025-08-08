@@ -3,6 +3,8 @@ import Beams from '@/components/Beams';
 import SplitText from "@/components/SplitText";
 import TimelineDemo from "@/components/ui/timeline-demo";
 import { Navbar } from '@/components/Navbar';
+import Projects from "@/components/Projects";
+
 
 export const Home = () => {
   return (
@@ -62,13 +64,7 @@ export const Home = () => {
         </section>
 
         {/* Projects Section */}
-        <section
-          id="projects"
-          className="min-h-screen flex items-center justify-center p-8 text-white"
-        >
-          <h2 className="text-3xl">Projects :</h2>
-        </section>
-
+          <Projects />
         {/* Add more sections as needed */}
       </div>
     </div>
