@@ -1,0 +1,71 @@
+/* Spotlight wrapper + overlay + glow + 3D transform using CSS variables */
+.spotlight-wrapper {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --pointer-from-center: 0;
+  --spot-color: rgba(220,220,220,0.24);
+  --spot-opacity: 0;
+  --spot-radius: 40%;
+
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  outline: none;
+  /* small base shadow */
+  box-shadow: 0 6px 18px rgba(8,10,18,0.45);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+/* the radial halo overlay (on top) */
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, background 220ms ease;
+  mix-blend-mode: screen;
+  border-radius: inherit;
+  z-index: 5;
+}
+
+/* subtle blurred glow behind the card (silver bright) */
+.spotlight-glow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(36px) saturate(140%) brightness(1.1);
+  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(220,220,220,0.02));
+  transform: translateZ(-1px) scale(1.04);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* container that holds actual content (transformed) */
+.spotlight-inner {
+  position: relative;
+  z-index: 10;
+  border-radius: inherit;
+  overflow: hidden;
+  transform-origin: center;
+  /* use variables to add tilt */
+  transform: perspective(900px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* add a subtle highlight border on hover/focus */
+.spotlight-wrapper:focus .spotlight-inner,
+.spotlight-wrapper:hover .spotlight-inner {
+  box-shadow: 0 10px 30px rgba(120, 120, 140, 0.08), 0 2px 8px rgba(0,0,0,0.4) inset;
+}
+
+/* reduce pointer-events for children that shouldn't block mouse (overlay handles interactions) */
+.spotlight-inner * { pointer-events: auto; }
+
+/* small responsive helper */
+@media (max-width: 640px) {
+  .spotlight-glow { filter: blur(26px); opacity: 0.9; }
+}
