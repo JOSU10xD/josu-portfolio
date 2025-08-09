@@ -1,148 +1,162 @@
-/* ProjectCard.css - for spotlight + tilt + glow styling */
+/* src/components/ProjectCard.css */
 
-:root {
-  --card-radius: 14px;
-  --card-bg: rgba(18, 20, 30, 0.8);
-  --card-border: rgba(255, 255, 255, 0.04);
-  --silver-glow: rgba(230,230,230,0.18);
-}
-
-/* wrapper provides perspective for tilt */
 .project-card-wrapper {
-  perspective: 1000px;
   width: 100%;
-  max-width: 20.5rem; /* smaller card width */
-  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-/* main card: placed in 3D space */
+/* translucent lightly dark card */
 .project-card {
-  position: relative;
-  border-radius: var(--card-radius);
+  width: 100%;
+  background: rgba(8, 8, 12, 0.45);             /* lightly dark translucent */
+  backdrop-filter: blur(6px) saturate(1.05);      /* gentle blur so text stays readable */
+  border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(15,16,22,0.75), rgba(24,26,36,0.8));
-  border: 1px solid var(--card-border);
-  box-shadow: 0 6px 18px rgba(2,3,8,0.6), 0 2px 6px rgba(13,15,25,0.4);
-  transform-style: preserve-3d;
-  transform: translate3d(0,0,0.01px) rotateX(0deg) rotateY(0deg);
-  transition: transform 600ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms ease;
+  box-shadow: 0 12px 40px rgba(2,2,6,0.55);
+  border: 1px solid rgba(255,255,255,0.04);
+  transform: translate3d(0,0,0.01px);
+  transition: transform 0.36s cubic-bezier(.2,.9,.3,1), box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
-  min-height: 16.5rem; /* smaller height */
+  position: relative;
 }
 
-/* background glow - behind everything but inside the card */
-.project-glow {
-  position: absolute;
-  inset: -15%;
-  background: radial-gradient(circle at var(--pointer-x,50%) var(--pointer-y,50%), rgba(255,255,255,0.08), rgba(255,255,255,0.02) 20%, transparent 40%);
-  filter: blur(18px) saturate(1.4);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 1;
-  transition: opacity 220ms ease;
+/* top image area: fixed height so image occupies the rectangle above title */
+.project-image-wrap {
+  width: 100%;
+  height: 210px;                  /* fixed area: keeps card height consistent */
+  min-height: 160px;
+  max-height: 260px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.14));
+  display: flex;                  /* center the image inside the wrapper */
+  align-items: center;
+  justify-content: center;
+  padding: 12px;                  /* inner padding so image doesn't touch edges */
+  box-sizing: border-box;
 }
 
-/* spotlight overlay (moves with cursor) - sits above glow but under content */
+/* actual image: contained and fully visible inside wrapper
+   - Use max-width/max-height so the whole image is shown (no cropping).
+   - Image will scale down if larger than the wrapper.
+*/
+.project-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;            /* ensure the full image is visible */
+  object-position: center;
+  -webkit-user-drag: none;
+  border-radius: 8px;             /* slight rounding to match card */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45); /* subtle depth */
+  background: rgba(10,10,12,0.28); /* small inner background so thumbnails read well */
+}
+
+/* placeholder if image missing */
+.project-image--placeholder {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  background: rgba(5,5,7,0.65);
+  border-radius: 6px;
+}
+
+/* content */
+.project-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+.project-desc {
+  margin: 0;
+  color: rgba(255,255,255,0.86);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* tags */
+.project-tags {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.project-tag {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* CTA */
+.project-cta-wrap {
+  margin-top: 8px;
+  display:flex;
+  justify-content:flex-end;
+}
+.project-cta {
+  background: linear-gradient(180deg, #5a46ff, #5c3bff);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(91,62,255,0.18);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.project-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(91,62,255,0.22); }
+
+/* spotlight overlay */
 .project-spotlight {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
 }
 
-/* image area - large and above the spotlight visually (z-index 2)*/
-.project-image-wrap {
+/* subtle background glow */
+.project-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 50%, transparent 100%);
+}
+
+/* ensure card content sits above overlays */
+.project-body, .project-title, .project-desc, .project-tags, .project-cta-wrap {
+  position: relative;
   z-index: 2;
-  width: 100%;
-  aspect-ratio: 4 / 3; /* big square-ish area */
-  background: linear-gradient(180deg, rgba(12,14,20,0.4), rgba(6,7,12,0.6));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
 }
 
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display:block;
-  transform: translateZ(1px); /* lift above overlays */
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .project-image-wrap { height: 170px; padding: 10px; }
+  .project-cta { padding: 8px 12px; }
+  .project-image { border-radius: 6px; }
 }
-
-/* content area sits above everything (z-index 3) */
-.project-body {
-  z-index: 3;
-  padding: 0.75rem;
-  display:flex;
-  flex-direction:column;
-  gap: 0.5rem;
-  color: #e6e7ee;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.02));
-}
-
-/* Typography */
-.project-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-  color: #f5f6fb;
-}
-
-.project-desc {
-  margin: 0;
-  font-size: 0.825rem;
-  color: rgba(230,230,240,0.82);
-  line-height: 1.2;
-  max-height: 3.6rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* tags and CTA */
-.project-tags {
-  display:flex;
-  gap: 0.35rem;
-  flex-wrap:wrap;
-  margin-top: 0.25rem;
-}
-
-.project-tag {
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: #eef0f6;
-}
-
-/* button */
-.project-cta-wrap {
-  margin-top: 0.5rem;
-  display:flex;
-}
-.project-cta {
-  margin-left: auto;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(180deg, #5b46ff, #5046ff);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-.project-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(80,70,255,0.18);
-}
-
-/* smaller screens */
-@media (max-width: 768px) {
-  .project-card-wrapper { max-width: 100%; }
-  .project-card { min-height: 15rem; }
-  .project-image-wrap { aspect-ratio: 16/9; }
-}
-
-/* helper: visually smaller gap when cards are in grid */

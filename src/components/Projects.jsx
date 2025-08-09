@@ -1,5 +1,12 @@
 import React from "react";
-import ProjectCard from "@/components/ProjectCard"; // or "./ProjectCard" if you don't have @ alias
+import ProjectCard from "@/components/ProjectCard";
+
+// Import images from src/assets/projects (ensure these files exist)
+import gridImg from "@/assets/projects/grid.png";
+import jenkinsImg from "@/assets/projects/jenkins.png";
+import browseruiImg from "@/assets/projects/browserui.png";
+import movieImg from "@/assets/projects/movie.png";
+import expenseImg from "@/assets/projects/expense.png";
 
 const projects = [
   {
@@ -7,7 +14,7 @@ const projects = [
     description:
       "Chromium-based browser built with Electron & Node.js. Custom tab management, bookmarks, and WebView2-like features.",
     tech: ["Electron", "Node.js", "JavaScript"],
-    imageUrl: "/projects/grid.png",
+    imageUrl: gridImg,
     link: "https://github.com/JOSU10xD/GRID-Browser",
   },
   {
@@ -15,7 +22,7 @@ const projects = [
     description:
       "Example pipeline demonstrating GitHub → Jenkins → Docker → AWS deployment with automated tests and quality gates.",
     tech: ["Jenkins", "Docker", "AWS"],
-    imageUrl: "/projects/jenkins.png",
+    imageUrl: jenkinsImg,
     link: "https://github.com/JOSU10xD/Jenkins-CICD-project",
   },
   {
@@ -23,7 +30,7 @@ const projects = [
     description:
       "WinUI 3 / C# native browser UI integrating WebView2 and custom clipboard & history features.",
     tech: ["C#", "WinUI 3", "WebView2"],
-    imageUrl: "/projects/browserui.png",
+    imageUrl: browseruiImg,
     link: "https://github.com/JOSU10xD/BrowserUI-Chromium",
   },
   {
@@ -31,7 +38,7 @@ const projects = [
     description:
       "Cross-platform Flutter app using Simkl API — search movies and keep a persistent watchlist.",
     tech: ["Flutter", "Dart", "Simkl API"],
-    imageUrl: "/projects/movie.png",
+    imageUrl: movieImg,
     link: "https://github.com/JOSU10xD/movie-watchlist-app",
   },
   {
@@ -39,7 +46,7 @@ const projects = [
     description:
       "React-based expense tracker with auth, persistent store and charts for spending insights.",
     tech: ["React", "Firebase", "Chart.js"],
-    imageUrl: "/projects/expense.png",
+    imageUrl: expenseImg,
     link: "https://github.com/JOSU10xD/expense-tracker",
   },
 ];
@@ -60,3 +67,4 @@ export default function Projects() {
     </section>
   );
 }
+
