@@ -10,8 +10,8 @@
 /* translucent lightly dark card */
 .project-card {
   width: 100%;
-  background: rgba(8, 8, 12, 0.45);             /* lightly dark translucent */
-  backdrop-filter: blur(6px) saturate(1.05);      /* gentle blur so text stays readable */
+  background: rgba(28, 28, 30, 0.50);  /* neutral dark gray */
+  backdrop-filter: blur(6px) saturate(1.05);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(2,2,6,0.55);
@@ -22,6 +22,7 @@
   flex-direction: column;
   position: relative;
 }
+
 
 /* top image area: fixed height so image occupies the rectangle above title */
 .project-image-wrap {

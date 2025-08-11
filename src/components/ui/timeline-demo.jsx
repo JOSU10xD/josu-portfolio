@@ -28,20 +28,19 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "Projects & Achievements",
+      title: "2018-202",
       content: (
         <div className="space-y-3">
-          <h3 className="text-xl font-bold text-white">Key Projects</h3>
-          <ul className="list-disc pl-5 space-y-2 text-silver-300 text-lg">
-            <li>E-commerce platform with React & Node.js</li>
-            <li>AI-powered study assistant application</li>
-            <li>Blockchain-based certificate verification system</li>
-          </ul>
+          <h3 className="text-xl font-bold text-white">Secondary Education</h3>
+          <div className="flex flex-col space-y-1">
+            <span className="text-silver-300 text-lg">Sobhana Public School</span>
+            <span className="text-silver-300 text-lg">Kothamangalam, Kerala, India</span>
+          </div>
         </div>
       ),
     },
   ];
-  
+
   return (
     <div className="relative w-full overflow-clip">
       <Timeline data={data} />
