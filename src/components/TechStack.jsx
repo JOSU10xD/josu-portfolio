@@ -1,6 +1,32 @@
 // src/components/TechStack.jsx
 import React from "react";
-import * as SiIcons from "react-icons/si";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiJavascript,
+  SiPython,
+  SiAmazonwebservices,
+  SiJenkins,
+  SiGit,
+  SiMongodb,
+  SiMysql,
+  SiTailwindcss,
+  SiElectron
+} from "react-icons/si";
+
+const ICON_MAP = {
+  SiReact,
+  SiNodedotjs,
+  SiJavascript,
+  SiPython,
+  SiAmazonwebservices,
+  SiJenkins,
+  SiGit,
+  SiMongodb,
+  SiMysql,
+  SiTailwindcss,
+  SiElectron
+};
 
 const TECHS = [
   { key: "react", label: "React", iconName: "SiReact" },
@@ -8,7 +34,7 @@ const TECHS = [
   { key: "js", label: "JavaScript", iconName: "SiJavascript" },
   { key: "python", label: "Python", iconName: "SiPython" },
   { key: "csharp", label: "C#", iconName: "SiCsharp" },
-  { key: "aws", label: "AWS", iconName: "SiAmazonaws" },
+  { key: "aws", label: "AWS", iconName: "SiAmazonwebservices" },
   { key: "jenkins", label: "Jenkins", iconName: "SiJenkins" },
   { key: "git", label: "Git", iconName: "SiGit" },
   { key: "mongo", label: "MongoDB", iconName: "SiMongodb" },
@@ -83,7 +109,7 @@ export default function TechStack() {
 
       <div className="tech-grid" role="list" aria-label="Tech stack">
         {TECHS.map((t) => {
-          const IconComponent = SiIcons[t.iconName];
+          const IconComponent = ICON_MAP[t.iconName];
           return (
             <div key={t.key} className="tech-chip" role="listitem">
               <div className="tech-icon" aria-hidden>

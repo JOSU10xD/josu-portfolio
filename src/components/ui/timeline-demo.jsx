@@ -28,7 +28,7 @@ export default function TimelineDemo() {
       ),
     },
     {
-      title: "2018-202",
+      title: "2018-2022",
       content: (
         <div className="space-y-3">
           <h3 className="text-xl font-bold text-white">Secondary Education</h3>

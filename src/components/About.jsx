@@ -2,15 +2,20 @@
 import React from "react";
 import MagicBentoLight from "./MagicBentoLight";
 import TechStack from "./TechStack";
+import { FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaPuzzlePiece, FaDownload } from "react-icons/fa";
+import { motion } from "framer-motion";
+import resumePdf from "@/assets/NevilBijuResume.pdf";
 
 export default function About() {
+
+
+
   return (
     <section
       id="about"
       className="min-h-screen py-16 px-4 flex items-center"
       aria-label="About section"
     >
-      {/* local styles to keep translucent panel readable and larger text */}
       <style>{`
         .about-panel {
           position: relative;
@@ -55,8 +60,34 @@ export default function About() {
           font-size: 0.86rem;
         }
 
+        /* Glowing button animation */
+        @keyframes glow {
+          0% { box-shadow: 0 0 10px rgba(220, 220, 255, 0.7), 0 0 20px rgba(220, 220, 255, 0.5); }
+          50% { box-shadow: 0 0 15px rgba(220, 220, 255, 0.8), 0 0 30px rgba(220, 220, 255, 0.6); }
+          100% { box-shadow: 0 0 10px rgba(220, 220, 255, 0.7), 0 0 20px rgba(220, 220, 255, 0.5); }
+        }
+
+        /* Glowing text animation */
+        @keyframes text-glow {
+          0% { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.5); }
+          50% { text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 24px rgba(255, 255, 255, 0.8); }
+          100% { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.5); }
+        }
+
+        .glow-button {
+          animation: glow 2s infinite;
+        }
+
+        .glow-text {
+          animation: text-glow 2s infinite;
+          color: white !important;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          .about-panel, .bento-wrap { transition: none !important; }
+          .about-panel, .bento-wrap, .glow-button, .glow-text { 
+            transition: none !important; 
+            animation: none !important;
+          }
         }
       `}</style>
 
@@ -70,21 +101,61 @@ export default function About() {
           </h1>
 
           <ul className="space-y-3 text-neutral-200 mb-6 about-list">
-            <li>📍 Kerala, India</li>
-            <li>🎓 Final year B.Tech (IT) — Viswajyothi College of Engineering</li>
-            <li>💼 Full Stack & Cloud/DevOps</li>
-            <li>🧩 Web apps, Electron apps, CI/CD, Cloud deployments</li>
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-silver-300 text-lg" />
+              <span>Kerala, India</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaGraduationCap className="text-silver-300 text-lg" />
+              <span>Final year B.Tech (IT) — Viswajyothi College of Engineering</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaBriefcase className="text-silver-300 text-lg" />
+              <span>Full Stack & Cloud/DevOps</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaPuzzlePiece className="text-silver-300 text-lg" />
+              <span>Web apps, Electron apps, CI/CD, Cloud deployments</span>
+            </li>
           </ul>
 
           <p className="about-body max-w-prose mb-6">
             I build fast, modern web applications and developer tools. I enjoy bridging the gap between
             UI/UX, platform automation, and resilient cloud-native systems. I work with React, Node, Electron,
-            Docker, Jenkins and AWS — and I’m open to collaborations.
+            Docker, Jenkins and AWS — and I'm open to collaborations.
           </p>
 
-          <div className="flex gap-4 mt-6">
-            <a href="#projects" className="px-6 py-3 bg-white text-black rounded-lg font-medium shadow-sm">View Projects</a>
-            <a href="#contact" className="px-6 py-3 border border-white/10 rounded-lg text-white/90">Get in Touch</a>
+          <div className="flex flex-wrap gap-4 mt-6">
+            <a href="#projects" className="px-6 py-3 bg-white text-black rounded-lg font-medium shadow-sm hover:bg-white/90 transition-colors">
+              View Projects
+            </a>
+            <a href="#contact" className="px-6 py-3 border border-white/10 rounded-lg text-white/90 hover:bg-white/5 transition-colors">
+              Get in Touch
+            </a>
+            
+            {/* Download CV Button */}
+              <motion.button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = resumePdf;
+                  link.download = "NevilBijuResume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="glow-button px-6 py-3 bg-gradient-to-r from-silver-500 to-silver-700 rounded-lg relative overflow-hidden group flex items-center gap-2"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 20px rgba(220, 220, 255, 0.9), 0 0 40px rgba(220, 220, 255, 0.7)"
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  boxShadow: "0 0 10px rgba(220, 220, 255, 0.6), 0 0 20px rgba(220, 220, 255, 0.4)"
+                }}
+              >
+                <FaDownload className="glow-text" />
+                <span className="glow-text font-medium">Download CV</span>
+              </motion.button>
           </div>
         </div>
 

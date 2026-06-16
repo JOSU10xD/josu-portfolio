@@ -4,7 +4,22 @@
 
 
 html {
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Lightweight CSS background fallback for mobile/low-memory */
+.css-bg-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #030303;
+  background-image: 
+    radial-gradient(circle at 50% -20%, rgba(220, 220, 225, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(220, 220, 225, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(220, 220, 225, 0.04) 0%, transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
 }
 
 /* Define silver color palette */

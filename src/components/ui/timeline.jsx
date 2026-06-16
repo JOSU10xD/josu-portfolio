@@ -8,9 +8,27 @@ export function Timeline({ data }) {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      setHeight(ref.current.getBoundingClientRect().height);
-    }
+    if (!ref.current) return;
+
+    const updateHeight = () => {
+      if (ref.current) {
+        setHeight(ref.current.getBoundingClientRect().height);
+      }
+    };
+
+    updateHeight();
+
+    const observer = new ResizeObserver(() => {
+      updateHeight();
+    });
+    observer.observe(ref.current);
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateHeight);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({

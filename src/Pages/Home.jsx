@@ -1,6 +1,7 @@
 // src/Pages/Home.jsx
-import React, { useState } from "react";
-import Beams from "../components/Beams";
+import React, { useState, useEffect, Suspense, lazy } from "react";
+import { useLocation } from "react-router-dom";
+
 import TextType from "../components/TextType";
 import TimelineDemo from "../components/ui/timeline-demo";
 import { Navbar } from "../components/Navbar";
@@ -9,9 +10,48 @@ import About from "../components/About";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
 import { motion } from "framer-motion";
 
+// Lazy-load Three.js Canvas to reduce initial mobile bundle size
+const Beams = lazy(() => import("../components/Beams"));
+
 export const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [shouldRenderCanvas, setShouldRenderCanvas] = useState(false);
+  const location = useLocation();
+
+  // Detect capability, screen size, and user preferences early
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hasWebGL = (() => {
+      try {
+        const canvas = document.createElement("canvas");
+        return !!(
+          window.WebGLRenderingContext &&
+          (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+        );
+      } catch (e) {
+        return false;
+      }
+    })();
+
+    setShouldRenderCanvas(!isMobile && !prefersReduced && hasWebGL);
+  }, []);
+
+  // Scroll to targeted sections smoothly on Router location changes
+  useEffect(() => {
+    const hash = location.hash || window.location.hash;
+    const targetId = hash.replace(/^#\/?/, ""); // strips "#/" or "#"
+    if (targetId) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +61,6 @@ export const Home = () => {
       const form = e.target;
       const formData = new FormData(form);
       
-      // Using FormSubmit.co for email delivery
       await fetch(form.action, {
         method: 'POST',
         body: formData,
@@ -42,43 +81,42 @@ export const Home = () => {
 
   return (
     <div className="relative">
-      {/* background beams */}
-      <div className="absolute inset-0 z-0 h-full w-full">
-        <Beams
-          beamWidth={1.8}
-          beamHeight={40}
-          beamNumber={10}
-          lightColor="#ffffff"
-          speed={2}
-          noiseIntensity={1}
-          scale={0.2}
-          rotation={30}
-        />
-      </div>
+      {/* background beams / CSS fallback */}
+      {shouldRenderCanvas ? (
+        <div className="fixed inset-0 z-0 h-screen w-screen pointer-events-none">
+          <Suspense fallback={<div className="css-bg-fallback" />}>
+            <Beams
+              beamWidth={1.8}
+              beamHeight={40}
+              beamNumber={10}
+              lightColor="#ffffff"
+              speed={2}
+              noiseIntensity={1}
+              scale={0.2}
+              rotation={30}
+            />
+          </Suspense>
+        </div>
+      ) : (
+        <div className="css-bg-fallback" aria-hidden="true" />
+      )}
 
-      {/* styles scoped to this file */}
       <style>{`
         .hero-section {
           position: relative;
           overflow: hidden;
         }
-
-        /* container for hero content */
         .hero-content {
           position: relative;
           z-index: 1;
         }
-
-        /* Title: balanced shadow + outer glow */
         .hero-title {
           text-shadow:
-            0 3px 6px rgba(0, 0, 0, 0.6),   /* dark shadow for light backgrounds */
+            0 3px 6px rgba(0, 0, 0, 0.6),
             0 -1px 1px rgba(0, 0, 0, 0.4),
-            0 0 8px rgba(255, 255, 255, 0.4); /* light glow for dark backgrounds */
+            0 0 8px rgba(255, 255, 255, 0.4);
           line-height: 1.02;
         }
-
-        /* typed line: subtle outline + inner glow */
         .hero-type {
           position: relative;
           display: inline-block;
@@ -87,8 +125,6 @@ export const Home = () => {
             0 2px 4px rgba(0, 0, 0, 0.5),
             0 0 6px rgba(255, 255, 255, 0.35);
         }
-
-        /* subtext paragraph shadow to increase legibility */
         .hero-desc {
           text-shadow:
             0 2px 4px rgba(0, 0, 0, 0.5),
@@ -99,10 +135,8 @@ export const Home = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
         <Navbar />
 
-        <section
-          id="home"
-          className="hero-section min-h-screen flex flex-col items-center justify-center p-8 text-white"
-        >
+        {/* Home Section */}
+        <section id="home" className="hero-section min-h-screen flex flex-col items-center justify-center p-8 text-white">
           <div className="hero-content w-full max-w-5xl text-center">
             <h1 className="hero-title text-4xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6 tracking-tight text-white">
               Hi, I'm <span className="text-neutral-200">Nevil Biju</span>
@@ -148,20 +182,22 @@ export const Home = () => {
           </div>
         </section>
 
-        {/* About (component below) */}
-        <About />
+        {/* About Section */}
+        <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+          <About />
+        </section>
 
-        {/* Timeline section */}
-        <section id="timeline" className="min-h-screen p-8 bg-transparent">
+        {/* Timeline Section */}
+        <section id="timeline" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
           <TimelineDemo />
         </section>
 
-        {/* Projects section */}
-        <section id="projects" className="min-h-screen p-8 bg-transparent">
+        {/* Projects Section */}
+        <section id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
           <Projects />
         </section>
 
-        {/* New Contact Section */}
+        {/* Contact Section */}
         <section id="contact" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -174,14 +210,15 @@ export const Home = () => {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Contact Form */}
               <div className="bg-neutral-900/70 backdrop-blur-md p-8 rounded-2xl border border-silver-500/30 shadow-xl shadow-neutral-900/30">
                 <form 
-                  action={`https://formsubmit.co/nevilbiju9497@gmail.com`} 
+                  action="https://formsubmit.co/461b982e7ee2afee2721432c7ea971fa" 
                   method="POST"
                   className="space-y-6"
                   onSubmit={handleSubmit}
                 >
+                  <input type="hidden" name="_next" value="https://josu10xd.github.io/#contact" />
+                  <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_subject" value="New message from portfolio!" />
                   
@@ -234,41 +271,37 @@ export const Home = () => {
                     ></textarea>
                   </div>
                   
-                    <motion.button
-                      type="submit"
-                      className="w-full py-3 px-6 bg-gradient-to-r from-silver-600 to-silver-800 text-white font-medium rounded-lg relative overflow-hidden group"
-                      whileHover={{ 
-                        scale: 1.03,
-                        boxShadow: "0 0 15px rgba(192, 192, 192, 0.7)"
-                      }}
-                      whileTap={{ 
-                        scale: 0.98,
-                        boxShadow: "0 0 10px rgba(192, 192, 192, 0.5)"
-                      }}
-                      disabled={isSubmitting}
-                    >
-                      {/* Glow effect */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-silver-400/20 to-silver-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
-                      
-                      {/* Button content */}
-                      <span className="relative z-10 flex items-center justify-center">
-                        {isSubmitting ? (
-                          <>
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Sending...
-                          </>
-                        ) : (
-                          "Send Message"
-                        )}
-                      </span>
-                    </motion.button>
+                  <motion.button
+                    type="submit"
+                    className="w-full py-3 px-6 bg-gradient-to-r from-silver-600 to-silver-800 text-white font-medium rounded-lg relative overflow-hidden group"
+                    whileHover={{ 
+                      scale: 1.03,
+                      boxShadow: "0 0 15px rgba(192, 192, 192, 0.7)"
+                    }}
+                    whileTap={{ 
+                      scale: 0.98,
+                      boxShadow: "0 0 10px rgba(192, 192, 192, 0.5)"
+                    }}
+                    disabled={isSubmitting}
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-r from-silver-400/20 to-silver-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                    <span className="relative z-10 flex items-center justify-center">
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </span>
+                  </motion.button>
                 </form>
               </div>
               
-              {/* Contact Info */}
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-bold text-silver-200 mb-4">Direct Contact</h3>
@@ -299,13 +332,30 @@ export const Home = () => {
                         <p className="text-silver-300">Kerala, India</p>
                       </div>
                     </div>
+
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 mt-1">
+                        <SiLinkedin className="h-6 w-6 text-silver-300" />
+                      </div>
+                      <div className="ml-4">
+                        <p className="text-lg font-medium text-silver-200">LinkedIn</p>
+                        <a 
+                          href="https://www.linkedin.com/in/nevil-biju" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-silver-300 hover:text-silver-100 transition-colors"
+                        >
+                          nevil-biju
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 <div>
                   <h3 className="text-xl font-bold text-silver-200 mb-4">Let's Connect</h3>
                   <p className="text-silver-300 mb-6">
-                    Feel free to reach out through any platform. I'm always open to discussing new projects, creative ideas, or opportunities.
+                    Feel free to reach out through any platform.
                   </p>
                   <div className="flex space-x-4">
                     <a 
@@ -316,6 +366,15 @@ export const Home = () => {
                       aria-label="GitHub"
                     >
                       <SiGithub className="h-6 w-6" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/nevil-biju" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-silver-300 hover:text-silver-100 transition-colors"
+                      aria-label="LinkedIn"
+                    >
+                      <SiLinkedin className="h-6 w-6" />
                     </a>
                     <a 
                       href="https://www.instagram.com/josu10_03" 
@@ -333,7 +392,6 @@ export const Home = () => {
           </div>
         </section>
 
-        {/* Message Sent Popup */}
         {showPopup && (
           <motion.div 
             className="fixed top-4 right-4 bg-gradient-to-r from-silver-500 to-silver-700 text-black p-4 rounded-lg shadow-lg z-50"
@@ -351,7 +409,6 @@ export const Home = () => {
           </motion.div>
         )}
 
-        {/* New Footer */}
         <footer className="py-12 bg-neutral-900/70 backdrop-blur-md border-t border-silver-500/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
@@ -371,6 +428,15 @@ export const Home = () => {
                   aria-label="GitHub"
                 >
                   <SiGithub className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/nevil-biju" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-silver-300 hover:text-silver-100 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <SiLinkedin className="h-6 w-6" />
                 </a>
                 <a 
                   href="https://www.instagram.com/josu10_03" 
