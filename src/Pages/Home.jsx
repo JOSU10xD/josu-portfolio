@@ -132,7 +132,7 @@ export const Home = () => {
         }
       `}</style>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="relative z-10 w-full">
         <Navbar />
 
         {/* Home Section */}
