@@ -62,8 +62,13 @@ function extendMaterial(BaseMaterial, cfg) {
   return mat;
 }
 
-const CanvasWrapper = ({ children }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className="w-full h-full relative">
+const CanvasWrapper = ({ dpr, paused, children }) => (
+  <Canvas
+    dpr={dpr}
+    frameloop={paused ? "never" : "always"}
+    className="w-full h-full relative"
+    gl={{ antialias: false, powerPreference: "low-power" }}
+  >
     {children}
   </Canvas>
 );
@@ -162,6 +167,9 @@ const Beams = ({
   noiseIntensity = 1.75,
   scale = 0.2,
   rotation = 0,
+  dpr = [1, 1.5],
+  heightSegments = 100,
+  paused = false,
 }) => {
   const meshRef = useRef(null);
   const beamMaterial = useMemo(
@@ -222,7 +230,7 @@ const Beams = ({
   );
 
   return (
-    <CanvasWrapper>
+    <CanvasWrapper dpr={dpr} paused={paused}>
       <group rotation={[0, 0, degToRad(rotation)]}>
         <PlaneNoise
           ref={meshRef}
@@ -230,6 +238,7 @@ const Beams = ({
           count={beamNumber}
           width={beamWidth}
           height={beamHeight}
+          heightSegments={heightSegments}
         />
         <DirLight color={lightColor} position={[0, 3, 10]} />
       </group>
@@ -297,18 +306,29 @@ function createStackedPlanesBufferGeometry(
   return geometry;
 }
 
-const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
-  const mesh = useRef(null);
-  useImperativeHandle(ref, () => mesh.current);
-  const geometry = useMemo(
-    () => createStackedPlanesBufferGeometry(count, width, height, 0, 100),
-    [count, width, height]
-  );
-  useFrame((_, delta) => {
-    mesh.current.material.uniforms.time.value += 0.1 * delta;
-  });
-  return <mesh ref={mesh} geometry={geometry} material={material} />;
-});
+const MergedPlanes = forwardRef(
+  ({ material, width, count, height, heightSegments = 100 }, ref) => {
+    const mesh = useRef(null);
+    useImperativeHandle(ref, () => mesh.current);
+    const geometry = useMemo(
+      () =>
+        createStackedPlanesBufferGeometry(
+          count,
+          width,
+          height,
+          0,
+          heightSegments
+        ),
+      [count, width, height, heightSegments]
+    );
+    useFrame((_, delta) => {
+      if (mesh.current && mesh.current.material && mesh.current.material.uniforms) {
+        mesh.current.material.uniforms.time.value += 0.1 * delta;
+      }
+    });
+    return <mesh ref={mesh} geometry={geometry} material={material} />;
+  }
+);
 MergedPlanes.displayName = "MergedPlanes";
 
 const PlaneNoise = forwardRef((props, ref) => (
@@ -318,6 +338,7 @@ const PlaneNoise = forwardRef((props, ref) => (
     width={props.width}
     count={props.count}
     height={props.height}
+    heightSegments={props.heightSegments}
   />
 ));
 PlaneNoise.displayName = "PlaneNoise";

@@ -1,129 +1,170 @@
-// src/components/TechStack.jsx
-import React from "react";
+import { motion } from "framer-motion";
+import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import {
   SiReact,
-  SiNodedotjs,
+  SiNextdotjs,
+  SiTypescript,
   SiJavascript,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiExpress,
   SiPython,
-  SiAmazonwebservices,
-  SiJenkins,
-  SiGit,
   SiMongodb,
   SiMysql,
-  SiTailwindcss,
-  SiElectron
+  SiPostgresql,
+  SiAmazonwebservices,
+  SiDocker,
+  SiJenkins,
+  SiNginx,
+  SiLinux,
+  SiElectron,
+  SiReact as SiReactNative,
+  SiExpo,
+  SiGit,
+  SiGithubactions,
+  SiFigma,
+  SiPostman,
+  SiFirebase,
+  SiVite,
 } from "react-icons/si";
+import { HiCode, HiCube, HiCloud, HiDeviceMobile, HiCog } from "react-icons/hi";
 
-const ICON_MAP = {
-  SiReact,
-  SiNodedotjs,
-  SiJavascript,
-  SiPython,
-  SiAmazonwebservices,
-  SiJenkins,
-  SiGit,
-  SiMongodb,
-  SiMysql,
-  SiTailwindcss,
-  SiElectron
-};
+const EASE = [0.22, 1, 0.36, 1];
 
-const TECHS = [
-  { key: "react", label: "React", iconName: "SiReact" },
-  { key: "node", label: "Node.js", iconName: "SiNodedotjs" },
-  { key: "js", label: "JavaScript", iconName: "SiJavascript" },
-  { key: "python", label: "Python", iconName: "SiPython" },
-  { key: "csharp", label: "C#", iconName: "SiCsharp" },
-  { key: "aws", label: "AWS", iconName: "SiAmazonwebservices" },
-  { key: "jenkins", label: "Jenkins", iconName: "SiJenkins" },
-  { key: "git", label: "Git", iconName: "SiGit" },
-  { key: "mongo", label: "MongoDB", iconName: "SiMongodb" },
-  { key: "mysql", label: "MySQL", iconName: "SiMysql" },
-  { key: "tailwind", label: "TailwindCSS", iconName: "SiTailwindcss" },
-  { key: "electron", label: "Electron", iconName: "SiElectron" },
+const CATEGORIES = [
+  {
+    id: "frontend",
+    label: "Frontend",
+    icon: <HiCode />,
+    items: [
+      { name: "React", icon: <SiReact /> },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss /> },
+      { name: "HTML5", icon: <SiHtml5 /> },
+      { name: "CSS3", icon: <SiCss3 /> },
+      { name: "Vite", icon: <SiVite /> },
+    ],
+  },
+  {
+    id: "backend",
+    label: "Backend",
+    icon: <HiCube />,
+    items: [
+      { name: "Node.js", icon: <SiNodedotjs /> },
+      { name: "Express", icon: <SiExpress /> },
+      { name: "Python", icon: <SiPython /> },
+      { name: "REST APIs", icon: <SiPostman /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Firebase", icon: <SiFirebase /> },
+    ],
+  },
+  {
+    id: "cloud",
+    label: "Cloud & DevOps",
+    icon: <HiCloud />,
+    items: [
+      { name: "AWS", icon: <SiAmazonwebservices /> },
+      { name: "Docker", icon: <SiDocker /> },
+      { name: "Jenkins", icon: <SiJenkins /> },
+      { name: "GitHub Actions", icon: <SiGithubactions /> },
+      { name: "Nginx", icon: <SiNginx /> },
+      { name: "Linux", icon: <SiLinux /> },
+    ],
+  },
+  {
+    id: "platforms",
+    label: "Desktop & Mobile",
+    icon: <HiDeviceMobile />,
+    items: [
+      { name: "Electron", icon: <SiElectron /> },
+      { name: "React Native", icon: <SiReactNative /> },
+      { name: "Expo", icon: <SiExpo /> },
+    ],
+  },
+  {
+    id: "tools",
+    label: "Tools",
+    icon: <HiCog />,
+    items: [
+      { name: "Git", icon: <SiGit /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Figma", icon: <SiFigma /> },
+    ],
+  },
 ];
-
-const DefaultIcon = ({ size = 20 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    aria-hidden
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect x="3" y="3" width="18" height="18" rx="4" fill="rgba(255,255,255,0.06)" />
-    <path d="M7 12h10" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M7 8h10" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" strokeLinecap="round" />
-    <path d="M7 16h10" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" strokeLinecap="round" />
-  </svg>
-);
 
 export default function TechStack() {
   return (
-    <>
-      <style>{`
-        .tech-grid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0,1fr));
-          gap: 10px;
-        }
-        @media (min-width: 640px) {
-          .tech-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-        }
-        .tech-chip {
-          display:flex;
-          align-items:center;
-          gap:10px;
-          padding: 10px 12px;
-          border-radius: 10px;
-          background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-          border: 1px solid rgba(255,255,255,0.04);
-          color: rgba(255,255,255,0.95);
-          font-weight: 600;
-          font-size: 0.98rem;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-          transition: all 0.25s ease;
-          cursor: default;
-        }
-        .tech-chip:hover {
-          background: white;
-          color: black;
-          border-color: rgba(0,0,0,0.15);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        .tech-icon {
-          width: 20px;
-          height: 20px;
-          opacity: 0.95;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          transition: color 0.25s ease;
-        }
-        .tech-chip:hover .tech-icon {
-          color: black;
-        }
-      `}</style>
+    <section id="stack" className="section section-divider" aria-label="Tech stack">
+      <div className="container-x">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Tech stack"
+              title={
+                <>
+                  The tools I reach{" "}
+                  <span className="font-serif italic font-normal">for</span>.
+                </>
+              }
+              description="A pragmatic toolbox. I pick technologies based on the problem, the team, and the constraints — not the trend cycle."
+            />
+          </div>
 
-      <div className="tech-grid" role="list" aria-label="Tech stack">
-        {TECHS.map((t) => {
-          const IconComponent = ICON_MAP[t.iconName];
-          return (
-            <div key={t.key} className="tech-chip" role="listitem">
-              <div className="tech-icon" aria-hidden>
-                {IconComponent ? (
-                  <IconComponent size={20} />
-                ) : (
-                  <DefaultIcon size={20} />
-                )}
-              </div>
-              <div>{t.label}</div>
-            </div>
-          );
-        })}
+          <div className="lg:col-span-7 flex flex-col gap-10 md:gap-12">
+            {CATEGORIES.map((cat, ci) => (
+              <Reveal key={cat.id} delay={ci * 60}>
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-[color:var(--border-subtle)] bg-white/[0.03] text-[color:var(--text-secondary)]">
+                      {cat.icon}
+                    </span>
+                    <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-[color:var(--text-primary)]">
+                      {cat.label}
+                    </h3>
+                    <span className="ml-auto eyebrow">
+                      {cat.items.length} items
+                    </span>
+                  </div>
+
+                  <motion.ul
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-60px" }}
+                    variants={{
+                      hidden: {},
+                      show: { transition: { staggerChildren: 0.04 } },
+                    }}
+                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"
+                  >
+                    {cat.items.map((it) => (
+                      <motion.li
+                        key={it.name}
+                        variants={{
+                          hidden: { opacity: 0, y: 10 },
+                          show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE } },
+                        }}
+                      >
+                        <div className="tech-item">
+                          <span className="tech-item-icon">{it.icon}</span>
+                          <span className="tech-item-label">{it.name}</span>
+                        </div>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 }

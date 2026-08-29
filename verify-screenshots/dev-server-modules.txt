@@ -1,0 +1,1279 @@
+
+
+===== src/main.jsx (status=200, len=2087) =====
+import __vite__cjsImport0_react_jsxDevRuntime from "/josu-portfolio/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=032de3ec"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import __vite__cjsImport1_react from "/josu-portfolio/node_modules/.vite/deps/react.js?v=032de3ec"; const StrictMode = __vite__cjsImport1_react["StrictMode"];
+import __vite__cjsImport2_reactDom_client from "/josu-portfolio/node_modules/.vite/deps/react-dom_client.js?v=9f1de2d3"; const createRoot = __vite__cjsImport2_reactDom_client["createRoot"];
+import "/josu-portfolio/src/index.css";
+import App from "/josu-portfolio/src/App.jsx";
+createRoot(document.getElementById("root")).render(
+  /* @__PURE__ */ jsxDEV(StrictMode, { children: /* @__PURE__ */ jsxDEV(App, {}, void 0, false, {
+    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/main.jsx",
+    lineNumber: 8,
+    columnNumber: 5
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/main.jsx",
+    lineNumber: 7,
+    columnNumber: 3
+  }, this)
+);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBT0k7QUFQSixTQUFTQSxrQkFBa0I7QUFDM0IsU0FBU0Msa0JBQWtCO0FBQzNCLE9BQU87QUFDUCxPQUFPQyxTQUFTO0FBRWhCRCxXQUFXRSxTQUFTQyxlQUFlLE1BQU0sQ0FBQyxFQUFFQztBQUFBQSxFQUMxQyx1QkFBQyxjQUNDLGlDQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUFJLEtBRE47QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUVBO0FBQ0YiLCJuYW1lcyI6WyJTdHJpY3RNb2RlIiwiY3JlYXRlUm9vdCIsIkFwcCIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJyZW5kZXIiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsibWFpbi5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gXCJyZWFjdC1kb20vY2xpZW50XCI7XG5pbXBvcnQgXCIuL2luZGV4LmNzc1wiO1xuaW1wb3J0IEFwcCBmcm9tIFwiLi9BcHAuanN4XCI7XG5cbmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJyb290XCIpKS5yZW5kZXIoXG4gIDxTdHJpY3RNb2RlPlxuICAgIDxBcHAgLz5cbiAgPC9TdHJpY3RNb2RlPlxuKTtcbiJdLCJmaWxlIjoiQzovVXNlcnMvbmV2aWwvRGVza3RvcC9KT1NVMTBzL0RldlN0dWZmL1Byb2plY3RzL2pvc3UtcG9ydGZvbGlvL3NyYy9tYWluLmpzeCJ9
+
+===== src/App.jsx (status=200, len=12070) =====
+import { createHotContext as __vite__createHotContext } from "/josu-portfolio/@vite/client";import.meta.hot = __vite__createHotContext("/src/App.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/josu-portfolio/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=032de3ec"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/josu-portfolio/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/josu-portfolio/node_modules/.vite/deps/react.js?v=032de3ec"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useEffect = __vite__cjsImport3_react["useEffect"];
+import { HashRouter, Routes, Route } from "/josu-portfolio/node_modules/.vite/deps/react-router-dom.js?v=c37b7c4f";
+import { Home } from "/josu-portfolio/src/Pages/Home.jsx";
+import { NotFound } from "/josu-portfolio/src/Pages/NotFound.jsx";
+function HashNormalizer() {
+  _s();
+  useEffect(() => {
+    const path = window.location.pathname;
+    const match = path.match(/\/(about|projects|contact|home|timeline)\/?$/i);
+    if (match) {
+      const section = match[1].toLowerCase();
+      const basePath = path.replace(/\/(about|projects|contact|home|timeline)\/?$/i, "/");
+      window.location.replace(basePath + window.location.search + "#/" + section);
+      return;
+    }
+    const hash = window.location.hash;
+    if (hash && hash.length > 1 && !hash.startsWith("#/")) {
+      const newHash = "#/" + hash.slice(1);
+      window.location.replace(path + window.location.search + newHash);
+    }
+  }, []);
+  return null;
+}
+_s(HashNormalizer, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c = HashNormalizer;
+export default function App() {
+  return /* @__PURE__ */ jsxDEV(HashRouter, { children: [
+    /* @__PURE__ */ jsxDEV(HashNormalizer, {}, void 0, false, {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+      lineNumber: 59,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV(Routes, { children: [
+      /* @__PURE__ */ jsxDEV(Route, { path: "/", element: /* @__PURE__ */ jsxDEV(Home, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 63,
+        columnNumber: 34
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 63,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(Route, { path: "home", element: /* @__PURE__ */ jsxDEV(Home, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 66,
+        columnNumber: 37
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 66,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(Route, { path: "about", element: /* @__PURE__ */ jsxDEV(Home, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 67,
+        columnNumber: 38
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 67,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(Route, { path: "projects", element: /* @__PURE__ */ jsxDEV(Home, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 68,
+        columnNumber: 41
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 68,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(Route, { path: "contact", element: /* @__PURE__ */ jsxDEV(Home, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 69,
+        columnNumber: 40
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 69,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV(Route, { path: "*", element: /* @__PURE__ */ jsxDEV(NotFound, {}, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 72,
+        columnNumber: 34
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+        lineNumber: 72,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+      lineNumber: 61,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx",
+    lineNumber: 57,
+    columnNumber: 5
+  }, this);
+}
+_c2 = App;
+var _c, _c2;
+$RefreshReg$(_c, "HashNormalizer");
+$RefreshReg$(_c2, "App");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/App.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBdUNNOzs7Ozs7Ozs7Ozs7Ozs7OztBQXRDTixPQUFPQSxTQUFTQyxpQkFBaUI7QUFDakMsU0FBU0MsWUFBWUMsUUFBUUMsYUFBYTtBQUMxQyxTQUFTQyxZQUFZO0FBQ3JCLFNBQVNDLGdCQUFnQjtBQVF6QixTQUFTQyxpQkFBaUI7QUFBQUMsS0FBQTtBQUN4QlAsWUFBVSxNQUFNO0FBQ2QsVUFBTVEsT0FBT0MsT0FBT0MsU0FBU0M7QUFDN0IsVUFBTUMsUUFBUUosS0FBS0ksTUFBTSwrQ0FBK0M7QUFFeEUsUUFBSUEsT0FBTztBQUNULFlBQU1DLFVBQVVELE1BQU0sQ0FBQyxFQUFFRSxZQUFZO0FBRXJDLFlBQU1DLFdBQVdQLEtBQUtRLFFBQVEsaURBQWlELEdBQUc7QUFFbEZQLGFBQU9DLFNBQVNNLFFBQVFELFdBQVdOLE9BQU9DLFNBQVNPLFNBQVMsT0FBT0osT0FBTztBQUMxRTtBQUFBLElBQ0Y7QUFFQSxVQUFNSyxPQUFPVCxPQUFPQyxTQUFTUTtBQUM3QixRQUFJQSxRQUFRQSxLQUFLQyxTQUFTLEtBQUssQ0FBQ0QsS0FBS0UsV0FBVyxJQUFJLEdBQUc7QUFDckQsWUFBTUMsVUFBVSxPQUFPSCxLQUFLSSxNQUFNLENBQUM7QUFDbkNiLGFBQU9DLFNBQVNNLFFBQVFSLE9BQU9DLE9BQU9DLFNBQVNPLFNBQVNJLE9BQU87QUFBQSxJQUNqRTtBQUFBLEVBQ0YsR0FBRyxFQUFFO0FBQ0wsU0FBTztBQUNUO0FBQUNkLEdBckJRRCxnQkFBYztBQUFBaUIsS0FBZGpCO0FBdUJULHdCQUF3QmtCLE1BQU07QUFDNUIsU0FDRSx1QkFBQyxjQUVDO0FBQUEsMkJBQUMsb0JBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUFlO0FBQUEsSUFFZix1QkFBQyxVQUVDO0FBQUEsNkJBQUMsU0FBTSxNQUFLLEtBQUksU0FBUyx1QkFBQyxVQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBSyxLQUE5QjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQWtDO0FBQUEsTUFHbEMsdUJBQUMsU0FBTSxNQUFLLFFBQU8sU0FBUyx1QkFBQyxVQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBSyxLQUFqQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXFDO0FBQUEsTUFDckMsdUJBQUMsU0FBTSxNQUFLLFNBQVEsU0FBUyx1QkFBQyxVQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBSyxLQUFsQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXNDO0FBQUEsTUFDdEMsdUJBQUMsU0FBTSxNQUFLLFlBQVcsU0FBUyx1QkFBQyxVQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBSyxLQUFyQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXlDO0FBQUEsTUFDekMsdUJBQUMsU0FBTSxNQUFLLFdBQVUsU0FBUyx1QkFBQyxVQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBSyxLQUFwQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXdDO0FBQUEsTUFHeEMsdUJBQUMsU0FBTSxNQUFLLEtBQUksU0FBUyx1QkFBQyxjQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBUyxLQUFsQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXNDO0FBQUEsU0FYeEM7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQVlBO0FBQUEsT0FoQkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQWlCQTtBQUVKO0FBQUNDLE1BckJ1QkQ7QUFBRyxJQUFBRCxJQUFBRTtBQUFBQyxhQUFBSCxJQUFBO0FBQUFHLGFBQUFELEtBQUEiLCJuYW1lcyI6WyJSZWFjdCIsInVzZUVmZmVjdCIsIkhhc2hSb3V0ZXIiLCJSb3V0ZXMiLCJSb3V0ZSIsIkhvbWUiLCJOb3RGb3VuZCIsIkhhc2hOb3JtYWxpemVyIiwiX3MiLCJwYXRoIiwid2luZG93IiwibG9jYXRpb24iLCJwYXRobmFtZSIsIm1hdGNoIiwic2VjdGlvbiIsInRvTG93ZXJDYXNlIiwiYmFzZVBhdGgiLCJyZXBsYWNlIiwic2VhcmNoIiwiaGFzaCIsImxlbmd0aCIsInN0YXJ0c1dpdGgiLCJuZXdIYXNoIiwic2xpY2UiLCJfYyIsIkFwcCIsIl9jMiIsIiRSZWZyZXNoUmVnJCJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJBcHAuanN4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIHNyYy9BcHAuanN4XG5pbXBvcnQgUmVhY3QsIHsgdXNlRWZmZWN0IH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyBIYXNoUm91dGVyLCBSb3V0ZXMsIFJvdXRlIH0gZnJvbSBcInJlYWN0LXJvdXRlci1kb21cIjtcbmltcG9ydCB7IEhvbWUgfSBmcm9tIFwiLi9QYWdlcy9Ib21lXCI7XG5pbXBvcnQgeyBOb3RGb3VuZCB9IGZyb20gXCIuL1BhZ2VzL05vdEZvdW5kXCI7XG5cbi8qKlxuICogTm9ybWFsaXplciBjb21wb25lbnQ6IHJ1bnMgb24gbW91bnQgYW5kOlxuICogMS4gQ2hlY2tzIGlmIHRoZSBVUkwgcGF0aG5hbWUgZW5kcyB3aXRoIGEgc2VjdGlvbiBuYW1lIChlLmcuLCBcIi9hYm91dFwiLCBcIi9wcm9qZWN0c1wiIGZyb20gYSByZWxvYWQpLlxuICogICAgSWYgc28sIGl0IHRyYW5zbGF0ZXMgdGhlIHBhdGhuYW1lIGludG8gYSBjbGVhbiBoYXNoIHJvdXRlIChlLmcuIFwiLyMvYWJvdXRcIikuXG4gKiAyLiBDaGVja3MgaWYgdGhlcmUgaXMgYSBmbGF0IGhhc2ggbGlrZSBcIiNhYm91dFwiIGFuZCBub3JtYWxpemVzIGl0IHRvIFwiIy9hYm91dFwiLlxuICovXG5mdW5jdGlvbiBIYXNoTm9ybWFsaXplcigpIHtcbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBjb25zdCBwYXRoID0gd2luZG93LmxvY2F0aW9uLnBhdGhuYW1lOyAvLyBlLmcuIFwiLzxiYXNlPi9hYm91dFwiIG9yIFwiL2Fib3V0XCJcbiAgICBjb25zdCBtYXRjaCA9IHBhdGgubWF0Y2goL1xcLyhhYm91dHxwcm9qZWN0c3xjb250YWN0fGhvbWV8dGltZWxpbmUpXFwvPyQvaSk7XG5cbiAgICBpZiAobWF0Y2gpIHtcbiAgICAgIGNvbnN0IHNlY3Rpb24gPSBtYXRjaFsxXS50b0xvd2VyQ2FzZSgpO1xuICAgICAgLy8gU3RyaXAgdGhlIHNlY3Rpb24gbmFtZSBmcm9tIHRoZSBlbmQgb2YgdGhlIHBhdGhuYW1lIHRvIGdldCB0aGUgYmFzZSBwYXRoXG4gICAgICBjb25zdCBiYXNlUGF0aCA9IHBhdGgucmVwbGFjZSgvXFwvKGFib3V0fHByb2plY3RzfGNvbnRhY3R8aG9tZXx0aW1lbGluZSlcXC8/JC9pLCBcIi9cIik7XG4gICAgICAvLyBSZWRpcmVjdCB0byB0aGUgaGFzaC1iYXNlZCBlcXVpdmFsZW50XG4gICAgICB3aW5kb3cubG9jYXRpb24ucmVwbGFjZShiYXNlUGF0aCArIHdpbmRvdy5sb2NhdGlvbi5zZWFyY2ggKyBcIiMvXCIgKyBzZWN0aW9uKTtcbiAgICAgIHJldHVybjtcbiAgICB9XG5cbiAgICBjb25zdCBoYXNoID0gd2luZG93LmxvY2F0aW9uLmhhc2g7IC8vIGUuZy4gXCIjYWJvdXRcIiBvciBcIiMvYWJvdXRcIiBvciBcIlwiXG4gICAgaWYgKGhhc2ggJiYgaGFzaC5sZW5ndGggPiAxICYmICFoYXNoLnN0YXJ0c1dpdGgoXCIjL1wiKSkge1xuICAgICAgY29uc3QgbmV3SGFzaCA9IFwiIy9cIiArIGhhc2guc2xpY2UoMSk7XG4gICAgICB3aW5kb3cubG9jYXRpb24ucmVwbGFjZShwYXRoICsgd2luZG93LmxvY2F0aW9uLnNlYXJjaCArIG5ld0hhc2gpO1xuICAgIH1cbiAgfSwgW10pO1xuICByZXR1cm4gbnVsbDtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQXBwKCkge1xuICByZXR1cm4gKFxuICAgIDxIYXNoUm91dGVyPlxuICAgICAgey8qIHJ1biBub3JtYWxpemVyIGVhcmx5ICovfVxuICAgICAgPEhhc2hOb3JtYWxpemVyIC8+XG5cbiAgICAgIDxSb3V0ZXM+XG4gICAgICAgIHsvKiBwcmltYXJ5IHNpbmdsZS1wYWdlIHJvdXRlICovfVxuICAgICAgICA8Um91dGUgcGF0aD1cIi9cIiBlbGVtZW50PXs8SG9tZSAvPn0gLz5cblxuICAgICAgICB7LyogU3VwcG9ydCBpbmNvbWluZyBub3JtYWxpemVkIHJvdXRlcyAqL31cbiAgICAgICAgPFJvdXRlIHBhdGg9XCJob21lXCIgZWxlbWVudD17PEhvbWUgLz59IC8+XG4gICAgICAgIDxSb3V0ZSBwYXRoPVwiYWJvdXRcIiBlbGVtZW50PXs8SG9tZSAvPn0gLz5cbiAgICAgICAgPFJvdXRlIHBhdGg9XCJwcm9qZWN0c1wiIGVsZW1lbnQ9ezxIb21lIC8+fSAvPlxuICAgICAgICA8Um91dGUgcGF0aD1cImNvbnRhY3RcIiBlbGVtZW50PXs8SG9tZSAvPn0gLz5cblxuICAgICAgICB7LyogY2F0Y2gtYWxsICovfVxuICAgICAgICA8Um91dGUgcGF0aD1cIipcIiBlbGVtZW50PXs8Tm90Rm91bmQgLz59IC8+XG4gICAgICA8L1JvdXRlcz5cbiAgICA8L0hhc2hSb3V0ZXI+XG4gICk7XG59XG4iXSwiZmlsZSI6IkM6L1VzZXJzL25ldmlsL0Rlc2t0b3AvSk9TVTEwcy9EZXZTdHVmZi9Qcm9qZWN0cy9qb3N1LXBvcnRmb2xpby9zcmMvQXBwLmpzeCJ9
+
+===== src/index.css (status=200, len=66229) =====
+import { createHotContext as __vite__createHotContext } from "/josu-portfolio/@vite/client";import.meta.hot = __vite__createHotContext("/src/index.css");import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from "/josu-portfolio/@vite/client"
+const __vite__id = "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/index.css"
+const __vite__css = "/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */\n@layer properties;\n@layer theme, base, components, utilities;\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\",\n      \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n    --font-serif: ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif;\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\",\n      \"Courier New\", monospace;\n    --color-emerald-200: oklch(90.5% 0.093 164.15);\n    --color-emerald-400: oklch(76.5% 0.177 163.223);\n    --color-rose-200: oklch(89.2% 0.058 10.001);\n    --color-rose-400: oklch(71.2% 0.194 13.428);\n    --color-neutral-800: oklch(26.9% 0 0);\n    --color-neutral-900: oklch(20.5% 0 0);\n    --color-black: #000;\n    --color-white: #fff;\n    --spacing: 0.25rem;\n    --container-md: 28rem;\n    --container-2xl: 42rem;\n    --container-3xl: 48rem;\n    --container-5xl: 64rem;\n    --text-2xl: 1.5rem;\n    --text-2xl--line-height: calc(2 / 1.5);\n    --font-weight-normal: 400;\n    --font-weight-medium: 500;\n    --font-weight-semibold: 600;\n    --tracking-tight: -0.025em;\n    --tracking-wider: 0.05em;\n    --leading-snug: 1.375;\n    --radius-md: 0.375rem;\n    --radius-lg: 0.5rem;\n    --radius-xl: 0.75rem;\n    --radius-2xl: 1rem;\n    --animate-spin: spin 1s linear infinite;\n    --blur-xl: 24px;\n    --blur-2xl: 40px;\n    --default-transition-duration: 150ms;\n    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    --default-font-family: var(--font-sans);\n    --default-mono-font-family: var(--font-mono);\n  }\n}\n@layer base {\n  *, ::after, ::before, ::backdrop, ::file-selector-button {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n    border: 0 solid;\n  }\n  html, :host {\n    line-height: 1.5;\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\");\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var(--default-font-variation-settings, normal);\n    -webkit-tap-highlight-color: transparent;\n  }\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n  b, strong {\n    font-weight: bolder;\n  }\n  code, kbd, samp, pre {\n    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace);\n    font-feature-settings: var(--default-mono-font-feature-settings, normal);\n    font-variation-settings: var(--default-mono-font-variation-settings, normal);\n    font-size: 1em;\n  }\n  small {\n    font-size: 80%;\n  }\n  sub, sup {\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n    vertical-align: baseline;\n  }\n  sub {\n    bottom: -0.25em;\n  }\n  sup {\n    top: -0.5em;\n  }\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n  :-moz-focusring {\n    outline: auto;\n  }\n  progress {\n    vertical-align: baseline;\n  }\n  summary {\n    display: list-item;\n  }\n  ol, ul, menu {\n    list-style: none;\n  }\n  img, svg, video, canvas, audio, iframe, embed, object {\n    display: block;\n    vertical-align: middle;\n  }\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n  button, input, select, optgroup, textarea, ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    border-radius: 0;\n    background-color: transparent;\n    opacity: 1;\n  }\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n  ::placeholder {\n    opacity: 1;\n  }\n  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {\n    ::placeholder {\n      color: currentcolor;\n      @supports (color: color-mix(in lab, red, red)) {\n        color: color-mix(in oklab, currentcolor 50%, transparent);\n      }\n    }\n  }\n  textarea {\n    resize: vertical;\n  }\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n  button, input:where([type=\"button\"], [type=\"reset\"], [type=\"submit\"]), ::file-selector-button {\n    appearance: button;\n  }\n  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {\n    height: auto;\n  }\n  [hidden]:where(:not([hidden=\"until-found\"])) {\n    display: none !important;\n  }\n}\n@layer utilities {\n  .pointer-events-auto {\n    pointer-events: auto;\n  }\n  .pointer-events-none {\n    pointer-events: none;\n  }\n  .absolute {\n    position: absolute;\n  }\n  .fixed {\n    position: fixed;\n  }\n  .relative {\n    position: relative;\n  }\n  .inset-0 {\n    inset: calc(var(--spacing) * 0);\n  }\n  .top-1\\/2 {\n    top: calc(1/2 * 100%);\n  }\n  .top-3 {\n    top: calc(var(--spacing) * 3);\n  }\n  .top-4 {\n    top: calc(var(--spacing) * 4);\n  }\n  .right-3 {\n    right: calc(var(--spacing) * 3);\n  }\n  .right-4 {\n    right: calc(var(--spacing) * 4);\n  }\n  .bottom-6 {\n    bottom: calc(var(--spacing) * 6);\n  }\n  .left-1\\/2 {\n    left: calc(1/2 * 100%);\n  }\n  .left-3 {\n    left: calc(var(--spacing) * 3);\n  }\n  .z-0 {\n    z-index: 0;\n  }\n  .z-10 {\n    z-index: 10;\n  }\n  .z-40 {\n    z-index: 40;\n  }\n  .z-\\[1\\] {\n    z-index: 1;\n  }\n  .z-\\[60\\] {\n    z-index: 60;\n  }\n  .container {\n    width: 100%;\n    @media (width >= 40rem) {\n      max-width: 40rem;\n    }\n    @media (width >= 48rem) {\n      max-width: 48rem;\n    }\n    @media (width >= 64rem) {\n      max-width: 64rem;\n    }\n    @media (width >= 80rem) {\n      max-width: 80rem;\n    }\n    @media (width >= 96rem) {\n      max-width: 96rem;\n    }\n  }\n  .mx-auto {\n    margin-inline: auto;\n  }\n  .mt-0\\.5 {\n    margin-top: calc(var(--spacing) * 0.5);\n  }\n  .mt-1 {\n    margin-top: calc(var(--spacing) * 1);\n  }\n  .mt-3 {\n    margin-top: calc(var(--spacing) * 3);\n  }\n  .mt-4 {\n    margin-top: calc(var(--spacing) * 4);\n  }\n  .mt-5 {\n    margin-top: calc(var(--spacing) * 5);\n  }\n  .mt-6 {\n    margin-top: calc(var(--spacing) * 6);\n  }\n  .mt-8 {\n    margin-top: calc(var(--spacing) * 8);\n  }\n  .mt-10 {\n    margin-top: calc(var(--spacing) * 10);\n  }\n  .mt-14 {\n    margin-top: calc(var(--spacing) * 14);\n  }\n  .mt-20 {\n    margin-top: calc(var(--spacing) * 20);\n  }\n  .mb-1\\.5 {\n    margin-bottom: calc(var(--spacing) * 1.5);\n  }\n  .mb-2 {\n    margin-bottom: calc(var(--spacing) * 2);\n  }\n  .mb-3 {\n    margin-bottom: calc(var(--spacing) * 3);\n  }\n  .mb-4 {\n    margin-bottom: calc(var(--spacing) * 4);\n  }\n  .mb-5 {\n    margin-bottom: calc(var(--spacing) * 5);\n  }\n  .mb-7 {\n    margin-bottom: calc(var(--spacing) * 7);\n  }\n  .mb-8 {\n    margin-bottom: calc(var(--spacing) * 8);\n  }\n  .ml-1 {\n    margin-left: calc(var(--spacing) * 1);\n  }\n  .ml-auto {\n    margin-left: auto;\n  }\n  .block {\n    display: block;\n  }\n  .flex {\n    display: flex;\n  }\n  .grid {\n    display: grid;\n  }\n  .hidden {\n    display: none;\n  }\n  .inline {\n    display: inline;\n  }\n  .inline-block {\n    display: inline-block;\n  }\n  .inline-flex {\n    display: inline-flex;\n  }\n  .table {\n    display: table;\n  }\n  .h-1\\.5 {\n    height: calc(var(--spacing) * 1.5);\n  }\n  .h-3 {\n    height: calc(var(--spacing) * 3);\n  }\n  .h-3\\.5 {\n    height: calc(var(--spacing) * 3.5);\n  }\n  .h-4 {\n    height: calc(var(--spacing) * 4);\n  }\n  .h-5 {\n    height: calc(var(--spacing) * 5);\n  }\n  .h-7 {\n    height: calc(var(--spacing) * 7);\n  }\n  .h-8 {\n    height: calc(var(--spacing) * 8);\n  }\n  .h-9 {\n    height: calc(var(--spacing) * 9);\n  }\n  .h-10 {\n    height: calc(var(--spacing) * 10);\n  }\n  .h-11 {\n    height: calc(var(--spacing) * 11);\n  }\n  .h-16 {\n    height: calc(var(--spacing) * 16);\n  }\n  .h-full {\n    height: 100%;\n  }\n  .h-px {\n    height: 1px;\n  }\n  .h-screen {\n    height: 100vh;\n  }\n  .max-h-\\[78vh\\] {\n    max-height: 78vh;\n  }\n  .min-h-\\[100svh\\] {\n    min-height: 100svh;\n  }\n  .min-h-\\[148px\\] {\n    min-height: 148px;\n  }\n  .min-h-screen {\n    min-height: 100vh;\n  }\n  .w-1\\.5 {\n    width: calc(var(--spacing) * 1.5);\n  }\n  .w-3 {\n    width: calc(var(--spacing) * 3);\n  }\n  .w-3\\.5 {\n    width: calc(var(--spacing) * 3.5);\n  }\n  .w-4 {\n    width: calc(var(--spacing) * 4);\n  }\n  .w-5 {\n    width: calc(var(--spacing) * 5);\n  }\n  .w-6 {\n    width: calc(var(--spacing) * 6);\n  }\n  .w-7 {\n    width: calc(var(--spacing) * 7);\n  }\n  .w-8 {\n    width: calc(var(--spacing) * 8);\n  }\n  .w-9 {\n    width: calc(var(--spacing) * 9);\n  }\n  .w-10 {\n    width: calc(var(--spacing) * 10);\n  }\n  .w-11 {\n    width: calc(var(--spacing) * 11);\n  }\n  .w-auto {\n    width: auto;\n  }\n  .w-full {\n    width: 100%;\n  }\n  .w-screen {\n    width: 100vw;\n  }\n  .max-w-2xl {\n    max-width: var(--container-2xl);\n  }\n  .max-w-3xl {\n    max-width: var(--container-3xl);\n  }\n  .max-w-5xl {\n    max-width: var(--container-5xl);\n  }\n  .max-w-full {\n    max-width: 100%;\n  }\n  .max-w-md {\n    max-width: var(--container-md);\n  }\n  .min-w-\\[150px\\] {\n    min-width: 150px;\n  }\n  .flex-shrink-0 {\n    flex-shrink: 0;\n  }\n  .-translate-x-1\\/2 {\n    --tw-translate-x: calc(calc(1/2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-translate-y-1 {\n    --tw-translate-y: calc(var(--spacing) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .-translate-y-1\\/2 {\n    --tw-translate-y: calc(calc(1/2 * 100%) * -1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .translate-y-0 {\n    --tw-translate-y: calc(var(--spacing) * 0);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .translate-y-1 {\n    --tw-translate-y: calc(var(--spacing) * 1);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .translate-y-3 {\n    --tw-translate-y: calc(var(--spacing) * 3);\n    translate: var(--tw-translate-x) var(--tw-translate-y);\n  }\n  .scale-90 {\n    --tw-scale-x: 90%;\n    --tw-scale-y: 90%;\n    --tw-scale-z: 90%;\n    scale: var(--tw-scale-x) var(--tw-scale-y);\n  }\n  .scale-100 {\n    --tw-scale-x: 100%;\n    --tw-scale-y: 100%;\n    --tw-scale-z: 100%;\n    scale: var(--tw-scale-x) var(--tw-scale-y);\n  }\n  .transform {\n    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);\n  }\n  .animate-spin {\n    animation: var(--animate-spin);\n  }\n  .resize {\n    resize: both;\n  }\n  .grid-cols-1 {\n    grid-template-columns: repeat(1, minmax(0, 1fr));\n  }\n  .grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .flex-col {\n    flex-direction: column;\n  }\n  .flex-wrap {\n    flex-wrap: wrap;\n  }\n  .items-baseline {\n    align-items: baseline;\n  }\n  .items-center {\n    align-items: center;\n  }\n  .items-end {\n    align-items: flex-end;\n  }\n  .items-start {\n    align-items: flex-start;\n  }\n  .justify-between {\n    justify-content: space-between;\n  }\n  .justify-center {\n    justify-content: center;\n  }\n  .gap-1 {\n    gap: calc(var(--spacing) * 1);\n  }\n  .gap-1\\.5 {\n    gap: calc(var(--spacing) * 1.5);\n  }\n  .gap-2 {\n    gap: calc(var(--spacing) * 2);\n  }\n  .gap-3 {\n    gap: calc(var(--spacing) * 3);\n  }\n  .gap-4 {\n    gap: calc(var(--spacing) * 4);\n  }\n  .gap-5 {\n    gap: calc(var(--spacing) * 5);\n  }\n  .gap-6 {\n    gap: calc(var(--spacing) * 6);\n  }\n  .gap-7 {\n    gap: calc(var(--spacing) * 7);\n  }\n  .gap-8 {\n    gap: calc(var(--spacing) * 8);\n  }\n  .gap-10 {\n    gap: calc(var(--spacing) * 10);\n  }\n  .gap-12 {\n    gap: calc(var(--spacing) * 12);\n  }\n  .gap-x-8 {\n    column-gap: calc(var(--spacing) * 8);\n  }\n  .gap-y-6 {\n    row-gap: calc(var(--spacing) * 6);\n  }\n  .overflow-hidden {\n    overflow: hidden;\n  }\n  .rounded-2xl {\n    border-radius: var(--radius-2xl);\n  }\n  .rounded-full {\n    border-radius: calc(infinity * 1px);\n  }\n  .rounded-lg {\n    border-radius: var(--radius-lg);\n  }\n  .rounded-md {\n    border-radius: var(--radius-md);\n  }\n  .rounded-xl {\n    border-radius: var(--radius-xl);\n  }\n  .border {\n    border-style: var(--tw-border-style);\n    border-width: 1px;\n  }\n  .border-2 {\n    border-style: var(--tw-border-style);\n    border-width: 2px;\n  }\n  .border-b {\n    border-bottom-style: var(--tw-border-style);\n    border-bottom-width: 1px;\n  }\n  .border-l {\n    border-left-style: var(--tw-border-style);\n    border-left-width: 1px;\n  }\n  .border-\\[color\\:var\\(--border-default\\)\\] {\n    border-color: var(--border-default);\n  }\n  .border-\\[color\\:var\\(--border-subtle\\)\\] {\n    border-color: var(--border-subtle);\n  }\n  .border-black\\/30 {\n    border-color: color-mix(in srgb, #000 30%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-black) 30%, transparent);\n    }\n  }\n  .border-emerald-400\\/30 {\n    border-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 30%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-emerald-400) 30%, transparent);\n    }\n  }\n  .border-rose-400\\/30 {\n    border-color: color-mix(in srgb, oklch(71.2% 0.194 13.428) 30%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-rose-400) 30%, transparent);\n    }\n  }\n  .border-white\\/10 {\n    border-color: color-mix(in srgb, #fff 10%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-white) 10%, transparent);\n    }\n  }\n  .border-white\\/15 {\n    border-color: color-mix(in srgb, #fff 15%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      border-color: color-mix(in oklab, var(--color-white) 15%, transparent);\n    }\n  }\n  .border-t-black {\n    border-top-color: var(--color-black);\n  }\n  .bg-\\[\\#0a0a0b\\]\\/95 {\n    background-color: color-mix(in oklab, #0a0a0b 95%, transparent);\n  }\n  .bg-black\\/60 {\n    background-color: color-mix(in srgb, #000 60%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);\n    }\n  }\n  .bg-black\\/90 {\n    background-color: color-mix(in srgb, #000 90%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-black) 90%, transparent);\n    }\n  }\n  .bg-emerald-400\\/\\[0\\.06\\] {\n    background-color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 6%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-emerald-400) 6%, transparent);\n    }\n  }\n  .bg-neutral-900\\/80 {\n    background-color: color-mix(in srgb, oklch(20.5% 0 0) 80%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-neutral-900) 80%, transparent);\n    }\n  }\n  .bg-rose-400\\/\\[0\\.06\\] {\n    background-color: color-mix(in srgb, oklch(71.2% 0.194 13.428) 6%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-rose-400) 6%, transparent);\n    }\n  }\n  .bg-white {\n    background-color: var(--color-white);\n  }\n  .bg-white\\/20 {\n    background-color: color-mix(in srgb, #fff 20%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);\n    }\n  }\n  .bg-white\\/25 {\n    background-color: color-mix(in srgb, #fff 25%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 25%, transparent);\n    }\n  }\n  .bg-white\\/30 {\n    background-color: color-mix(in srgb, #fff 30%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 30%, transparent);\n    }\n  }\n  .bg-white\\/\\[0\\.02\\] {\n    background-color: color-mix(in srgb, #fff 2%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 2%, transparent);\n    }\n  }\n  .bg-white\\/\\[0\\.03\\] {\n    background-color: color-mix(in srgb, #fff 3%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 3%, transparent);\n    }\n  }\n  .bg-white\\/\\[0\\.04\\] {\n    background-color: color-mix(in srgb, #fff 4%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 4%, transparent);\n    }\n  }\n  .bg-white\\/\\[0\\.05\\] {\n    background-color: color-mix(in srgb, #fff 5%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      background-color: color-mix(in oklab, var(--color-white) 5%, transparent);\n    }\n  }\n  .p-4 {\n    padding: calc(var(--spacing) * 4);\n  }\n  .p-6 {\n    padding: calc(var(--spacing) * 6);\n  }\n  .px-2\\.5 {\n    padding-inline: calc(var(--spacing) * 2.5);\n  }\n  .px-3\\.5 {\n    padding-inline: calc(var(--spacing) * 3.5);\n  }\n  .px-4 {\n    padding-inline: calc(var(--spacing) * 4);\n  }\n  .px-6 {\n    padding-inline: calc(var(--spacing) * 6);\n  }\n  .py-1\\.5 {\n    padding-block: calc(var(--spacing) * 1.5);\n  }\n  .py-3 {\n    padding-block: calc(var(--spacing) * 3);\n  }\n  .py-4 {\n    padding-block: calc(var(--spacing) * 4);\n  }\n  .pt-1 {\n    padding-top: calc(var(--spacing) * 1);\n  }\n  .pt-2 {\n    padding-top: calc(var(--spacing) * 2);\n  }\n  .pt-24 {\n    padding-top: calc(var(--spacing) * 24);\n  }\n  .pt-28 {\n    padding-top: calc(var(--spacing) * 28);\n  }\n  .pr-4 {\n    padding-right: calc(var(--spacing) * 4);\n  }\n  .pr-6 {\n    padding-right: calc(var(--spacing) * 6);\n  }\n  .pr-8 {\n    padding-right: calc(var(--spacing) * 8);\n  }\n  .pb-10 {\n    padding-bottom: calc(var(--spacing) * 10);\n  }\n  .pb-16 {\n    padding-bottom: calc(var(--spacing) * 16);\n  }\n  .pl-3 {\n    padding-left: calc(var(--spacing) * 3);\n  }\n  .pl-4 {\n    padding-left: calc(var(--spacing) * 4);\n  }\n  .pl-6 {\n    padding-left: calc(var(--spacing) * 6);\n  }\n  .pl-8 {\n    padding-left: calc(var(--spacing) * 8);\n  }\n  .text-center {\n    text-align: center;\n  }\n  .text-left {\n    text-align: left;\n  }\n  .font-mono {\n    font-family: var(--font-mono);\n  }\n  .font-serif {\n    font-family: var(--font-serif);\n  }\n  .text-2xl {\n    font-size: var(--text-2xl);\n    line-height: var(--tw-leading, var(--text-2xl--line-height));\n  }\n  .text-\\[0\\.7rem\\] {\n    font-size: 0.7rem;\n  }\n  .text-\\[0\\.8rem\\] {\n    font-size: 0.8rem;\n  }\n  .text-\\[0\\.9rem\\] {\n    font-size: 0.9rem;\n  }\n  .text-\\[0\\.78rem\\] {\n    font-size: 0.78rem;\n  }\n  .text-\\[0\\.82rem\\] {\n    font-size: 0.82rem;\n  }\n  .text-\\[0\\.85rem\\] {\n    font-size: 0.85rem;\n  }\n  .text-\\[0\\.88rem\\] {\n    font-size: 0.88rem;\n  }\n  .text-\\[0\\.92rem\\] {\n    font-size: 0.92rem;\n  }\n  .text-\\[0\\.95rem\\] {\n    font-size: 0.95rem;\n  }\n  .text-\\[0\\.98rem\\] {\n    font-size: 0.98rem;\n  }\n  .text-\\[1\\.05rem\\] {\n    font-size: 1.05rem;\n  }\n  .text-\\[11px\\] {\n    font-size: 11px;\n  }\n  .text-\\[clamp\\(1\\.25rem\\,1\\.4vw\\+0\\.7rem\\,1\\.625rem\\)\\] {\n    font-size: clamp(1.25rem, 1.4vw + 0.7rem, 1.625rem);\n  }\n  .text-\\[clamp\\(1rem\\,1vw\\+0\\.9rem\\,1\\.35rem\\)\\] {\n    font-size: clamp(1rem, 1vw + 0.9rem, 1.35rem);\n  }\n  .leading-\\[1\\.65\\] {\n    --tw-leading: 1.65;\n    line-height: 1.65;\n  }\n  .leading-snug {\n    --tw-leading: var(--leading-snug);\n    line-height: var(--leading-snug);\n  }\n  .font-medium {\n    --tw-font-weight: var(--font-weight-medium);\n    font-weight: var(--font-weight-medium);\n  }\n  .font-normal {\n    --tw-font-weight: var(--font-weight-normal);\n    font-weight: var(--font-weight-normal);\n  }\n  .font-semibold {\n    --tw-font-weight: var(--font-weight-semibold);\n    font-weight: var(--font-weight-semibold);\n  }\n  .tracking-\\[0\\.2em\\] {\n    --tw-tracking: 0.2em;\n    letter-spacing: 0.2em;\n  }\n  .tracking-\\[0\\.18em\\] {\n    --tw-tracking: 0.18em;\n    letter-spacing: 0.18em;\n  }\n  .tracking-tight {\n    --tw-tracking: var(--tracking-tight);\n    letter-spacing: var(--tracking-tight);\n  }\n  .tracking-wider {\n    --tw-tracking: var(--tracking-wider);\n    letter-spacing: var(--tracking-wider);\n  }\n  .text-balance {\n    text-wrap: balance;\n  }\n  .text-pretty {\n    text-wrap: pretty;\n  }\n  .whitespace-pre-wrap {\n    white-space: pre-wrap;\n  }\n  .text-\\[color\\:var\\(--text-faint\\)\\] {\n    color: var(--text-faint);\n  }\n  .text-\\[color\\:var\\(--text-muted\\)\\] {\n    color: var(--text-muted);\n  }\n  .text-\\[color\\:var\\(--text-primary\\)\\] {\n    color: var(--text-primary);\n  }\n  .text-\\[color\\:var\\(--text-secondary\\)\\] {\n    color: var(--text-secondary);\n  }\n  .text-\\[color\\:var\\(--text-tertiary\\)\\] {\n    color: var(--text-tertiary);\n  }\n  .text-emerald-200\\/90 {\n    color: color-mix(in srgb, oklch(90.5% 0.093 164.15) 90%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, var(--color-emerald-200) 90%, transparent);\n    }\n  }\n  .text-emerald-400\\/90 {\n    color: color-mix(in srgb, oklch(76.5% 0.177 163.223) 90%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, var(--color-emerald-400) 90%, transparent);\n    }\n  }\n  .text-rose-200\\/90 {\n    color: color-mix(in srgb, oklch(89.2% 0.058 10.001) 90%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, var(--color-rose-200) 90%, transparent);\n    }\n  }\n  .text-white {\n    color: var(--color-white);\n  }\n  .text-white\\/90 {\n    color: color-mix(in srgb, #fff 90%, transparent);\n    @supports (color: color-mix(in lab, red, red)) {\n      color: color-mix(in oklab, var(--color-white) 90%, transparent);\n    }\n  }\n  .uppercase {\n    text-transform: uppercase;\n  }\n  .italic {\n    font-style: italic;\n  }\n  .no-underline {\n    text-decoration-line: none;\n  }\n  .opacity-0 {\n    opacity: 0%;\n  }\n  .opacity-60 {\n    opacity: 60%;\n  }\n  .opacity-100 {\n    opacity: 100%;\n  }\n  .shadow-2xl {\n    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n  .ring {\n    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n  .filter {\n    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);\n  }\n  .backdrop-blur {\n    --tw-backdrop-blur: blur(8px);\n    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n  }\n  .backdrop-blur-2xl {\n    --tw-backdrop-blur: blur(var(--blur-2xl));\n    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n  }\n  .backdrop-blur-xl {\n    --tw-backdrop-blur: blur(var(--blur-xl));\n    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);\n  }\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n  .transition-all {\n    transition-property: all;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n  .transition-colors {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n  .transition-opacity {\n    transition-property: opacity;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n  .duration-300 {\n    --tw-duration: 300ms;\n    transition-duration: 300ms;\n  }\n  .duration-500 {\n    --tw-duration: 500ms;\n    transition-duration: 500ms;\n  }\n  .group-hover\\:text-\\[color\\:var\\(--text-primary\\)\\] {\n    &:is(:where(.group):hover *) {\n      @media (hover: hover) {\n        color: var(--text-primary);\n      }\n    }\n  }\n  .hover\\:border-\\[color\\:var\\(--border-default\\)\\] {\n    &:hover {\n      @media (hover: hover) {\n        border-color: var(--border-default);\n      }\n    }\n  }\n  .hover\\:bg-black\\/80 {\n    &:hover {\n      @media (hover: hover) {\n        background-color: color-mix(in srgb, #000 80%, transparent);\n        @supports (color: color-mix(in lab, red, red)) {\n          background-color: color-mix(in oklab, var(--color-black) 80%, transparent);\n        }\n      }\n    }\n  }\n  .hover\\:bg-neutral-800 {\n    &:hover {\n      @media (hover: hover) {\n        background-color: var(--color-neutral-800);\n      }\n    }\n  }\n  .hover\\:bg-white\\/50 {\n    &:hover {\n      @media (hover: hover) {\n        background-color: color-mix(in srgb, #fff 50%, transparent);\n        @supports (color: color-mix(in lab, red, red)) {\n          background-color: color-mix(in oklab, var(--color-white) 50%, transparent);\n        }\n      }\n    }\n  }\n  .hover\\:bg-white\\/\\[0\\.05\\] {\n    &:hover {\n      @media (hover: hover) {\n        background-color: color-mix(in srgb, #fff 5%, transparent);\n        @supports (color: color-mix(in lab, red, red)) {\n          background-color: color-mix(in oklab, var(--color-white) 5%, transparent);\n        }\n      }\n    }\n  }\n  .hover\\:bg-white\\/\\[0\\.06\\] {\n    &:hover {\n      @media (hover: hover) {\n        background-color: color-mix(in srgb, #fff 6%, transparent);\n        @supports (color: color-mix(in lab, red, red)) {\n          background-color: color-mix(in oklab, var(--color-white) 6%, transparent);\n        }\n      }\n    }\n  }\n  .hover\\:text-\\[color\\:var\\(--text-primary\\)\\] {\n    &:hover {\n      @media (hover: hover) {\n        color: var(--text-primary);\n      }\n    }\n  }\n  .sm\\:right-8 {\n    @media (width >= 40rem) {\n      right: calc(var(--spacing) * 8);\n    }\n  }\n  .sm\\:left-8 {\n    @media (width >= 40rem) {\n      left: calc(var(--spacing) * 8);\n    }\n  }\n  .sm\\:inline-block {\n    @media (width >= 40rem) {\n      display: inline-block;\n    }\n  }\n  .sm\\:grid-cols-2 {\n    @media (width >= 40rem) {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n    }\n  }\n  .sm\\:grid-cols-3 {\n    @media (width >= 40rem) {\n      grid-template-columns: repeat(3, minmax(0, 1fr));\n    }\n  }\n  .sm\\:flex-row {\n    @media (width >= 40rem) {\n      flex-direction: row;\n    }\n  }\n  .sm\\:items-center {\n    @media (width >= 40rem) {\n      align-items: center;\n    }\n  }\n  .sm\\:justify-between {\n    @media (width >= 40rem) {\n      justify-content: space-between;\n    }\n  }\n  .sm\\:p-8 {\n    @media (width >= 40rem) {\n      padding: calc(var(--spacing) * 8);\n    }\n  }\n  .md\\:mt-7 {\n    @media (width >= 48rem) {\n      margin-top: calc(var(--spacing) * 7);\n    }\n  }\n  .md\\:mt-10 {\n    @media (width >= 48rem) {\n      margin-top: calc(var(--spacing) * 10);\n    }\n  }\n  .md\\:mt-12 {\n    @media (width >= 48rem) {\n      margin-top: calc(var(--spacing) * 12);\n    }\n  }\n  .md\\:mt-20 {\n    @media (width >= 48rem) {\n      margin-top: calc(var(--spacing) * 20);\n    }\n  }\n  .md\\:mt-28 {\n    @media (width >= 48rem) {\n      margin-top: calc(var(--spacing) * 28);\n    }\n  }\n  .md\\:mb-6 {\n    @media (width >= 48rem) {\n      margin-bottom: calc(var(--spacing) * 6);\n    }\n  }\n  .md\\:mb-9 {\n    @media (width >= 48rem) {\n      margin-bottom: calc(var(--spacing) * 9);\n    }\n  }\n  .md\\:mb-10 {\n    @media (width >= 48rem) {\n      margin-bottom: calc(var(--spacing) * 10);\n    }\n  }\n  .md\\:ml-3 {\n    @media (width >= 48rem) {\n      margin-left: calc(var(--spacing) * 3);\n    }\n  }\n  .md\\:flex {\n    @media (width >= 48rem) {\n      display: flex;\n    }\n  }\n  .md\\:hidden {\n    @media (width >= 48rem) {\n      display: none;\n    }\n  }\n  .md\\:inline-flex {\n    @media (width >= 48rem) {\n      display: inline-flex;\n    }\n  }\n  .md\\:h-\\[72px\\] {\n    @media (width >= 48rem) {\n      height: 72px;\n    }\n  }\n  .md\\:flex-row {\n    @media (width >= 48rem) {\n      flex-direction: row;\n    }\n  }\n  .md\\:items-end {\n    @media (width >= 48rem) {\n      align-items: flex-end;\n    }\n  }\n  .md\\:justify-between {\n    @media (width >= 48rem) {\n      justify-content: space-between;\n    }\n  }\n  .md\\:gap-5 {\n    @media (width >= 48rem) {\n      gap: calc(var(--spacing) * 5);\n    }\n  }\n  .md\\:gap-6 {\n    @media (width >= 48rem) {\n      gap: calc(var(--spacing) * 6);\n    }\n  }\n  .md\\:gap-8 {\n    @media (width >= 48rem) {\n      gap: calc(var(--spacing) * 8);\n    }\n  }\n  .md\\:gap-12 {\n    @media (width >= 48rem) {\n      gap: calc(var(--spacing) * 12);\n    }\n  }\n  .md\\:gap-16 {\n    @media (width >= 48rem) {\n      gap: calc(var(--spacing) * 16);\n    }\n  }\n  .md\\:border-l {\n    @media (width >= 48rem) {\n      border-left-style: var(--tw-border-style);\n      border-left-width: 1px;\n    }\n  }\n  .md\\:border-\\[color\\:var\\(--border-subtle\\)\\] {\n    @media (width >= 48rem) {\n      border-color: var(--border-subtle);\n    }\n  }\n  .md\\:p-7 {\n    @media (width >= 48rem) {\n      padding: calc(var(--spacing) * 7);\n    }\n  }\n  .md\\:p-8 {\n    @media (width >= 48rem) {\n      padding: calc(var(--spacing) * 8);\n    }\n  }\n  .md\\:pt-32 {\n    @media (width >= 48rem) {\n      padding-top: calc(var(--spacing) * 32);\n    }\n  }\n  .md\\:pb-20 {\n    @media (width >= 48rem) {\n      padding-bottom: calc(var(--spacing) * 20);\n    }\n  }\n  .md\\:pl-4 {\n    @media (width >= 48rem) {\n      padding-left: calc(var(--spacing) * 4);\n    }\n  }\n  .md\\:pl-5 {\n    @media (width >= 48rem) {\n      padding-left: calc(var(--spacing) * 5);\n    }\n  }\n  .lg\\:col-span-5 {\n    @media (width >= 64rem) {\n      grid-column: span 5 / span 5;\n    }\n  }\n  .lg\\:col-span-7 {\n    @media (width >= 64rem) {\n      grid-column: span 7 / span 7;\n    }\n  }\n  .lg\\:grid-cols-3 {\n    @media (width >= 64rem) {\n      grid-template-columns: repeat(3, minmax(0, 1fr));\n    }\n  }\n  .lg\\:grid-cols-4 {\n    @media (width >= 64rem) {\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n    }\n  }\n  .lg\\:grid-cols-12 {\n    @media (width >= 64rem) {\n      grid-template-columns: repeat(12, minmax(0, 1fr));\n    }\n  }\n  .lg\\:items-end {\n    @media (width >= 64rem) {\n      align-items: flex-end;\n    }\n  }\n  .lg\\:gap-16 {\n    @media (width >= 64rem) {\n      gap: calc(var(--spacing) * 16);\n    }\n  }\n}\n:root {\n  --bg-base: #08080a;\n  --bg-elevated: #0e0e10;\n  --bg-card: rgba(14, 14, 16, 0.86);\n  --bg-card-strong: rgba(12, 12, 14, 0.92);\n  --bg-card-hover: rgba(20, 20, 22, 0.9);\n  --text-primary: #f4f4f5;\n  --text-secondary: #c8c8ce;\n  --text-tertiary: #95959e;\n  --text-muted: #6c6c75;\n  --text-faint: #494951;\n  --border-subtle: rgba(255, 255, 255, 0.07);\n  --border-default: rgba(255, 255, 255, 0.11);\n  --border-strong: rgba(255, 255, 255, 0.18);\n  --accent: #d6cfc1;\n  --accent-strong: #efe9da;\n  --font-sans: \"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif;\n  --font-display: \"Inter Tight\", \"Inter\", system-ui, -apple-system, sans-serif;\n  --font-mono: \"JetBrains Mono\", ui-monospace, SFMono-Regular, monospace;\n  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);\n  --ease-out-fast: cubic-bezier(0.2, 0.9, 0.3, 1);\n  --container-px: 1.25rem;\n  --container-max: 1280px;\n  --section-py: 6rem;\n}\n@media (min-width: 768px) {\n  :root {\n    --container-px: 2rem;\n    --section-py: 8rem;\n  }\n}\n@media (min-width: 1280px) {\n  :root {\n    --container-px: 3rem;\n  }\n}\n* {\n  box-sizing: border-box;\n}\nhtml {\n  scroll-behavior: smooth;\n  -webkit-text-size-adjust: 100%;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-feature-settings: \"cv11\", \"ss01\", \"ss03\", \"cv02\";\n}\nbody {\n  margin: 0;\n  font-family: var(--font-sans);\n  font-size: 17px;\n  line-height: 1.7;\n  color: var(--text-primary);\n  background: var(--bg-base);\n  overflow-x: hidden;\n}\n@media (min-width: 768px) {\n  body {\n    font-size: 17.5px;\n  }\n}\n::selection {\n  background: rgba(255, 255, 255, 0.18);\n  color: #fff;\n}\n::-webkit-scrollbar {\n  width: 10px;\n  height: 10px;\n}\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n::-webkit-scrollbar-thumb {\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 999px;\n}\n::-webkit-scrollbar-thumb:hover {\n  background: rgba(255, 255, 255, 0.2);\n}\n.font-display {\n  font-family: var(--font-display);\n  letter-spacing: -0.03em;\n  font-feature-settings: \"ss01\", \"cv11\";\n}\n.font-mono {\n  font-family: var(--font-mono);\n  letter-spacing: 0;\n}\n.eyebrow {\n  font-family: var(--font-mono);\n  font-size: 0.74rem;\n  font-weight: 500;\n  letter-spacing: 0.2em;\n  text-transform: uppercase;\n  color: var(--text-tertiary);\n}\n.h-display {\n  font-family: var(--font-display);\n  font-weight: 600;\n  line-height: 1.02;\n  letter-spacing: -0.04em;\n  color: var(--text-primary);\n}\n.h-section {\n  font-family: var(--font-display);\n  font-weight: 600;\n  line-height: 1.04;\n  letter-spacing: -0.035em;\n  color: var(--text-primary);\n}\n.text-balance {\n  text-wrap: balance;\n}\n.text-pretty {\n  text-wrap: pretty;\n}\n.display-hero {\n  font-family: var(--font-display);\n  font-size: clamp(2.6rem, 6.8vw + 0.4rem, 5.75rem);\n  line-height: 0.98;\n  letter-spacing: -0.045em;\n  font-weight: 600;\n}\n.display-section {\n  font-family: var(--font-display);\n  font-size: clamp(2rem, 3.5vw + 0.4rem, 3.4rem);\n  line-height: 1.04;\n  letter-spacing: -0.04em;\n  font-weight: 600;\n}\n.display-card {\n  font-family: var(--font-display);\n  font-size: clamp(1.2rem, 1vw + 0.8rem, 1.55rem);\n  line-height: 1.2;\n  letter-spacing: -0.025em;\n  font-weight: 600;\n}\n.body-lg {\n  font-size: clamp(1.05rem, 0.25vw + 1rem, 1.18rem);\n  line-height: 1.7;\n  color: var(--text-secondary);\n  letter-spacing: -0.005em;\n}\n.body-md {\n  font-size: 1rem;\n  line-height: 1.7;\n  color: var(--text-secondary);\n  letter-spacing: -0.003em;\n}\n.body-sm {\n  font-size: 0.95rem;\n  line-height: 1.6;\n  color: var(--text-tertiary);\n  letter-spacing: -0.002em;\n}\n.container-x {\n  width: 100%;\n  max-width: var(--container-max);\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: var(--container-px);\n  padding-right: var(--container-px);\n}\n.section {\n  position: relative;\n  padding-top: var(--section-py);\n  padding-bottom: var(--section-py);\n}\n.section-divider {\n  position: relative;\n}\n.section-divider::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  width: min(90%, 900px);\n  height: 1px;\n  background: linear-gradient( 90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100% );\n}\n.surface {\n  background: var(--bg-card);\n  border: 1px solid var(--border-subtle);\n  border-radius: 18px;\n  backdrop-filter: blur(18px) saturate(1.1);\n  -webkit-backdrop-filter: blur(18px) saturate(1.1);\n}\n.surface-strong {\n  background: var(--bg-card-strong);\n  border: 1px solid var(--border-default);\n  border-radius: 18px;\n  backdrop-filter: blur(20px) saturate(1.15);\n  -webkit-backdrop-filter: blur(20px) saturate(1.15);\n}\n.surface-hover {\n  transition: background 240ms var(--ease-out-fast), border-color 240ms var(--ease-out-fast), transform 240ms var(--ease-out-fast);\n}\n.surface-hover:hover {\n  background: var(--bg-card-hover);\n  border-color: var(--border-default);\n}\n.hairline {\n  height: 1px;\n  width: 100%;\n  background: linear-gradient( 90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100% );\n}\n.btn {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.6rem;\n  padding: 0.95rem 1.6rem;\n  border-radius: 999px;\n  font-family: var(--font-sans);\n  font-size: 0.95rem;\n  font-weight: 500;\n  letter-spacing: -0.01em;\n  cursor: pointer;\n  text-decoration: none;\n  border: 1px solid transparent;\n  transition: transform 200ms var(--ease-out-fast), background 200ms var(--ease-out-fast), border-color 200ms var(--ease-out-fast), color 200ms var(--ease-out-fast);\n  white-space: nowrap;\n  user-select: none;\n  line-height: 1;\n}\n.btn:focus-visible {\n  outline: 2px solid rgba(255, 255, 255, 0.6);\n  outline-offset: 3px;\n}\n.btn-primary {\n  background: #f4f4f5;\n  color: #08080a;\n  border-color: #f4f4f5;\n}\n.btn-primary:hover {\n  background: #fff;\n  transform: translateY(-1px);\n}\n.btn-ghost {\n  background: rgba(255, 255, 255, 0.03);\n  color: var(--text-primary);\n  border-color: var(--border-default);\n  backdrop-filter: blur(10px);\n  -webkit-backdrop-filter: blur(10px);\n}\n.btn-ghost:hover {\n  background: rgba(255, 255, 255, 0.07);\n  border-color: var(--border-strong);\n  transform: translateY(-1px);\n}\n.btn-subtle {\n  background: rgba(255, 255, 255, 0.04);\n  color: var(--text-primary);\n  border-color: var(--border-subtle);\n}\n.btn-subtle:hover {\n  background: rgba(255, 255, 255, 0.08);\n  border-color: var(--border-default);\n}\n.btn-icon-arrow {\n  display: inline-flex;\n  align-items: center;\n  transition: transform 220ms var(--ease-out-fast);\n}\n.btn:hover .btn-icon-arrow {\n  transform: translateX(3px);\n}\n.chip {\n  display: inline-flex;\n  align-items: center;\n  padding: 0.36rem 0.78rem;\n  font-family: var(--font-mono);\n  font-size: 0.72rem;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  color: var(--text-secondary);\n  background: rgba(255, 255, 255, 0.04);\n  border: 1px solid var(--border-subtle);\n  border-radius: 999px;\n  transition: color 200ms, background 200ms, border-color 200ms;\n}\n.chip:hover {\n  color: var(--text-primary);\n  background: rgba(255, 255, 255, 0.07);\n  border-color: var(--border-default);\n}\n@keyframes marquee-fade {\n  0% {\n    opacity: 0;\n  }\n  10% {\n    opacity: 1;\n  }\n  90% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes pulse-ring {\n  0% {\n    transform: scale(0.6);\n    opacity: 0.6;\n  }\n  100% {\n    transform: scale(2);\n    opacity: 0;\n  }\n}\n@keyframes scroll-bounce {\n  0%, 100% {\n    transform: translateY(0);\n    opacity: 0.5;\n  }\n  50% {\n    transform: translateY(6px);\n    opacity: 1;\n  }\n}\n@keyframes cursor-pulse {\n  0%, 100% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.55;\n  }\n}\n@keyframes fade-up {\n  from {\n    opacity: 0;\n    transform: translateY(14px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n@keyframes shimmer {\n  0% {\n    background-position: -200% 0;\n  }\n  100% {\n    background-position: 200% 0;\n  }\n}\n@keyframes float {\n  0%, 100% {\n    transform: translateY(0);\n  }\n  50% {\n    transform: translateY(-8px);\n  }\n}\n@keyframes text-glow-soft {\n  0%, 100% {\n    text-shadow: 0 1px 24px rgba(0, 0, 0, 0.4);\n  }\n  50% {\n    text-shadow: 0 1px 28px rgba(0, 0, 0, 0.55);\n  }\n}\n.anim-scroll-indicator {\n  animation: scroll-bounce 2.4s var(--ease-out-soft) infinite;\n}\n.anim-float {\n  animation: float 5s ease-in-out infinite;\n}\n.anim-text-glow {\n  animation: text-glow-soft 5s ease-in-out infinite;\n}\n.css-bg-fallback {\n  position: fixed;\n  inset: 0;\n  z-index: 0;\n  background-color: #08080a;\n  background-image: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(214, 207, 193, 0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 100% 100%, rgba(214, 207, 193, 0.03) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 0% 100%, rgba(214, 207, 193, 0.03) 0%, transparent 50%), linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);\n  background-size: 100% 100%, 100% 100%, 100% 100%, 56px 56px, 56px 56px;\n  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;\n  pointer-events: none;\n}\n.grain-layer {\n  position: fixed;\n  inset: 0;\n  z-index: 1;\n  pointer-events: none;\n  opacity: 0.025;\n  background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\");\n  mix-blend-mode: screen;\n}\n.reveal {\n  opacity: 0;\n  transform: translateY(18px);\n  transition: opacity 700ms var(--ease-out-soft), transform 700ms var(--ease-out-soft);\n  will-change: opacity, transform;\n}\n.reveal.is-visible {\n  opacity: 1;\n  transform: translateY(0);\n}\n.reveal-stagger > * {\n  opacity: 0;\n  transform: translateY(14px);\n  transition: opacity 600ms var(--ease-out-soft), transform 600ms var(--ease-out-soft);\n  will-change: opacity, transform;\n}\n.reveal-stagger.is-visible > * {\n  opacity: 1;\n  transform: translateY(0);\n}\n.reveal-stagger.is-visible > *:nth-child(1) {\n  transition-delay: 0ms;\n}\n.reveal-stagger.is-visible > *:nth-child(2) {\n  transition-delay: 80ms;\n}\n.reveal-stagger.is-visible > *:nth-child(3) {\n  transition-delay: 160ms;\n}\n.reveal-stagger.is-visible > *:nth-child(4) {\n  transition-delay: 240ms;\n}\n.reveal-stagger.is-visible > *:nth-child(5) {\n  transition-delay: 320ms;\n}\n.reveal-stagger.is-visible > *:nth-child(6) {\n  transition-delay: 400ms;\n}\n.reveal-stagger.is-visible > *:nth-child(7) {\n  transition-delay: 460ms;\n}\n.reveal-stagger.is-visible > *:nth-child(8) {\n  transition-delay: 520ms;\n}\n.cursor-dot, .cursor-ring {\n  position: fixed;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n  z-index: 9999;\n  transform: translate3d(-100px, -100px, 0);\n  transition: width 220ms var(--ease-out-fast), height 220ms var(--ease-out-fast), border-color 220ms var(--ease-out-fast), background 220ms var(--ease-out-fast);\n  will-change: transform;\n}\n.cursor-dot {\n  width: 6px;\n  height: 6px;\n  border-radius: 50%;\n  background: #fff;\n  mix-blend-mode: difference;\n}\n.cursor-ring {\n  width: 36px;\n  height: 36px;\n  margin-left: -15px;\n  margin-top: -15px;\n  border-radius: 50%;\n  border: 1px solid rgba(255, 255, 255, 0.35);\n  background: transparent;\n  transition: width 220ms var(--ease-out-fast), height 220ms var(--ease-out-fast), border-color 220ms var(--ease-out-fast), background 220ms var(--ease-out-fast), margin 220ms var(--ease-out-fast);\n}\n.cursor-ring.is-hover {\n  width: 64px;\n  height: 64px;\n  margin-left: -32px;\n  margin-top: -32px;\n  border-color: rgba(255, 255, 255, 0.5);\n  background: rgba(255, 255, 255, 0.04);\n}\nhtml.has-custom-cursor, html.has-custom-cursor * {\n  cursor: none !important;\n}\nhtml.has-custom-cursor a, html.has-custom-cursor button, html.has-custom-cursor [role=\"button\"] {\n  cursor: none !important;\n}\n@media (hover: none), (max-width: 1023px) {\n  .cursor-dot, .cursor-ring {\n    display: none !important;\n  }\n}\n.field {\n  position: relative;\n  display: block;\n}\n.field-input, .field-textarea {\n  width: 100%;\n  padding: 1.05rem 1.15rem;\n  font-family: var(--font-sans);\n  font-size: 0.98rem;\n  color: var(--text-primary);\n  background: rgba(255, 255, 255, 0.025);\n  border: 1px solid var(--border-subtle);\n  border-radius: 12px;\n  outline: none;\n  transition: border-color 220ms var(--ease-out-fast), background 220ms var(--ease-out-fast), box-shadow 220ms var(--ease-out-fast);\n  -webkit-appearance: none;\n  appearance: none;\n}\n.field-textarea {\n  min-height: 150px;\n  resize: vertical;\n  line-height: 1.65;\n}\n.field-input::placeholder, .field-textarea::placeholder {\n  color: var(--text-faint);\n}\n.field-input:focus, .field-textarea:focus {\n  border-color: rgba(255, 255, 255, 0.32);\n  background: rgba(255, 255, 255, 0.04);\n  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.04);\n}\n.field-input:disabled, .field-textarea:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n.field-label {\n  display: block;\n  font-family: var(--font-mono);\n  font-size: 0.7rem;\n  font-weight: 500;\n  letter-spacing: 0.18em;\n  text-transform: uppercase;\n  color: var(--text-tertiary);\n  margin-bottom: 0.6rem;\n}\n.nav-root {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 50;\n  transition: background 280ms var(--ease-out-fast), border-color 280ms var(--ease-out-fast), backdrop-filter 280ms var(--ease-out-fast), padding 280ms var(--ease-out-fast);\n}\n.nav-root.is-scrolled {\n  background: rgba(8, 8, 10, 0.78);\n  backdrop-filter: blur(20px) saturate(1.2);\n  -webkit-backdrop-filter: blur(20px) saturate(1.2);\n  border-bottom: 1px solid var(--border-subtle);\n}\n.nav-root.is-hidden {\n  transform: translateY(-100%);\n}\n.nav-link {\n  position: relative;\n  font-size: 0.9rem;\n  font-weight: 450;\n  color: var(--text-tertiary);\n  text-decoration: none;\n  padding: 0.4rem 0.1rem;\n  transition: color 220ms var(--ease-out-fast);\n  letter-spacing: -0.005em;\n}\n.nav-link:hover {\n  color: var(--text-primary);\n}\n.nav-link.is-active {\n  color: var(--text-primary);\n}\n.nav-link-underline {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -2px;\n  height: 1px;\n  background: var(--text-primary);\n  transform-origin: left;\n  transform: scaleX(0);\n  transition: transform 320ms var(--ease-out-soft);\n}\n.nav-link.is-active .nav-link-underline, .nav-link:hover .nav-link-underline {\n  transform: scaleX(1);\n}\n.hero-gradient-line {\n  position: absolute;\n  inset: 0;\n  pointer-events: none;\n  background: radial-gradient( ellipse 60% 40% at 30% 0%, rgba(214, 207, 193, 0.05) 0%, transparent 60% ), radial-gradient( ellipse 50% 35% at 80% 100%, rgba(214, 207, 193, 0.03) 0%, transparent 60% );\n}\n.project-card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  background: var(--bg-card);\n  border: 1px solid var(--border-subtle);\n  border-radius: 18px;\n  overflow: hidden;\n  transition: border-color 320ms var(--ease-out-fast), background 320ms var(--ease-out-fast), transform 320ms var(--ease-out-fast);\n  isolation: isolate;\n  backdrop-filter: blur(18px) saturate(1.1);\n  -webkit-backdrop-filter: blur(18px) saturate(1.1);\n}\n.project-card:hover {\n  border-color: var(--border-default);\n  background: var(--bg-card-hover);\n}\n.project-image-wrap {\n  position: relative;\n  width: 100%;\n  aspect-ratio: 16 / 10;\n  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));\n  overflow: hidden;\n}\n.project-image {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center;\n  transition: transform 600ms var(--ease-out-soft);\n}\n.project-card:hover .project-image {\n  transform: scale(1.04);\n}\n.project-image-overlay {\n  position: absolute;\n  inset: 0;\n  background: linear-gradient( 180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 100% );\n  pointer-events: none;\n  z-index: 1;\n}\n.project-body {\n  display: flex;\n  flex-direction: column;\n  gap: 0.85rem;\n  padding: 1.65rem 1.65rem 1.65rem;\n}\n.project-meta {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 1rem;\n}\n.project-num {\n  font-family: var(--font-mono);\n  font-size: 0.72rem;\n  letter-spacing: 0.2em;\n  text-transform: uppercase;\n  color: var(--text-tertiary);\n}\n.project-title {\n  font-family: var(--font-display);\n  font-size: 1.35rem;\n  font-weight: 600;\n  letter-spacing: -0.025em;\n  color: var(--text-primary);\n  line-height: 1.18;\n}\n.project-desc {\n  color: var(--text-secondary);\n  font-size: 0.98rem;\n  line-height: 1.6;\n  letter-spacing: -0.003em;\n}\n.project-tags {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 0.4rem;\n  margin-top: 0.25rem;\n}\n.project-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 0.85rem;\n  padding-top: 1.05rem;\n  border-top: 1px solid var(--border-subtle);\n}\n.project-link {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.45rem;\n  font-size: 0.9rem;\n  font-weight: 500;\n  color: var(--text-primary);\n  text-decoration: none;\n  padding: 0.5rem 0.85rem;\n  border-radius: 10px;\n  border: 1px solid var(--border-subtle);\n  background: rgba(255, 255, 255, 0.03);\n  transition: background 220ms, border-color 220ms, transform 220ms;\n}\n.project-link:hover {\n  background: rgba(255, 255, 255, 0.08);\n  border-color: var(--border-default);\n}\n.project-link .arrow {\n  transition: transform 220ms var(--ease-out-fast);\n}\n.project-link:hover .arrow {\n  transform: translate(2px, -2px);\n}\n.project-card-featured {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 0;\n}\n@media (min-width: 900px) {\n  .project-card-featured {\n    grid-template-columns: 1.25fr 1fr;\n  }\n  .project-card-featured.flip {\n    grid-template-columns: 1fr 1.25fr;\n  }\n  .project-card-featured.flip .project-image-wrap {\n    order: 2;\n  }\n  .project-card-featured.flip .project-body {\n    order: 1;\n  }\n}\n.tech-item {\n  display: flex;\n  align-items: center;\n  gap: 0.9rem;\n  padding: 1rem 1.1rem;\n  border: 1px solid var(--border-subtle);\n  background: rgba(255, 255, 255, 0.03);\n  border-radius: 14px;\n  transition: background 240ms, border-color 240ms, transform 240ms;\n  backdrop-filter: blur(12px);\n  -webkit-backdrop-filter: blur(12px);\n}\n.tech-item:hover {\n  background: rgba(255, 255, 255, 0.06);\n  border-color: var(--border-default);\n  transform: translateY(-1px);\n}\n.tech-item-icon {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  color: var(--text-secondary);\n  transition: color 240ms, transform 240ms;\n}\n.tech-item:hover .tech-item-icon {\n  color: var(--text-primary);\n  transform: scale(1.05);\n}\n.tech-item-label {\n  font-size: 0.98rem;\n  font-weight: 500;\n  color: var(--text-secondary);\n  letter-spacing: -0.005em;\n  transition: color 240ms;\n}\n.tech-item:hover .tech-item-label {\n  color: var(--text-primary);\n}\n.timeline {\n  position: relative;\n  display: grid;\n  grid-template-columns: 100px 1fr;\n  gap: 1.5rem;\n  align-items: start;\n}\n@media (min-width: 768px) {\n  .timeline {\n    grid-template-columns: 130px 1fr;\n    gap: 2.5rem;\n  }\n}\n.timeline-year {\n  position: relative;\n  font-family: var(--font-mono);\n  font-size: 0.78rem;\n  font-weight: 500;\n  letter-spacing: 0.18em;\n  text-transform: uppercase;\n  color: var(--text-tertiary);\n  text-align: right;\n  padding-top: 0.55rem;\n  z-index: 2;\n  transition: color 320ms var(--ease-out-fast);\n}\n.timeline-item.is-active .timeline-year, .timeline-item.is-complete .timeline-year {\n  color: var(--text-primary);\n}\n@media (max-width: 767px) {\n  .timeline-year {\n    position: static;\n    text-align: left;\n    margin-bottom: 0.5rem;\n  }\n}\n.timeline-card {\n  position: relative;\n  padding: 1.7rem 1.85rem;\n  background: var(--bg-card);\n  border: 1px solid var(--border-subtle);\n  border-radius: 16px;\n  transition: border-color 320ms var(--ease-out-fast), background 320ms var(--ease-out-fast);\n  backdrop-filter: blur(16px) saturate(1.1);\n  -webkit-backdrop-filter: blur(16px) saturate(1.1);\n}\n.timeline-card h3 {\n  font-family: var(--font-display);\n  font-size: 1.25rem;\n  font-weight: 600;\n  letter-spacing: -0.025em;\n  color: var(--text-primary);\n  margin: 0 0 0.4rem;\n  line-height: 1.2;\n}\n.timeline-card p {\n  margin: 0;\n  color: var(--text-secondary);\n  font-size: 0.98rem;\n  line-height: 1.65;\n  letter-spacing: -0.003em;\n}\n.timeline-card .timeline-org {\n  color: var(--text-primary);\n  font-weight: 500;\n}\n.timeline-card .timeline-loc {\n  color: var(--text-tertiary);\n}\n.timeline-card .timeline-body {\n  margin-top: 0.85rem;\n  color: var(--text-secondary);\n  font-size: 0.98rem;\n  line-height: 1.7;\n}\n.timeline-spine {\n  position: absolute;\n  top: var(--spine-top, 0px);\n  bottom: var(--spine-bottom, 0px);\n  left: var(--spine-x, calc(100px + 1.5rem));\n  width: 1px;\n  background: linear-gradient( 180deg, transparent 0%, rgba(255, 255, 255, 0.08) 6%, rgba(255, 255, 255, 0.08) 94%, transparent 100% );\n  z-index: 1;\n}\n.timeline-spine::after {\n  content: \"\";\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 1px;\n  height: var(--progress, 0%);\n  background: linear-gradient( 180deg, rgba(255, 255, 255, 0.95) 0%, rgba(214, 207, 193, 0.85) 50%, rgba(255, 255, 255, 0.5) 100% );\n  box-shadow: 0 0 12px rgba(255, 255, 255, 0.35), 0 0 28px rgba(214, 207, 193, 0.18);\n  transition: height 120ms linear;\n}\n@media (min-width: 768px) {\n  .timeline-spine {\n    left: var(--spine-x, calc(130px + 2.5rem));\n  }\n}\n.timeline-node {\n  position: absolute;\n  left: var(--spine-x, calc(100px + 1.5rem));\n  top: 0;\n  width: 14px;\n  height: 14px;\n  margin-left: -7px;\n  border-radius: 50%;\n  background: rgba(8, 8, 10, 0.95);\n  border: 1.5px solid rgba(255, 255, 255, 0.2);\n  z-index: 3;\n  transition: border-color 320ms var(--ease-out-fast), background 320ms var(--ease-out-fast), box-shadow 320ms var(--ease-out-fast);\n}\n@media (min-width: 768px) {\n  .timeline-node {\n    left: var(--spine-x, calc(130px + 2.5rem));\n  }\n}\n.timeline-item.is-complete .timeline-node {\n  background: #f4f4f5;\n  border-color: #f4f4f5;\n  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);\n}\n.timeline-item.is-active .timeline-card, .timeline-item.is-complete .timeline-card {\n  border-color: var(--border-default);\n  background: var(--bg-card-hover);\n}\n.timeline-node.is-complete {\n  background: #f4f4f5;\n  border-color: #f4f4f5;\n  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);\n}\n.timeline-node.is-active {\n  background: #f4f4f5;\n  border-color: #f4f4f5;\n  box-shadow: 0 0 14px rgba(255, 255, 255, 0.55), 0 0 26px rgba(214, 207, 193, 0.3);\n}\n.timeline-node.is-active::after {\n  content: \"\";\n  position: absolute;\n  inset: -5px;\n  border-radius: 50%;\n  border: 1px solid rgba(255, 255, 255, 0.4);\n  animation: node-pulse 2.2s ease-out infinite;\n}\n@keyframes node-pulse {\n  0% {\n    transform: scale(0.8);\n    opacity: 0.9;\n  }\n  100% {\n    transform: scale(1.8);\n    opacity: 0;\n  }\n}\n@media (max-width: 767px) {\n  .timeline-spine, .timeline-node {\n    display: none;\n  }\n}\n.site-footer {\n  border-top: 1px solid var(--border-subtle);\n  background: rgba(8, 8, 10, 0.7);\n  backdrop-filter: blur(14px);\n  -webkit-backdrop-filter: blur(14px);\n  padding: 4rem 0 2rem;\n}\n*:focus-visible {\n  outline: 2px solid rgba(255, 255, 255, 0.6);\n  outline-offset: 3px;\n  border-radius: 4px;\n}\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after {\n    animation-duration: 0.001ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.001ms !important;\n    scroll-behavior: auto !important;\n  }\n  .reveal, .reveal-stagger > * {\n    opacity: 1 !important;\n    transform: none !important;\n  }\n}\n@media (max-width: 480px) {\n  .project-body {\n    padding: 1.25rem 1.25rem 1.25rem;\n  }\n  .project-title {\n    font-size: 1.18rem;\n  }\n}\nhtml, body {\n  overflow-x: hidden;\n}\n@property --tw-translate-x {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-y {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-translate-z {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0;\n}\n@property --tw-scale-x {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 1;\n}\n@property --tw-scale-y {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 1;\n}\n@property --tw-scale-z {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 1;\n}\n@property --tw-rotate-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-rotate-z {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-x {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-skew-y {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-border-style {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: solid;\n}\n@property --tw-leading {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-font-weight {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-tracking {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-shadow-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-shadow-alpha {\n  syntax: \"<percentage>\";\n  inherits: false;\n  initial-value: 100%;\n}\n@property --tw-inset-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-inset-shadow-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-inset-shadow-alpha {\n  syntax: \"<percentage>\";\n  inherits: false;\n  initial-value: 100%;\n}\n@property --tw-ring-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-ring-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-inset-ring-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-inset-ring-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-ring-inset {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-ring-offset-width {\n  syntax: \"<length>\";\n  inherits: false;\n  initial-value: 0px;\n}\n@property --tw-ring-offset-color {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: #fff;\n}\n@property --tw-ring-offset-shadow {\n  syntax: \"*\";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n@property --tw-blur {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-brightness {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-contrast {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-grayscale {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-hue-rotate {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-invert {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-opacity {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-saturate {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-sepia {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-drop-shadow {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-drop-shadow-color {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-drop-shadow-alpha {\n  syntax: \"<percentage>\";\n  inherits: false;\n  initial-value: 100%;\n}\n@property --tw-drop-shadow-size {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-blur {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-brightness {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-contrast {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-grayscale {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-hue-rotate {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-invert {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-opacity {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-saturate {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-backdrop-sepia {\n  syntax: \"*\";\n  inherits: false;\n}\n@property --tw-duration {\n  syntax: \"*\";\n  inherits: false;\n}\n@keyframes spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n@layer properties {\n  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {\n    *, ::before, ::after, ::backdrop {\n      --tw-translate-x: 0;\n      --tw-translate-y: 0;\n      --tw-translate-z: 0;\n      --tw-scale-x: 1;\n      --tw-scale-y: 1;\n      --tw-scale-z: 1;\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-border-style: solid;\n      --tw-leading: initial;\n      --tw-font-weight: initial;\n      --tw-tracking: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n      --tw-blur: initial;\n      --tw-brightness: initial;\n      --tw-contrast: initial;\n      --tw-grayscale: initial;\n      --tw-hue-rotate: initial;\n      --tw-invert: initial;\n      --tw-opacity: initial;\n      --tw-saturate: initial;\n      --tw-sepia: initial;\n      --tw-drop-shadow: initial;\n      --tw-drop-shadow-color: initial;\n      --tw-drop-shadow-alpha: 100%;\n      --tw-drop-shadow-size: initial;\n      --tw-backdrop-blur: initial;\n      --tw-backdrop-brightness: initial;\n      --tw-backdrop-contrast: initial;\n      --tw-backdrop-grayscale: initial;\n      --tw-backdrop-hue-rotate: initial;\n      --tw-backdrop-invert: initial;\n      --tw-backdrop-opacity: initial;\n      --tw-backdrop-saturate: initial;\n      --tw-backdrop-sepia: initial;\n      --tw-duration: initial;\n    }\n  }\n}\n"
+__vite__updateStyle(__vite__id, __vite__css)
+import.meta.hot.accept()
+import.meta.hot.prune(() => __vite__removeStyle(__vite__id))
+
+===== src/components/Hero.jsx (status=200, len=37992) =====
+import { createHotContext as __vite__createHotContext } from "/josu-portfolio/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Hero.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/josu-portfolio/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=032de3ec"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/josu-portfolio/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/josu-portfolio/node_modules/.vite/deps/react.js?v=032de3ec"; const useEffect = __vite__cjsImport3_react["useEffect"]; const useRef = __vite__cjsImport3_react["useRef"]; const useState = __vite__cjsImport3_react["useState"];
+import { motion } from "/josu-portfolio/node_modules/.vite/deps/framer-motion.js?v=4a46872b";
+import { ArrowRight, ArrowDown, Github, Linkedin, Instagram } from "/josu-portfolio/node_modules/.vite/deps/lucide-react.js?v=622197d2";
+import TextType from "/josu-portfolio/src/components/TextType.jsx";
+import MagneticButton from "/josu-portfolio/src/components/MagneticButton.jsx";
+const ROLES = [
+  "Web Developer",
+  "Cloud & DevOps Engineer",
+  "Software Engineer",
+  "Full Stack Developer"
+];
+const EASE = [0.22, 1, 0.36, 1];
+export default function Hero() {
+  _s();
+  const heroRef = useRef(null);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!supportsHover) return;
+    const onMove = (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 5;
+      const y = (e.clientY / window.innerHeight - 0.5) * 5;
+      setParallax({ x, y });
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } }
+  };
+  const item = {
+    hidden: { opacity: 0, y: 22, filter: "blur(6px)" },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: EASE }
+    }
+  };
+  return /* @__PURE__ */ jsxDEV(
+    "section",
+    {
+      ref: heroRef,
+      id: "home",
+      className: "relative min-h-[100svh] flex items-center overflow-hidden",
+      "aria-label": "Hero",
+      children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "hero-gradient-line", "aria-hidden": true }, void 0, false, {
+          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+          lineNumber: 76,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV(
+          motion.div,
+          {
+            className: "container-x relative z-10 pt-28 md:pt-32 pb-16 md:pb-20",
+            variants: container,
+            initial: "hidden",
+            animate: "show",
+            style: {
+              transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
+              transition: "transform 600ms cubic-bezier(0.22, 1, 0.36, 1)",
+              willChange: "transform"
+            },
+            children: /* @__PURE__ */ jsxDEV("div", { className: "max-w-5xl", children: [
+              /* @__PURE__ */ jsxDEV(motion.div, { variants: item, className: "mb-7 md:mb-9", children: /* @__PURE__ */ jsxDEV("span", { className: "eyebrow inline-flex items-center gap-3", children: [
+                /* @__PURE__ */ jsxDEV(
+                  "span",
+                  {
+                    "aria-hidden": true,
+                    className: "inline-block w-6 h-px bg-white/30"
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                    lineNumber: 93,
+                    columnNumber: 15
+                  },
+                  this
+                ),
+                "Software Engineer Â· Full Stack Â· Cloud"
+              ] }, void 0, true, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                lineNumber: 92,
+                columnNumber: 13
+              }, this) }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                lineNumber: 91,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ jsxDEV(
+                motion.h1,
+                {
+                  variants: item,
+                  className: "display-hero text-balance anim-text-glow",
+                  children: [
+                    /* @__PURE__ */ jsxDEV("span", { className: "text-[color:var(--text-secondary)]", children: "Hi, Iâm" }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                      lineNumber: 106,
+                      columnNumber: 13
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                      lineNumber: 109,
+                      columnNumber: 13
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("span", { className: "font-display text-[color:var(--text-primary)]", children: "Nevil Biju" }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                      lineNumber: 110,
+                      columnNumber: 13
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("span", { className: "text-[color:var(--text-primary)]", children: "." }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                      lineNumber: 113,
+                      columnNumber: 13
+                    }, this)
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                  lineNumber: 102,
+                  columnNumber: 11
+                },
+                this
+              ),
+              /* @__PURE__ */ jsxDEV(
+                motion.div,
+                {
+                  variants: item,
+                  className: "mt-6 md:mt-7 flex items-center gap-3 text-[color:var(--text-secondary)]",
+                  children: [
+                    /* @__PURE__ */ jsxDEV(
+                      "span",
+                      {
+                        "aria-hidden": true,
+                        className: "hidden sm:inline-block w-8 h-px bg-white/20"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                        lineNumber: 121,
+                        columnNumber: 13
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      TextType,
+                      {
+                        text: ROLES,
+                        typingSpeed: 70,
+                        pauseDuration: 1500,
+                        showCursor: true,
+                        cursorCharacter: "|",
+                        className: "text-[clamp(1rem,1vw+0.9rem,1.35rem)] font-mono tracking-tight",
+                        textColors: ["#a1a1aa", "#d4d4d8", "#f5f5f7"],
+                        startOnVisible: false
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                        lineNumber: 125,
+                        columnNumber: 13
+                      },
+                      this
+                    )
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                  lineNumber: 117,
+                  columnNumber: 11
+                },
+                this
+              ),
+              /* @__PURE__ */ jsxDEV(
+                motion.p,
+                {
+                  variants: item,
+                  className: "mt-8 md:mt-10 body-lg text-pretty max-w-2xl",
+                  children: "I build reliable software, polished interfaces and cloud-powered systems â with a focus on performance, accessibility, and craft."
+                },
+                void 0,
+                false,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                  lineNumber: 138,
+                  columnNumber: 11
+                },
+                this
+              ),
+              /* @__PURE__ */ jsxDEV(
+                motion.div,
+                {
+                  variants: item,
+                  className: "mt-10 md:mt-12 flex flex-wrap items-center gap-3",
+                  children: [
+                    /* @__PURE__ */ jsxDEV(
+                      MagneticButton,
+                      {
+                        href: "#projects",
+                        className: "btn btn-primary",
+                        "aria-label": "View selected work",
+                        children: [
+                          "View Work",
+                          /* @__PURE__ */ jsxDEV("span", { className: "btn-icon-arrow", "aria-hidden": true, children: /* @__PURE__ */ jsxDEV(ArrowRight, { className: "h-4 w-4" }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                            lineNumber: 159,
+                            columnNumber: 17
+                          }, this) }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                            lineNumber: 158,
+                            columnNumber: 15
+                          }, this)
+                        ]
+                      },
+                      void 0,
+                      true,
+                      {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                        lineNumber: 152,
+                        columnNumber: 13
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      MagneticButton,
+                      {
+                        href: "#contact",
+                        className: "btn btn-ghost",
+                        "aria-label": "Contact Nevil Biju",
+                        children: "Get in touch"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                        lineNumber: 162,
+                        columnNumber: 13
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV("div", { className: "ml-1 flex items-center gap-2 pl-3 md:pl-4 md:ml-3 md:border-l md:border-[color:var(--border-subtle)]", children: [
+                      /* @__PURE__ */ jsxDEV(
+                        "a",
+                        {
+                          href: "https://github.com/JOSU10xD",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          "aria-label": "GitHub",
+                          className: "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border-subtle)] bg-white/[0.02] text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-default)] hover:bg-white/[0.05] transition-all",
+                          children: /* @__PURE__ */ jsxDEV(Github, { className: "h-4 w-4" }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                            lineNumber: 178,
+                            columnNumber: 17
+                          }, this)
+                        },
+                        void 0,
+                        false,
+                        {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                          lineNumber: 171,
+                          columnNumber: 15
+                        },
+                        this
+                      ),
+                      /* @__PURE__ */ jsxDEV(
+                        "a",
+                        {
+                          href: "https://www.linkedin.com/in/nevil-biju",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          "aria-label": "LinkedIn",
+                          className: "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border-subtle)] bg-white/[0.02] text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-default)] hover:bg-white/[0.05] transition-all",
+                          children: /* @__PURE__ */ jsxDEV(Linkedin, { className: "h-4 w-4" }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                            lineNumber: 187,
+                            columnNumber: 17
+                          }, this)
+                        },
+                        void 0,
+                        false,
+                        {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                          lineNumber: 180,
+                          columnNumber: 15
+                        },
+                        this
+                      ),
+                      /* @__PURE__ */ jsxDEV(
+                        "a",
+                        {
+                          href: "https://www.instagram.com/josu10_03",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          "aria-label": "Instagram",
+                          className: "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border-subtle)] bg-white/[0.02] text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:border-[color:var(--border-default)] hover:bg-white/[0.05] transition-all",
+                          children: /* @__PURE__ */ jsxDEV(Instagram, { className: "h-4 w-4" }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                            lineNumber: 196,
+                            columnNumber: 17
+                          }, this)
+                        },
+                        void 0,
+                        false,
+                        {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                          lineNumber: 189,
+                          columnNumber: 15
+                        },
+                        this
+                      )
+                    ] }, void 0, true, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                      lineNumber: 170,
+                      columnNumber: 13
+                    }, this)
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                  lineNumber: 148,
+                  columnNumber: 11
+                },
+                this
+              )
+            ] }, void 0, true, {
+              fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+              lineNumber: 89,
+              columnNumber: 9
+            }, this)
+          },
+          void 0,
+          false,
+          {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+            lineNumber: 78,
+            columnNumber: 7
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV(
+          "a",
+          {
+            href: "#about",
+            className: "hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] transition-colors",
+            "aria-label": "Scroll to about section",
+            children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "eyebrow", children: "Scroll" }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                lineNumber: 209,
+                columnNumber: 9
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "anim-scroll-indicator", "aria-hidden": true, children: /* @__PURE__ */ jsxDEV(ArrowDown, { className: "h-4 w-4" }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                lineNumber: 211,
+                columnNumber: 11
+              }, this) }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+                lineNumber: 210,
+                columnNumber: 9
+              }, this)
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+            lineNumber: 204,
+            columnNumber: 7
+          },
+          this
+        )
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx",
+      lineNumber: 69,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(Hero, "/9L15EchfcsgEZlvdE6hmCBeBxM=");
+_c = Hero;
+var _c;
+$RefreshReg$(_c, "Hero");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Hero.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUFBQTtBQUFBO0FBQUEsVUFSRjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsUUFTQTtBQUFBO0FBQUE7QUFBQSxJQWhKRjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsRUFpSkE7QUFFSjtBQUFDeEIsR0FyTHVCRCxNQUFJO0FBQUFnQyxLQUFKaEM7QUFBSSxJQUFBZ0M7QUFBQUMsYUFBQUQsSUFBQSIsIm5hbWVzIjpbInVzZUVmZmVjdCIsInVzZVJlZiIsInVzZVN0YXRlIiwibW90aW9uIiwiQXJyb3dSaWdodCIsIkFycm93RG93biIsIkdpdGh1YiIsIkxpbmtlZGluIiwiSW5zdGFncmFtIiwiVGV4dFR5cGUiLCJNYWduZXRpY0J1dHRvbiIsIlJPTEVTIiwiRUFTRSIsIkhlcm8iLCJfcyIsImhlcm9SZWYiLCJwYXJhbGxheCIsInNldFBhcmFsbGF4IiwieCIsInkiLCJ3aW5kb3ciLCJzdXBwb3J0c0hvdmVyIiwibWF0Y2hNZWRpYSIsIm1hdGNoZXMiLCJvbk1vdmUiLCJlIiwiY2xpZW50WCIsImlubmVyV2lkdGgiLCJjbGllbnRZIiwiaW5uZXJIZWlnaHQiLCJhZGRFdmVudExpc3RlbmVyIiwicmVtb3ZlRXZlbnRMaXN0ZW5lciIsImNvbnRhaW5lciIsImhpZGRlbiIsInNob3ciLCJ0cmFuc2l0aW9uIiwic3RhZ2dlckNoaWxkcmVuIiwiZGVsYXlDaGlsZHJlbiIsIml0ZW0iLCJvcGFjaXR5IiwiZmlsdGVyIiwiZHVyYXRpb24iLCJlYXNlIiwidHJhbnNmb3JtIiwid2lsbENoYW5nZSIsIl9jIiwiJFJlZnJlc2hSZWckIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkhlcm8uanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZUVmZmVjdCwgdXNlUmVmLCB1c2VTdGF0ZSB9IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgbW90aW9uIH0gZnJvbSBcImZyYW1lci1tb3Rpb25cIjtcbmltcG9ydCB7IEFycm93UmlnaHQsIEFycm93RG93biwgR2l0aHViLCBMaW5rZWRpbiwgSW5zdGFncmFtIH0gZnJvbSBcImx1Y2lkZS1yZWFjdFwiO1xuaW1wb3J0IFRleHRUeXBlIGZyb20gXCIuL1RleHRUeXBlXCI7XG5pbXBvcnQgTWFnbmV0aWNCdXR0b24gZnJvbSBcIi4vTWFnbmV0aWNCdXR0b25cIjtcblxuY29uc3QgUk9MRVMgPSBbXG4gIFwiV2ViIERldmVsb3BlclwiLFxuICBcIkNsb3VkICYgRGV2T3BzIEVuZ2luZWVyXCIsXG4gIFwiU29mdHdhcmUgRW5naW5lZXJcIixcbiAgXCJGdWxsIFN0YWNrIERldmVsb3BlclwiLFxuXTtcblxuY29uc3QgRUFTRSA9IFswLjIyLCAxLCAwLjM2LCAxXTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gSGVybygpIHtcbiAgY29uc3QgaGVyb1JlZiA9IHVzZVJlZihudWxsKTtcbiAgY29uc3QgW3BhcmFsbGF4LCBzZXRQYXJhbGxheF0gPSB1c2VTdGF0ZSh7IHg6IDAsIHk6IDAgfSk7XG5cbiAgLy8gU3VidGxlIHBhcmFsbGF4IChkZXNrdG9wIG9ubHksIHJlZHVjZWQtbW90aW9uIHNhZmUgdmlhIHRoZSBnbG9iYWwgcnVsZSlcbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAodHlwZW9mIHdpbmRvdyA9PT0gXCJ1bmRlZmluZWRcIikgcmV0dXJuO1xuICAgIGNvbnN0IHN1cHBvcnRzSG92ZXIgPSB3aW5kb3cubWF0Y2hNZWRpYShcIihob3ZlcjogaG92ZXIpIGFuZCAocG9pbnRlcjogZmluZSlcIikubWF0Y2hlcztcbiAgICBpZiAoIXN1cHBvcnRzSG92ZXIpIHJldHVybjtcblxuICAgIGNvbnN0IG9uTW92ZSA9IChlKSA9PiB7XG4gICAgICBjb25zdCB4ID0gKGUuY2xpZW50WCAvIHdpbmRvdy5pbm5lcldpZHRoIC0gMC41KSAqIDU7XG4gICAgICBjb25zdCB5ID0gKGUuY2xpZW50WSAvIHdpbmRvdy5pbm5lckhlaWdodCAtIDAuNSkgKiA1O1xuICAgICAgc2V0UGFyYWxsYXgoeyB4LCB5IH0pO1xuICAgIH07XG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoXCJtb3VzZW1vdmVcIiwgb25Nb3ZlKTtcbiAgICByZXR1cm4gKCkgPT4gd2luZG93LnJlbW92ZUV2ZW50TGlzdGVuZXIoXCJtb3VzZW1vdmVcIiwgb25Nb3ZlKTtcbiAgfSwgW10pO1xuXG4gIGNvbnN0IGNvbnRhaW5lciA9IHtcbiAgICBoaWRkZW46IHt9LFxuICAgIHNob3c6IHsgdHJhbnNpdGlvbjogeyBzdGFnZ2VyQ2hpbGRyZW46IDAuMDgsIGRlbGF5Q2hpbGRyZW46IDAuMSB9IH0sXG4gIH07XG4gIGNvbnN0IGl0ZW0gPSB7XG4gICAgaGlkZGVuOiB7IG9wYWNpdHk6IDAsIHk6IDIyLCBmaWx0ZXI6IFwiYmx1cig2cHgpXCIgfSxcbiAgICBzaG93OiB7XG4gICAgICBvcGFjaXR5OiAxLFxuICAgICAgeTogMCxcbiAgICAgIGZpbHRlcjogXCJibHVyKDBweClcIixcbiAgICAgIHRyYW5zaXRpb246IHsgZHVyYXRpb246IDAuNywgZWFzZTogRUFTRSB9LFxuICAgIH0sXG4gIH07XG5cbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvblxuICAgICAgcmVmPXtoZXJvUmVmfVxuICAgICAgaWQ9XCJob21lXCJcbiAgICAgIGNsYXNzTmFtZT1cInJlbGF0aXZlIG1pbi1oLVsxMDBzdmhdIGZsZXggaXRlbXMtY2VudGVyIG92ZXJmbG93LWhpZGRlblwiXG4gICAgICBhcmlhLWxhYmVsPVwiSGVyb1wiXG4gICAgPlxuICAgICAgey8qIFNvZnQgYWNjZW50IGdsb3cgKi99XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImhlcm8tZ3JhZGllbnQtbGluZVwiIGFyaWEtaGlkZGVuIC8+XG5cbiAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgIGNsYXNzTmFtZT1cImNvbnRhaW5lci14IHJlbGF0aXZlIHotMTAgcHQtMjggbWQ6cHQtMzIgcGItMTYgbWQ6cGItMjBcIlxuICAgICAgICB2YXJpYW50cz17Y29udGFpbmVyfVxuICAgICAgICBpbml0aWFsPVwiaGlkZGVuXCJcbiAgICAgICAgYW5pbWF0ZT1cInNob3dcIlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIHRyYW5zZm9ybTogYHRyYW5zbGF0ZTNkKCR7cGFyYWxsYXgueH1weCwgJHtwYXJhbGxheC55fXB4LCAwKWAsXG4gICAgICAgICAgdHJhbnNpdGlvbjogXCJ0cmFuc2Zvcm0gNjAwbXMgY3ViaWMtYmV6aWVyKDAuMjIsIDEsIDAuMzYsIDEpXCIsXG4gICAgICAgICAgd2lsbENoYW5nZTogXCJ0cmFuc2Zvcm1cIixcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXgtdy01eGxcIj5cbiAgICAgICAgICB7LyogRXllYnJvdyAqL31cbiAgICAgICAgICA8bW90aW9uLmRpdiB2YXJpYW50cz17aXRlbX0gY2xhc3NOYW1lPVwibWItNyBtZDptYi05XCI+XG4gICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJleWVicm93IGlubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBnYXAtM1wiPlxuICAgICAgICAgICAgICA8c3BhblxuICAgICAgICAgICAgICAgIGFyaWEtaGlkZGVuXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaW5saW5lLWJsb2NrIHctNiBoLXB4IGJnLXdoaXRlLzMwXCJcbiAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgU29mdHdhcmUgRW5naW5lZXIgwrcgRnVsbCBTdGFjayDCtyBDbG91ZFxuICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgIDwvbW90aW9uLmRpdj5cblxuICAgICAgICAgIHsvKiBIZWFkbGluZSDigJQgc2luZ2xlIGNvbnNpc3RlbnQgdHlwb2dyYXBoaWMgdHJlYXRtZW50IGZvciB0aGUgZnVsbCBuYW1lICovfVxuICAgICAgICAgIDxtb3Rpb24uaDFcbiAgICAgICAgICAgIHZhcmlhbnRzPXtpdGVtfVxuICAgICAgICAgICAgY2xhc3NOYW1lPVwiZGlzcGxheS1oZXJvIHRleHQtYmFsYW5jZSBhbmltLXRleHQtZ2xvd1wiXG4gICAgICAgICAgPlxuICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1bY29sb3I6dmFyKC0tdGV4dC1zZWNvbmRhcnkpXVwiPlxuICAgICAgICAgICAgICBIaSwgSSZyc3F1bzttXG4gICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICA8YnIgLz5cbiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXByaW1hcnkpXVwiPlxuICAgICAgICAgICAgICBOZXZpbCBCaWp1XG4gICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXByaW1hcnkpXVwiPi48L3NwYW4+XG4gICAgICAgICAgPC9tb3Rpb24uaDE+XG5cbiAgICAgICAgICB7LyogUm90YXRpbmcgcm9sZSwgc2Vjb25kYXJ5ICovfVxuICAgICAgICAgIDxtb3Rpb24uZGl2XG4gICAgICAgICAgICB2YXJpYW50cz17aXRlbX1cbiAgICAgICAgICAgIGNsYXNzTmFtZT1cIm10LTYgbWQ6bXQtNyBmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXNlY29uZGFyeSldXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICA8c3BhblxuICAgICAgICAgICAgICBhcmlhLWhpZGRlblxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJoaWRkZW4gc206aW5saW5lLWJsb2NrIHctOCBoLXB4IGJnLXdoaXRlLzIwXCJcbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8VGV4dFR5cGVcbiAgICAgICAgICAgICAgdGV4dD17Uk9MRVN9XG4gICAgICAgICAgICAgIHR5cGluZ1NwZWVkPXs3MH1cbiAgICAgICAgICAgICAgcGF1c2VEdXJhdGlvbj17MTUwMH1cbiAgICAgICAgICAgICAgc2hvd0N1cnNvclxuICAgICAgICAgICAgICBjdXJzb3JDaGFyYWN0ZXI9XCJ8XCJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGV4dC1bY2xhbXAoMXJlbSwxdncrMC45cmVtLDEuMzVyZW0pXSBmb250LW1vbm8gdHJhY2tpbmctdGlnaHRcIlxuICAgICAgICAgICAgICB0ZXh0Q29sb3JzPXtbXCIjYTFhMWFhXCIsIFwiI2Q0ZDRkOFwiLCBcIiNmNWY1ZjdcIl19XG4gICAgICAgICAgICAgIHN0YXJ0T25WaXNpYmxlPXtmYWxzZX1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgPC9tb3Rpb24uZGl2PlxuXG4gICAgICAgICAgey8qIERlc2NyaXB0aW9uICovfVxuICAgICAgICAgIDxtb3Rpb24ucFxuICAgICAgICAgICAgdmFyaWFudHM9e2l0ZW19XG4gICAgICAgICAgICBjbGFzc05hbWU9XCJtdC04IG1kOm10LTEwIGJvZHktbGcgdGV4dC1wcmV0dHkgbWF4LXctMnhsXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICBJIGJ1aWxkIHJlbGlhYmxlIHNvZnR3YXJlLCBwb2xpc2hlZCBpbnRlcmZhY2VzIGFuZCBjbG91ZC1wb3dlcmVkXG4gICAgICAgICAgICBzeXN0ZW1zICZtZGFzaDsgd2l0aCBhIGZvY3VzIG9uIHBlcmZvcm1hbmNlLCBhY2Nlc3NpYmlsaXR5LCBhbmRcbiAgICAgICAgICAgIGNyYWZ0LlxuICAgICAgICAgIDwvbW90aW9uLnA+XG5cbiAgICAgICAgICB7LyogQ1RBcyAqL31cbiAgICAgICAgICA8bW90aW9uLmRpdlxuICAgICAgICAgICAgdmFyaWFudHM9e2l0ZW19XG4gICAgICAgICAgICBjbGFzc05hbWU9XCJtdC0xMCBtZDptdC0xMiBmbGV4IGZsZXgtd3JhcCBpdGVtcy1jZW50ZXIgZ2FwLTNcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIDxNYWduZXRpY0J1dHRvblxuICAgICAgICAgICAgICBocmVmPVwiI3Byb2plY3RzXCJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYnRuIGJ0bi1wcmltYXJ5XCJcbiAgICAgICAgICAgICAgYXJpYS1sYWJlbD1cIlZpZXcgc2VsZWN0ZWQgd29ya1wiXG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIFZpZXcgV29ya1xuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJidG4taWNvbi1hcnJvd1wiIGFyaWEtaGlkZGVuPlxuICAgICAgICAgICAgICAgIDxBcnJvd1JpZ2h0IGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICA8L01hZ25ldGljQnV0dG9uPlxuICAgICAgICAgICAgPE1hZ25ldGljQnV0dG9uXG4gICAgICAgICAgICAgIGhyZWY9XCIjY29udGFjdFwiXG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBidG4tZ2hvc3RcIlxuICAgICAgICAgICAgICBhcmlhLWxhYmVsPVwiQ29udGFjdCBOZXZpbCBCaWp1XCJcbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgR2V0IGluIHRvdWNoXG4gICAgICAgICAgICA8L01hZ25ldGljQnV0dG9uPlxuXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1sLTEgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIgcGwtMyBtZDpwbC00IG1kOm1sLTMgbWQ6Ym9yZGVyLWwgbWQ6Ym9yZGVyLVtjb2xvcjp2YXIoLS1ib3JkZXItc3VidGxlKV1cIj5cbiAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly9naXRodWIuY29tL0pPU1UxMHhEXCJcbiAgICAgICAgICAgICAgICB0YXJnZXQ9XCJfYmxhbmtcIlxuICAgICAgICAgICAgICAgIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIlxuICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9XCJHaXRIdWJcIlxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImlubGluZS1mbGV4IGgtMTAgdy0xMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItW2NvbG9yOnZhcigtLWJvcmRlci1zdWJ0bGUpXSBiZy13aGl0ZS9bMC4wMl0gdGV4dC1bY29sb3I6dmFyKC0tdGV4dC1zZWNvbmRhcnkpXSBob3Zlcjp0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXByaW1hcnkpXSBob3Zlcjpib3JkZXItW2NvbG9yOnZhcigtLWJvcmRlci1kZWZhdWx0KV0gaG92ZXI6Ymctd2hpdGUvWzAuMDVdIHRyYW5zaXRpb24tYWxsXCJcbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxHaXRodWIgY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XG4gICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL25ldmlsLWJpanVcIlxuICAgICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgICAgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiXG4gICAgICAgICAgICAgICAgYXJpYS1sYWJlbD1cIkxpbmtlZEluXCJcbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJpbmxpbmUtZmxleCBoLTEwIHctMTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtZnVsbCBib3JkZXIgYm9yZGVyLVtjb2xvcjp2YXIoLS1ib3JkZXItc3VidGxlKV0gYmctd2hpdGUvWzAuMDJdIHRleHQtW2NvbG9yOnZhcigtLXRleHQtc2Vjb25kYXJ5KV0gaG92ZXI6dGV4dC1bY29sb3I6dmFyKC0tdGV4dC1wcmltYXJ5KV0gaG92ZXI6Ym9yZGVyLVtjb2xvcjp2YXIoLS1ib3JkZXItZGVmYXVsdCldIGhvdmVyOmJnLXdoaXRlL1swLjA1XSB0cmFuc2l0aW9uLWFsbFwiXG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8TGlua2VkaW4gY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XG4gICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9qb3N1MTBfMDNcIlxuICAgICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgICAgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiXG4gICAgICAgICAgICAgICAgYXJpYS1sYWJlbD1cIkluc3RhZ3JhbVwiXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaW5saW5lLWZsZXggaC0xMCB3LTEwIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgYm9yZGVyIGJvcmRlci1bY29sb3I6dmFyKC0tYm9yZGVyLXN1YnRsZSldIGJnLXdoaXRlL1swLjAyXSB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXNlY29uZGFyeSldIGhvdmVyOnRleHQtW2NvbG9yOnZhcigtLXRleHQtcHJpbWFyeSldIGhvdmVyOmJvcmRlci1bY29sb3I6dmFyKC0tYm9yZGVyLWRlZmF1bHQpXSBob3ZlcjpiZy13aGl0ZS9bMC4wNV0gdHJhbnNpdGlvbi1hbGxcIlxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPEluc3RhZ3JhbSBjbGFzc05hbWU9XCJoLTQgdy00XCIgLz5cbiAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9tb3Rpb24uZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvbW90aW9uLmRpdj5cblxuICAgICAgey8qIFNjcm9sbCBpbmRpY2F0b3IgKi99XG4gICAgICA8YVxuICAgICAgICBocmVmPVwiI2Fib3V0XCJcbiAgICAgICAgY2xhc3NOYW1lPVwiaGlkZGVuIG1kOmZsZXggYWJzb2x1dGUgYm90dG9tLTYgbGVmdC0xLzIgLXRyYW5zbGF0ZS14LTEvMiB6LTEwIGZsZXgtY29sIGl0ZW1zLWNlbnRlciBnYXAtMiB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LW11dGVkKV0gaG92ZXI6dGV4dC1bY29sb3I6dmFyKC0tdGV4dC1wcmltYXJ5KV0gdHJhbnNpdGlvbi1jb2xvcnNcIlxuICAgICAgICBhcmlhLWxhYmVsPVwiU2Nyb2xsIHRvIGFib3V0IHNlY3Rpb25cIlxuICAgICAgPlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJleWVicm93XCI+U2Nyb2xsPC9zcGFuPlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJhbmltLXNjcm9sbC1pbmRpY2F0b3JcIiBhcmlhLWhpZGRlbj5cbiAgICAgICAgICA8QXJyb3dEb3duIGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgICA8L3NwYW4+XG4gICAgICA8L2E+XG4gICAgPC9zZWN0aW9uPlxuICApO1xufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9uZXZpbC9EZXNrdG9wL0pPU1UxMHMvRGV2U3R1ZmYvUHJvamVjdHMvam9zdS1wb3J0Zm9saW8vc3JjL2NvbXBvbmVudHMvSGVyby5qc3gifQ==
+
+===== src/components/About.jsx (status=200, len=32552) =====
+import { createHotContext as __vite__createHotContext } from "/josu-portfolio/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/About.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/josu-portfolio/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=032de3ec"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/josu-portfolio/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/josu-portfolio/node_modules/.vite/deps/react.js?v=032de3ec"; const useState = __vite__cjsImport3_react["useState"];
+import {
+  FaMapMarkerAlt,
+  FaGraduationCap,
+  FaBriefcase,
+  FaDownload
+} from "/josu-portfolio/node_modules/.vite/deps/react-icons_fa.js?v=9c2a18a8";
+import { motion } from "/josu-portfolio/node_modules/.vite/deps/framer-motion.js?v=4a46872b";
+import SectionHeading from "/josu-portfolio/src/components/SectionHeading.jsx";
+import Reveal from "/josu-portfolio/src/components/Reveal.jsx";
+import resumePdf from "/josu-portfolio/src/assets/NevilBijuResume.pdf?import";
+const HIGHLIGHTS = [
+  {
+    label: "Full Stack",
+    body: "Production web apps with React, Node.js, TypeScript and modern tooling."
+  },
+  {
+    label: "Cloud & DevOps",
+    body: "AWS, Docker and CI/CD pipelines for reliable, automated delivery."
+  },
+  {
+    label: "Desktop / Electron",
+    body: "Cross-platform desktop experiences and native browser UIs."
+  },
+  {
+    label: "Mobile",
+    body: "Cross-platform apps with React Native & Expo, maps and offline UX."
+  },
+  {
+    label: "System Design",
+    body: "Architecting clean APIs, scalable services and resilient systems."
+  }
+];
+const FACTS = [
+  { icon: /* @__PURE__ */ jsxDEV(FaMapMarkerAlt, {}, void 0, false, {
+    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+    lineNumber: 57,
+    columnNumber: 9
+  }, this), label: "Based in", value: "Kerala, India" },
+  {
+    icon: /* @__PURE__ */ jsxDEV(FaGraduationCap, {}, void 0, false, {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+      lineNumber: 59,
+      columnNumber: 9
+    }, this),
+    label: "Studying",
+    value: "B.Tech IT",
+    sub: "Viswajyothi College of Engineering"
+  },
+  {
+    icon: /* @__PURE__ */ jsxDEV(FaBriefcase, {}, void 0, false, {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+      lineNumber: 65,
+      columnNumber: 9
+    }, this),
+    label: "Focus",
+    value: "Full Stack & Cloud",
+    sub: "DevOps / Web Â· Cloud Â· Mobile"
+  }
+];
+const EASE = [0.22, 1, 0.36, 1];
+export default function About() {
+  _s();
+  const [downloading, setDownloading] = useState(false);
+  const onDownload = () => {
+    setDownloading(true);
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "NevilBijuResume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.setTimeout(() => setDownloading(false), 800);
+  };
+  return /* @__PURE__ */ jsxDEV(
+    "section",
+    {
+      id: "about",
+      className: "section section-divider",
+      "aria-label": "About",
+      children: /* @__PURE__ */ jsxDEV("div", { className: "container-x", children: /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-5", children: [
+          /* @__PURE__ */ jsxDEV(
+            SectionHeading,
+            {
+              eyebrow: "About",
+              title: /* @__PURE__ */ jsxDEV(Fragment, { children: [
+                "Building software",
+                /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                  lineNumber: 103,
+                  columnNumber: 19
+                }, this),
+                "that earns its",
+                " ",
+                /* @__PURE__ */ jsxDEV("span", { className: "text-[color:var(--text-primary)]", children: "place" }, void 0, false, {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                  lineNumber: 105,
+                  columnNumber: 19
+                }, this),
+                "."
+              ] }, void 0, true, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 101,
+                columnNumber: 15
+              }, this),
+              description: "I'm a software engineer focused on full-stack development and cloud systems â designing interfaces, APIs and infrastructure that work well in production, not just in demos."
+            },
+            void 0,
+            false,
+            {
+              fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+              lineNumber: 98,
+              columnNumber: 13
+            },
+            this
+          ),
+          /* @__PURE__ */ jsxDEV(Reveal, { delay: 200, className: "mt-8 flex flex-wrap gap-3", children: [
+            /* @__PURE__ */ jsxDEV(
+              "a",
+              {
+                href: "#projects",
+                className: "btn btn-primary",
+                "aria-label": "View selected projects",
+                children: [
+                  "View Projects",
+                  /* @__PURE__ */ jsxDEV("span", { className: "btn-icon-arrow", "aria-hidden": true, children: "â" }, void 0, false, {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                    lineNumber: 118,
+                    columnNumber: 17
+                  }, this)
+                ]
+              },
+              void 0,
+              true,
+              {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 112,
+                columnNumber: 15
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV(
+              motion.button,
+              {
+                type: "button",
+                onClick: onDownload,
+                className: "btn btn-ghost",
+                whileTap: { scale: 0.97 },
+                "aria-label": "Download resume",
+                disabled: downloading,
+                children: [
+                  /* @__PURE__ */ jsxDEV(FaDownload, { className: "h-3.5 w-3.5" }, void 0, false, {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                    lineNumber: 130,
+                    columnNumber: 17
+                  }, this),
+                  downloading ? "Downloadingâ¦" : "Download CV"
+                ]
+              },
+              void 0,
+              true,
+              {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 122,
+                columnNumber: 15
+              },
+              this
+            )
+          ] }, void 0, true, {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+            lineNumber: 111,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+          lineNumber: 97,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-7 flex flex-col gap-6 md:gap-8", children: [
+          /* @__PURE__ */ jsxDEV(Reveal, { children: /* @__PURE__ */ jsxDEV("ul", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5", children: FACTS.map(
+            (f, i) => /* @__PURE__ */ jsxDEV(
+              "li",
+              {
+                className: "surface surface-hover p-6 md:p-7 rounded-2xl flex flex-col gap-3 min-h-[148px]",
+                children: [
+                  /* @__PURE__ */ jsxDEV("span", { className: "inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--border-default)] bg-white/[0.05] text-[color:var(--text-secondary)]", children: f.icon }, void 0, false, {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                    lineNumber: 145,
+                    columnNumber: 21
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { className: "eyebrow", children: f.label }, void 0, false, {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                    lineNumber: 148,
+                    columnNumber: 21
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("div", { children: [
+                    /* @__PURE__ */ jsxDEV("span", { className: "block text-[color:var(--text-primary)] text-[1.05rem] font-semibold leading-snug tracking-tight", children: f.value }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                      lineNumber: 150,
+                      columnNumber: 23
+                    }, this),
+                    f.sub && /* @__PURE__ */ jsxDEV("span", { className: "block text-[color:var(--text-tertiary)] text-[0.9rem] leading-snug mt-1", children: f.sub }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                      lineNumber: 154,
+                      columnNumber: 21
+                    }, this)
+                  ] }, void 0, true, {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                    lineNumber: 149,
+                    columnNumber: 21
+                  }, this)
+                ]
+              },
+              i,
+              true,
+              {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 141,
+                columnNumber: 17
+              },
+              this
+            )
+          ) }, void 0, false, {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+            lineNumber: 139,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+            lineNumber: 138,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV(Reveal, { delay: 120, children: /* @__PURE__ */ jsxDEV("div", { className: "surface-strong rounded-2xl p-6 md:p-8", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "flex items-center justify-between mb-5 md:mb-6", children: [
+              /* @__PURE__ */ jsxDEV("p", { className: "eyebrow", children: "What I do" }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 167,
+                columnNumber: 19
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "hidden sm:inline-block text-[0.78rem] font-mono text-[color:var(--text-faint)] tracking-wider", children: [
+                HIGHLIGHTS.length.toString().padStart(2, "0"),
+                " / focus"
+              ] }, void 0, true, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                lineNumber: 168,
+                columnNumber: 19
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+              lineNumber: 166,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDEV("ul", { className: "grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6", children: HIGHLIGHTS.map(
+              (h, i) => /* @__PURE__ */ jsxDEV(
+                motion.li,
+                {
+                  initial: { opacity: 0, y: 10 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true, margin: "-50px" },
+                  transition: { duration: 0.5, ease: EASE, delay: i * 0.05 },
+                  className: "border-l border-[color:var(--border-default)] pl-4 md:pl-5",
+                  children: [
+                    /* @__PURE__ */ jsxDEV("h3", { className: "font-display text-[1.05rem] font-semibold tracking-tight text-[color:var(--text-primary)] mb-1.5", children: h.label }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                      lineNumber: 182,
+                      columnNumber: 23
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("p", { className: "text-[0.98rem] leading-[1.65] text-[color:var(--text-secondary)]", children: h.body }, void 0, false, {
+                      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                      lineNumber: 185,
+                      columnNumber: 23
+                    }, this)
+                  ]
+                },
+                h.label,
+                true,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+                  lineNumber: 174,
+                  columnNumber: 19
+                },
+                this
+              )
+            ) }, void 0, false, {
+              fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+              lineNumber: 172,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+            lineNumber: 165,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+            lineNumber: 164,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+          lineNumber: 137,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+        lineNumber: 95,
+        columnNumber: 9
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+        lineNumber: 94,
+        columnNumber: 7
+      }, this)
+    },
+    void 0,
+    false,
+    {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx",
+      lineNumber: 89,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(About, "TGKrlxNRiU0jrDoP4C72kWxN4Qs=");
+_c = About;
+var _c;
+$RefreshReg$(_c, "About");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/About.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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a0JBRVY7QUFBQSwyQ0FBQyxRQUFHLFdBQVUsb0dBQ1hJLFlBQUU3QixTQURMO0FBQUE7QUFBQTtBQUFBO0FBQUEsMkJBRUE7QUFBQSxvQkFDQSx1QkFBQyxPQUFFLFdBQVUsb0VBQ1Y2QixZQUFFNUIsUUFETDtBQUFBO0FBQUE7QUFBQTtBQUFBLDJCQUVBO0FBQUE7QUFBQTtBQUFBLGdCQVpLNEIsRUFBRTdCO0FBQUFBLGdCQURUO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsY0FjQTtBQUFBLFlBQ0QsS0FqQkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFrQkE7QUFBQSxlQXpCRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQTBCQSxLQTNCRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQTRCQTtBQUFBLGFBdkRGO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUF3REE7QUFBQSxXQWxHRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBbUdBLEtBcEdGO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFxR0E7QUFBQTtBQUFBLElBMUdGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxFQTJHQTtBQUVKO0FBQUNRLEdBNUh1QkQsT0FBSztBQUFBOEIsS0FBTDlCO0FBQUssSUFBQThCO0FBQUFDLGFBQUFELElBQUEiLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsIkZhTWFwTWFya2VyQWx0IiwiRmFHcmFkdWF0aW9uQ2FwIiwiRmFCcmllZmNhc2UiLCJGYURvd25sb2FkIiwibW90aW9uIiwiU2VjdGlvbkhlYWRpbmciLCJSZXZlYWwiLCJyZXN1bWVQZGYiLCJISUdITElHSFRTIiwibGFiZWwiLCJib2R5IiwiRkFDVFMiLCJpY29uIiwidmFsdWUiLCJzdWIiLCJFQVNFIiwiQWJvdXQiLCJfcyIsImRvd25sb2FkaW5nIiwic2V0RG93bmxvYWRpbmciLCJvbkRvd25sb2FkIiwibGluayIsImRvY3VtZW50IiwiY3JlYXRlRWxlbWVudCIsImhyZWYiLCJkb3dubG9hZCIsImFwcGVuZENoaWxkIiwiY2xpY2siLCJyZW1vdmVDaGlsZCIsIndpbmRvdyIsInNldFRpbWVvdXQiLCJzY2FsZSIsIm1hcCIsImYiLCJpIiwibGVuZ3RoIiwidG9TdHJpbmciLCJwYWRTdGFydCIsImgiLCJvcGFjaXR5IiwieSIsIm9uY2UiLCJtYXJnaW4iLCJkdXJhdGlvbiIsImVhc2UiLCJkZWxheSIsIl9jIiwiJFJlZnJlc2hSZWckIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkFib3V0LmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBzcmMvY29tcG9uZW50cy9BYm91dC5qc3hcbmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQge1xuICBGYU1hcE1hcmtlckFsdCxcbiAgRmFHcmFkdWF0aW9uQ2FwLFxuICBGYUJyaWVmY2FzZSxcbiAgRmFEb3dubG9hZCxcbn0gZnJvbSBcInJlYWN0LWljb25zL2ZhXCI7XG5pbXBvcnQgeyBtb3Rpb24gfSBmcm9tIFwiZnJhbWVyLW1vdGlvblwiO1xuaW1wb3J0IFNlY3Rpb25IZWFkaW5nIGZyb20gXCIuL1NlY3Rpb25IZWFkaW5nXCI7XG5pbXBvcnQgUmV2ZWFsIGZyb20gXCIuL1JldmVhbFwiO1xuaW1wb3J0IHJlc3VtZVBkZiBmcm9tIFwiQC9hc3NldHMvTmV2aWxCaWp1UmVzdW1lLnBkZlwiO1xuXG5jb25zdCBISUdITElHSFRTID0gW1xuICB7XG4gICAgbGFiZWw6IFwiRnVsbCBTdGFja1wiLFxuICAgIGJvZHk6IFwiUHJvZHVjdGlvbiB3ZWIgYXBwcyB3aXRoIFJlYWN0LCBOb2RlLmpzLCBUeXBlU2NyaXB0IGFuZCBtb2Rlcm4gdG9vbGluZy5cIixcbiAgfSxcbiAge1xuICAgIGxhYmVsOiBcIkNsb3VkICYgRGV2T3BzXCIsXG4gICAgYm9keTogXCJBV1MsIERvY2tlciBhbmQgQ0kvQ0QgcGlwZWxpbmVzIGZvciByZWxpYWJsZSwgYXV0b21hdGVkIGRlbGl2ZXJ5LlwiLFxuICB9LFxuICB7XG4gICAgbGFiZWw6IFwiRGVza3RvcCAvIEVsZWN0cm9uXCIsXG4gICAgYm9keTogXCJDcm9zcy1wbGF0Zm9ybSBkZXNrdG9wIGV4cGVyaWVuY2VzIGFuZCBuYXRpdmUgYnJvd3NlciBVSXMuXCIsXG4gIH0sXG4gIHtcbiAgICBsYWJlbDogXCJNb2JpbGVcIixcbiAgICBib2R5OiBcIkNyb3NzLXBsYXRmb3JtIGFwcHMgd2l0aCBSZWFjdCBOYXRpdmUgJiBFeHBvLCBtYXBzIGFuZCBvZmZsaW5lIFVYLlwiLFxuICB9LFxuICB7XG4gICAgbGFiZWw6IFwiU3lzdGVtIERlc2lnblwiLFxuICAgIGJvZHk6IFwiQXJjaGl0ZWN0aW5nIGNsZWFuIEFQSXMsIHNjYWxhYmxlIHNlcnZpY2VzIGFuZCByZXNpbGllbnQgc3lzdGVtcy5cIixcbiAgfSxcbl07XG5cbmNvbnN0IEZBQ1RTID0gW1xuICB7IGljb246IDxGYU1hcE1hcmtlckFsdCAvPiwgbGFiZWw6IFwiQmFzZWQgaW5cIiwgdmFsdWU6IFwiS2VyYWxhLCBJbmRpYVwiIH0sXG4gIHtcbiAgICBpY29uOiA8RmFHcmFkdWF0aW9uQ2FwIC8+LFxuICAgIGxhYmVsOiBcIlN0dWR5aW5nXCIsXG4gICAgdmFsdWU6IFwiQi5UZWNoIElUXCIsXG4gICAgc3ViOiBcIlZpc3dhanlvdGhpIENvbGxlZ2Ugb2YgRW5naW5lZXJpbmdcIixcbiAgfSxcbiAge1xuICAgIGljb246IDxGYUJyaWVmY2FzZSAvPixcbiAgICBsYWJlbDogXCJGb2N1c1wiLFxuICAgIHZhbHVlOiBcIkZ1bGwgU3RhY2sgJiBDbG91ZFwiLFxuICAgIHN1YjogXCJEZXZPcHMgLyBXZWIgwrcgQ2xvdWQgwrcgTW9iaWxlXCIsXG4gIH0sXG5dO1xuXG5jb25zdCBFQVNFID0gWzAuMjIsIDEsIDAuMzYsIDFdO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBBYm91dCgpIHtcbiAgY29uc3QgW2Rvd25sb2FkaW5nLCBzZXREb3dubG9hZGluZ10gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgY29uc3Qgb25Eb3dubG9hZCA9ICgpID0+IHtcbiAgICBzZXREb3dubG9hZGluZyh0cnVlKTtcbiAgICBjb25zdCBsaW5rID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImFcIik7XG4gICAgbGluay5ocmVmID0gcmVzdW1lUGRmO1xuICAgIGxpbmsuZG93bmxvYWQgPSBcIk5ldmlsQmlqdVJlc3VtZS5wZGZcIjtcbiAgICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGxpbmspO1xuICAgIGxpbmsuY2xpY2soKTtcbiAgICBkb2N1bWVudC5ib2R5LnJlbW92ZUNoaWxkKGxpbmspO1xuICAgIHdpbmRvdy5zZXRUaW1lb3V0KCgpID0+IHNldERvd25sb2FkaW5nKGZhbHNlKSwgODAwKTtcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxzZWN0aW9uXG4gICAgICBpZD1cImFib3V0XCJcbiAgICAgIGNsYXNzTmFtZT1cInNlY3Rpb24gc2VjdGlvbi1kaXZpZGVyXCJcbiAgICAgIGFyaWEtbGFiZWw9XCJBYm91dFwiXG4gICAgPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb250YWluZXIteFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ3JpZC1jb2xzLTEgbGc6Z3JpZC1jb2xzLTEyIGdhcC0xMiBsZzpnYXAtMTZcIj5cbiAgICAgICAgICB7LyogTGVmdCDigJQgZWRpdG9yaWFsIGhlYWRpbmcgKi99XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJsZzpjb2wtc3Bhbi01XCI+XG4gICAgICAgICAgICA8U2VjdGlvbkhlYWRpbmdcbiAgICAgICAgICAgICAgZXllYnJvdz1cIkFib3V0XCJcbiAgICAgICAgICAgICAgdGl0bGU9e1xuICAgICAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgICAgICBCdWlsZGluZyBzb2Z0d2FyZVxuICAgICAgICAgICAgICAgICAgPGJyIC8+XG4gICAgICAgICAgICAgICAgICB0aGF0IGVhcm5zIGl0c3tcIiBcIn1cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtW2NvbG9yOnZhcigtLXRleHQtcHJpbWFyeSldXCI+cGxhY2U8L3NwYW4+LlxuICAgICAgICAgICAgICAgIDwvPlxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIGRlc2NyaXB0aW9uPVwiSSdtIGEgc29mdHdhcmUgZW5naW5lZXIgZm9jdXNlZCBvbiBmdWxsLXN0YWNrIGRldmVsb3BtZW50IGFuZCBjbG91ZCBzeXN0ZW1zIOKAlCBkZXNpZ25pbmcgaW50ZXJmYWNlcywgQVBJcyBhbmQgaW5mcmFzdHJ1Y3R1cmUgdGhhdCB3b3JrIHdlbGwgaW4gcHJvZHVjdGlvbiwgbm90IGp1c3QgaW4gZGVtb3MuXCJcbiAgICAgICAgICAgIC8+XG5cbiAgICAgICAgICAgIDxSZXZlYWwgZGVsYXk9ezIwMH0gY2xhc3NOYW1lPVwibXQtOCBmbGV4IGZsZXgtd3JhcCBnYXAtM1wiPlxuICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgIGhyZWY9XCIjcHJvamVjdHNcIlxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBidG4tcHJpbWFyeVwiXG4gICAgICAgICAgICAgICAgYXJpYS1sYWJlbD1cIlZpZXcgc2VsZWN0ZWQgcHJvamVjdHNcIlxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgVmlldyBQcm9qZWN0c1xuICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImJ0bi1pY29uLWFycm93XCIgYXJpYS1oaWRkZW4+XG4gICAgICAgICAgICAgICAgICDihpJcbiAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPG1vdGlvbi5idXR0b25cbiAgICAgICAgICAgICAgICB0eXBlPVwiYnV0dG9uXCJcbiAgICAgICAgICAgICAgICBvbkNsaWNrPXtvbkRvd25sb2FkfVxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBidG4tZ2hvc3RcIlxuICAgICAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiAwLjk3IH19XG4gICAgICAgICAgICAgICAgYXJpYS1sYWJlbD1cIkRvd25sb2FkIHJlc3VtZVwiXG4gICAgICAgICAgICAgICAgZGlzYWJsZWQ9e2Rvd25sb2FkaW5nfVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPEZhRG93bmxvYWQgY2xhc3NOYW1lPVwiaC0zLjUgdy0zLjVcIiAvPlxuICAgICAgICAgICAgICAgIHtkb3dubG9hZGluZyA/IFwiRG93bmxvYWRpbmfigKZcIiA6IFwiRG93bmxvYWQgQ1ZcIn1cbiAgICAgICAgICAgICAgPC9tb3Rpb24uYnV0dG9uPlxuICAgICAgICAgICAgPC9SZXZlYWw+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICB7LyogUmlnaHQg4oCUIGZhY3RzICsgY2FwYWJpbGl0eSBoaWdobGlnaHRzICovfVxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibGc6Y29sLXNwYW4tNyBmbGV4IGZsZXgtY29sIGdhcC02IG1kOmdhcC04XCI+XG4gICAgICAgICAgICA8UmV2ZWFsPlxuICAgICAgICAgICAgICA8dWwgY2xhc3NOYW1lPVwiZ3JpZCBncmlkLWNvbHMtMSBzbTpncmlkLWNvbHMtMyBnYXAtNCBtZDpnYXAtNVwiPlxuICAgICAgICAgICAgICAgIHtGQUNUUy5tYXAoKGYsIGkpID0+IChcbiAgICAgICAgICAgICAgICAgIDxsaVxuICAgICAgICAgICAgICAgICAgICBrZXk9e2l9XG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInN1cmZhY2Ugc3VyZmFjZS1ob3ZlciBwLTYgbWQ6cC03IHJvdW5kZWQtMnhsIGZsZXggZmxleC1jb2wgZ2FwLTMgbWluLWgtWzE0OHB4XVwiXG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImlubGluZS1mbGV4IGgtOSB3LTkgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1bY29sb3I6dmFyKC0tYm9yZGVyLWRlZmF1bHQpXSBiZy13aGl0ZS9bMC4wNV0gdGV4dC1bY29sb3I6dmFyKC0tdGV4dC1zZWNvbmRhcnkpXVwiPlxuICAgICAgICAgICAgICAgICAgICAgIHtmLmljb259XG4gICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiZXllYnJvd1wiPntmLmxhYmVsfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJibG9jayB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXByaW1hcnkpXSB0ZXh0LVsxLjA1cmVtXSBmb250LXNlbWlib2xkIGxlYWRpbmctc251ZyB0cmFja2luZy10aWdodFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2YudmFsdWV9XG4gICAgICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgIHtmLnN1YiAmJiAoXG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJibG9jayB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXRlcnRpYXJ5KV0gdGV4dC1bMC45cmVtXSBsZWFkaW5nLXNudWcgbXQtMVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICB7Zi5zdWJ9XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICA8L3VsPlxuICAgICAgICAgICAgPC9SZXZlYWw+XG5cbiAgICAgICAgICAgIDxSZXZlYWwgZGVsYXk9ezEyMH0+XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3VyZmFjZS1zdHJvbmcgcm91bmRlZC0yeGwgcC02IG1kOnAtOFwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIG1iLTUgbWQ6bWItNlwiPlxuICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwiZXllYnJvd1wiPldoYXQgSSBkbzwvcD5cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImhpZGRlbiBzbTppbmxpbmUtYmxvY2sgdGV4dC1bMC43OHJlbV0gZm9udC1tb25vIHRleHQtW2NvbG9yOnZhcigtLXRleHQtZmFpbnQpXSB0cmFja2luZy13aWRlclwiPlxuICAgICAgICAgICAgICAgICAgICB7SElHSExJR0hUUy5sZW5ndGgudG9TdHJpbmcoKS5wYWRTdGFydCgyLCBcIjBcIil9IC8gZm9jdXNcbiAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8dWwgY2xhc3NOYW1lPVwiZ3JpZCBncmlkLWNvbHMtMSBzbTpncmlkLWNvbHMtMiBnYXAteC04IGdhcC15LTZcIj5cbiAgICAgICAgICAgICAgICAgIHtISUdITElHSFRTLm1hcCgoaCwgaSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICA8bW90aW9uLmxpXG4gICAgICAgICAgICAgICAgICAgICAga2V5PXtoLmxhYmVsfVxuICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMTAgfX1cbiAgICAgICAgICAgICAgICAgICAgICB3aGlsZUluVmlldz17eyBvcGFjaXR5OiAxLCB5OiAwIH19XG4gICAgICAgICAgICAgICAgICAgICAgdmlld3BvcnQ9e3sgb25jZTogdHJ1ZSwgbWFyZ2luOiBcIi01MHB4XCIgfX1cbiAgICAgICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjUsIGVhc2U6IEVBU0UsIGRlbGF5OiBpICogMC4wNSB9fVxuICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJvcmRlci1sIGJvcmRlci1bY29sb3I6dmFyKC0tYm9yZGVyLWRlZmF1bHQpXSBwbC00IG1kOnBsLTVcIlxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cImZvbnQtZGlzcGxheSB0ZXh0LVsxLjA1cmVtXSBmb250LXNlbWlib2xkIHRyYWNraW5nLXRpZ2h0IHRleHQtW2NvbG9yOnZhcigtLXRleHQtcHJpbWFyeSldIG1iLTEuNVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2gubGFiZWx9XG4gICAgICAgICAgICAgICAgICAgICAgPC9oMz5cbiAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LVswLjk4cmVtXSBsZWFkaW5nLVsxLjY1XSB0ZXh0LVtjb2xvcjp2YXIoLS10ZXh0LXNlY29uZGFyeSldXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7aC5ib2R5fVxuICAgICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgICAgPC9tb3Rpb24ubGk+XG4gICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICA8L3VsPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvUmV2ZWFsPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKTtcbn1cbiJdLCJmaWxlIjoiQzovVXNlcnMvbmV2aWwvRGVza3RvcC9KT1NVMTBzL0RldlN0dWZmL1Byb2plY3RzL2pvc3UtcG9ydGZvbGlvL3NyYy9jb21wb25lbnRzL0Fib3V0LmpzeCJ9
+
+===== src/components/Experience.jsx (status=200, len=33467) =====
+import { createHotContext as __vite__createHotContext } from "/josu-portfolio/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Experience.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/josu-portfolio/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=032de3ec"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/josu-portfolio/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/josu-portfolio/node_modules/.vite/deps/react.js?v=032de3ec"; const useEffect = __vite__cjsImport3_react["useEffect"]; const useRef = __vite__cjsImport3_react["useRef"]; const useState = __vite__cjsImport3_react["useState"];
+import { motion } from "/josu-portfolio/node_modules/.vite/deps/framer-motion.js?v=4a46872b";
+import SectionHeading from "/josu-portfolio/src/components/SectionHeading.jsx";
+import Reveal from "/josu-portfolio/src/components/Reveal.jsx";
+const EASE = [0.22, 1, 0.36, 1];
+const EXPERIENCE = [
+  {
+    period: "2022 â 2026",
+    role: "Bachelor of Technology in Information Technology",
+    org: "Viswajyothi College of Engineering & Technology",
+    location: "Vazhakulam, Kerala, India",
+    body: "Coursework spanning software engineering, distributed systems, cloud computing and modern web development. Capstone and side projects focused on full-stack systems, Electron tooling and mobile applications."
+  },
+  {
+    period: "2021 â 2022",
+    role: "Higher Secondary Education",
+    org: "St. Joseph's Higher Secondary School",
+    location: "Paingottoor, Kerala, India",
+    body: "Completed higher secondary studies with a focus on computer science and mathematics."
+  },
+  {
+    period: "2018 â 2021",
+    role: "Secondary Education",
+    org: "Sobhana Public School",
+    location: "Kothamangalam, Kerala, India",
+    body: "Foundations in mathematics, science and computer applications â and the first taste of writing code that solved real problems."
+  }
+];
+export default function Experience() {
+  _s();
+  const listRef = useRef(null);
+  const itemRefs = useRef([]);
+  const [progress, setProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [completed, setCompleted] = useState(/* @__PURE__ */ new Set());
+  const [nodeYs, setNodeYs] = useState([]);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let raf = 0;
+    const compute = () => {
+      const list = listRef.current;
+      if (!list) return;
+      const years = itemRefs.current.map((el) => el?.querySelector(".timeline-year")).filter(Boolean);
+      if (years.length < 2) return;
+      const listRect = list.getBoundingClientRect();
+      const firstRect = years[0].getBoundingClientRect();
+      const lastRect = years[years.length - 1].getBoundingClientRect();
+      const firstY = firstRect.top - listRect.top + firstRect.height / 2;
+      const lastY = lastRect.top - listRect.top + lastRect.height / 2;
+      list.style.setProperty("--spine-top", `${firstY}px`);
+      list.style.setProperty("--spine-bottom", `${listRect.height - lastY}px`);
+      const ys = years.map((yearEl) => {
+        const r = yearEl.getBoundingClientRect();
+        return r.top - listRect.top + r.height / 2;
+      });
+      setNodeYs(ys);
+      const start = firstRect.top - window.innerHeight * 0.75;
+      const end = lastRect.top - window.innerHeight * 0.5;
+      const total = Math.max(1, end - start);
+      const p = Math.min(1, Math.max(0, -start / total));
+      setProgress(p);
+      const viewportFocus = window.innerHeight * 0.55;
+      let active = -1;
+      const done = /* @__PURE__ */ new Set();
+      years.forEach((yearEl, i) => {
+        const r = yearEl.getBoundingClientRect();
+        if (r.top < viewportFocus) {
+          done.add(i);
+        }
+        if (r.top <= viewportFocus + 30 && r.bottom >= 0) {
+          active = i;
+        }
+      });
+      setCompleted(done);
+      setActiveIndex(active);
+    };
+    const onScroll = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(() => {
+        raf = 0;
+        compute();
+      });
+    };
+    compute();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (raf) window.cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+  return /* @__PURE__ */ jsxDEV(
+    "section",
+    {
+      id: "experience",
+      className: "section section-divider",
+      "aria-label": "Experience",
+      children: /* @__PURE__ */ jsxDEV("div", { className: "container-x", children: /* @__PURE__ */ jsxDEV("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-5", children: /* @__PURE__ */ jsxDEV(
+          SectionHeading,
+          {
+            eyebrow: "Experience",
+            title: /* @__PURE__ */ jsxDEV(Fragment, { children: [
+              "Education &",
+              /* @__PURE__ */ jsxDEV("br", {}, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                lineNumber: 153,
+                columnNumber: 19
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "text-[color:var(--text-primary)]", children: "journey" }, void 0, false, {
+                fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                lineNumber: 154,
+                columnNumber: 19
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+              lineNumber: 151,
+              columnNumber: 15
+            }, this),
+            description: "A path shaped by curiosity, formal study, and a long streak of shipping real software outside the classroom."
+          },
+          void 0,
+          false,
+          {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+            lineNumber: 148,
+            columnNumber: 13
+          },
+          this
+        ) }, void 0, false, {
+          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+          lineNumber: 147,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "lg:col-span-7 relative", children: /* @__PURE__ */ jsxDEV(
+          "ul",
+          {
+            ref: listRef,
+            className: "relative flex flex-col gap-12 md:gap-16",
+            children: [
+              /* @__PURE__ */ jsxDEV(
+                "div",
+                {
+                  className: "timeline-spine",
+                  "aria-hidden": true,
+                  style: { "--progress": `${progress * 100}%` }
+                },
+                void 0,
+                false,
+                {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                  lineNumber: 169,
+                  columnNumber: 15
+                },
+                this
+              ),
+              nodeYs.map((y, i) => {
+                const isActive = i === activeIndex;
+                const isComplete = completed.has(i);
+                return /* @__PURE__ */ jsxDEV(
+                  "span",
+                  {
+                    className: `timeline-node ${isActive ? "is-active" : ""} ${isComplete ? "is-complete" : ""}`,
+                    "aria-hidden": true,
+                    style: { top: `${y}px` }
+                  },
+                  `node-${i}`,
+                  false,
+                  {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                    lineNumber: 178,
+                    columnNumber: 19
+                  },
+                  this
+                );
+              }),
+              EXPERIENCE.map((item, i) => {
+                const isActive = i === activeIndex;
+                const isComplete = completed.has(i);
+                return /* @__PURE__ */ jsxDEV(Reveal, { delay: i * 60, children: /* @__PURE__ */ jsxDEV(
+                  motion.li,
+                  {
+                    ref: (el) => itemRefs.current[i] = el,
+                    initial: { opacity: 0, y: 18 },
+                    whileInView: { opacity: 1, y: 0 },
+                    viewport: { once: true, margin: "-80px" },
+                    transition: { duration: 0.6, ease: EASE },
+                    className: `timeline timeline-item ${isActive ? "is-active" : ""} ${isComplete ? "is-complete" : ""}`,
+                    children: [
+                      /* @__PURE__ */ jsxDEV("div", { className: "timeline-year", children: item.period }, void 0, false, {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                        lineNumber: 204,
+                        columnNumber: 23
+                      }, this),
+                      /* @__PURE__ */ jsxDEV("article", { className: "timeline-card", children: [
+                        /* @__PURE__ */ jsxDEV("h3", { children: item.role }, void 0, false, {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                          lineNumber: 206,
+                          columnNumber: 25
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("p", { children: [
+                          /* @__PURE__ */ jsxDEV("span", { className: "timeline-org", children: item.org }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                            lineNumber: 208,
+                            columnNumber: 27
+                          }, this),
+                          " Â· ",
+                          /* @__PURE__ */ jsxDEV("span", { className: "timeline-loc", children: item.location }, void 0, false, {
+                            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                            lineNumber: 210,
+                            columnNumber: 27
+                          }, this)
+                        ] }, void 0, true, {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                          lineNumber: 207,
+                          columnNumber: 25
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("p", { className: "timeline-body", children: item.body }, void 0, false, {
+                          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                          lineNumber: 212,
+                          columnNumber: 25
+                        }, this)
+                      ] }, void 0, true, {
+                        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                        lineNumber: 205,
+                        columnNumber: 23
+                      }, this)
+                    ]
+                  },
+                  void 0,
+                  true,
+                  {
+                    fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                    lineNumber: 194,
+                    columnNumber: 21
+                  },
+                  this
+                ) }, item.period, false, {
+                  fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+                  lineNumber: 193,
+                  columnNumber: 19
+                }, this);
+              })
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+            lineNumber: 164,
+            columnNumber: 13
+          },
+          this
+        ) }, void 0, false, {
+          fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+          lineNumber: 163,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+        lineNumber: 146,
+        columnNumber: 9
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+        lineNumber: 145,
+        columnNumber: 7
+      }, this)
+    },
+    void 0,
+    false,
+    {
+      fileName: "C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx",
+      lineNumber: 140,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(Experience, "kUviPzu9DAqVPDUbLkM7uKmTr/Y=");
+_c = Experience;
+var _c;
+$RefreshReg$(_c, "Experience");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/nevil/Desktop/JOSU10s/DevStuff/Projects/josu-portfolio/src/components/Experience.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUEsNkJBUUE7QUFBQTtBQUFBO0FBQUEsa0JBbkJGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxnQkFvQkEsS0FyQldnRSxLQUFLcEUsUUFBbEI7QUFBQTtBQUFBO0FBQUE7QUFBQSx1QkFzQkE7QUFBQSxjQUVKLENBQUM7QUFBQTtBQUFBO0FBQUEsVUFyREg7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFFBc0RBLEtBdkRGO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUF3REE7QUFBQSxXQXpFRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBMEVBLEtBM0VGO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUE0RUE7QUFBQTtBQUFBLElBakZGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxFQWtGQTtBQUVKO0FBQUNNLEdBMUt1QkQsWUFBVTtBQUFBcUUsS0FBVnJFO0FBQVUsSUFBQXFFO0FBQUFDLGFBQUFELElBQUEiLCJuYW1lcyI6WyJ1c2VFZmZlY3QiLCJ1c2VSZWYiLCJ1c2VTdGF0ZSIsIm1vdGlvbiIsIlNlY3Rpb25IZWFkaW5nIiwiUmV2ZWFsIiwiRUFTRSIsIkVYUEVSSUVOQ0UiLCJwZXJpb2QiLCJyb2xlIiwib3JnIiwibG9jYXRpb24iLCJib2R5IiwiRXhwZXJpZW5jZSIsIl9zIiwibGlzdFJlZiIsIml0ZW1SZWZzIiwicHJvZ3Jlc3MiLCJzZXRQcm9ncmVzcyIsImFjdGl2ZUluZGV4Iiwic2V0QWN0aXZlSW5kZXgiLCJjb21wbGV0ZWQiLCJzZXRDb21wbGV0ZWQiLCJTZXQiLCJub2RlWXMiLCJzZXROb2RlWXMiLCJ3aW5kb3ciLCJyYWYiLCJjb21wdXRlIiwibGlzdCIsImN1cnJlbnQiLCJ5ZWFycyIsIm1hcCIsImVsIiwicXVlcnlTZWxlY3RvciIsImZpbHRlciIsIkJvb2xlYW4iLCJsZW5ndGgiLCJsaXN0UmVjdCIsImdldEJvdW5kaW5nQ2xpZW50UmVjdCIsImZpcnN0UmVjdCIsImxhc3RSZWN0IiwiZmlyc3RZIiwidG9wIiwiaGVpZ2h0IiwibGFzdFkiLCJzdHlsZSIsInNldFByb3BlcnR5IiwieXMiLCJ5ZWFyRWwiLCJyIiwic3RhcnQiLCJpbm5lckhlaWdodCIsImVuZCIsInRvdGFsIiwiTWF0aCIsIm1heCIsInAiLCJtaW4iLCJ2aWV3cG9ydEZvY3VzIiwiYWN0aXZlIiwiZG9uZSIsImZvckVhY2giLCJpIiwiYWRkIiwiYm90dG9tIiwib25TY3JvbGwiLCJyZXF1ZXN0QW5pbWF0aW9uRnJhbWUiLCJhZGRFdmVudExpc3RlbmVyIiwicGFzc2l2ZSIsImNhbmNlbEFuaW1hdGlvbkZyYW1lIiwicmVtb3ZlRXZlbnRMaXN0ZW5lciIsInkiLCJpc0FjdGl2ZSIsImlzQ29tcGxldGUiLCJoYXMiLCJpdGVtIiwib3BhY2l0eSIsIm9uY2UiLCJtYXJnaW4iLCJkdXJhdGlvbiIsImVhc2UiLCJfYyIsIiRSZWZyZXNoUmVnJCJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJFeHBlcmllbmNlLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VFZmZlY3QsIHVzZVJlZiwgdXNlU3RhdGUgfSBmcm9tIFwicmVhY3RcIjtcbmltcG9ydCB7IG1vdGlvbiB9IGZyb20gXCJmcmFtZXItbW90aW9uXCI7XG5pbXBvcnQgU2VjdGlvbkhlYWRpbmcgZnJvbSBcIi4vU2VjdGlvbkhlYWRpbmdcIjtcbmltcG9ydCBSZXZlYWwgZnJvbSBcIi4vUmV2ZWFsXCI7XG5cbmNvbnN0IEVBU0UgPSBbMC4yMiwgMSwgMC4zNiwgMV07XG5cbmNvbnN0IEVYUEVSSUVOQ0UgPSBbXG4gIHtcbiAgICBwZXJpb2Q6IFwiMjAyMiDigJQgMjAyNlwiLFxuICAgIHJvbGU6IFwiQmFjaGVsb3Igb2YgVGVjaG5vbG9neSBpbiBJbmZvcm1hdGlvbiBUZWNobm9sb2d5XCIsXG4gICAgb3JnOiBcIlZpc3dhanlvdGhpIENvbGxlZ2Ugb2YgRW5naW5lZXJpbmcgJiBUZWNobm9sb2d5XCIsXG4gICAgbG9jYXRpb246IFwiVmF6aGFrdWxhbSwgS2VyYWxhLCBJbmRpYVwiLFxuICAgIGJvZHk6XG4gICAgICBcIkNvdXJzZXdvcmsgc3Bhbm5pbmcgc29mdHdhcmUgZW5naW5lZXJpbmcsIGRpc3RyaWJ1dGVkIHN5c3RlbXMsIGNsb3VkIGNvbXB1dGluZyBhbmQgbW9kZXJuIHdlYiBkZXZlbG9wbWVudC4gQ2Fwc3RvbmUgYW5kIHNpZGUgcHJvamVjdHMgZm9jdXNlZCBvbiBmdWxsLXN0YWNrIHN5c3RlbXMsIEVsZWN0cm9uIHRvb2xpbmcgYW5kIG1vYmlsZSBhcHBsaWNhdGlvbnMuXCIsXG4gIH0sXG4gIHtcbiAgICBwZXJpb2Q6IFwiMjAyMSDigJQgMjAyMlwiLFxuICAgIHJvbGU6IFwiSGlnaGVyIFNlY29uZGFyeSBFZHVjYXRpb25cIixcbiAgICBvcmc6IFwiU3QuIEpvc2VwaCdzIEhpZ2hlciBTZWNvbmRhcnkgU2Nob29sXCIsXG4gICAgbG9jYXRpb246IFwiUGFpbmdvdHRvb3IsIEtlcmFsYSwgSW5kaWFcIixcbiAgICBib2R5OlxuICAgICAgXCJDb21wbGV0ZWQgaGlnaGVyIHNlY29uZGFyeSBzdHVkaWVzIHdpdGggYSBmb2N1cyBvbiBjb21wdXRlciBzY2llbmNlIGFuZCBtYXRoZW1hdGljcy5cIixcbiAgfSxcbiAge1xuICAgIHBlcmlvZDogXCIyMDE4IOKAlCAyMDIxXCIsXG4gICAgcm9sZTogXCJTZWNvbmRhcnkgRWR1Y2F0aW9uXCIsXG4gICAgb3JnOiBcIlNvYmhhbmEgUHVibGljIFNjaG9vbFwiLFxuICAgIGxvY2F0aW9uOiBcIktvdGhhbWFuZ2FsYW0sIEtlcmFsYSwgSW5kaWFcIixcbiAgICBib2R5OlxuICAgICAgXCJGb3VuZGF0aW9ucyBpbiBtYXRoZW1hdGljcywgc2NpZW5jZSBhbmQgY29tcHV0ZXIgYXBwbGljYXRpb25zIOKAlCBhbmQgdGhlIGZpcnN0IHRhc3RlIG9mIHdyaXRpbmcgY29kZSB0aGF0IHNvbHZlZCByZWFsIHByb2JsZW1zLlwiLFxuICB9LFxuXTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRXhwZXJpZW5jZSgpIHtcbiAgY29uc3QgbGlzdFJlZiA9IHVzZVJlZihudWxsKTtcbiAgY29uc3QgaXRlbVJlZnMgPSB1c2VSZWYoW10pO1xuICBjb25zdCBbcHJvZ3Jlc3MsIHNldFByb2dyZXNzXSA9IHVzZVN0YXRlKDApOyAvLyAwLi4xIOKAlCBoZWlnaHQgb2YgdGhlIG5lb24gbGluZVxuICBjb25zdCBbYWN0aXZlSW5kZXgsIHNldEFjdGl2ZUluZGV4XSA9IHVzZVN0YXRlKC0xKTtcbiAgY29uc3QgW2NvbXBsZXRlZCwgc2V0Q29tcGxldGVkXSA9IHVzZVN0YXRlKG5ldyBTZXQoKSk7XG4gIGNvbnN0IFtub2RlWXMsIHNldE5vZGVZc10gPSB1c2VTdGF0ZShbXSk7IC8vIFkgcG9zaXRpb24gKHB4KSBvZiBlYWNoIG5vZGUsIGluIDx1bD4tbG9jYWwgY29vcmRzXG5cbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAodHlwZW9mIHdpbmRvdyA9PT0gXCJ1bmRlZmluZWRcIikgcmV0dXJuO1xuXG4gICAgbGV0IHJhZiA9IDA7XG4gICAgY29uc3QgY29tcHV0ZSA9ICgpID0+IHtcbiAgICAgIGNvbnN0IGxpc3QgPSBsaXN0UmVmLmN1cnJlbnQ7XG4gICAgICBpZiAoIWxpc3QpIHJldHVybjtcblxuICAgICAgLy8gVGhlIFwiZHJhd2FibGVcIiByYW5nZSBmb3IgdGhlIG5lb24gbGluZSBpcyBmcm9tIHRoZSB0b3Agb2YgdGhlXG4gICAgICAvLyBmaXJzdCB5ZWFyIGxhYmVsIHRvIHRoZSB0b3Agb2YgdGhlIGxhc3QgeWVhciBsYWJlbCwgaW4gbGlzdC1sb2NhbFxuICAgICAgLy8gY29vcmRpbmF0ZXMuIFRoZSBub2RlcyBhcmUgcG9zaXRpb25lZCBhdCB0aGUgc2FtZSBZIGFzIGVhY2ggeWVhci5cbiAgICAgIGNvbnN0IHllYXJzID0gaXRlbVJlZnMuY3VycmVudFxuICAgICAgICAubWFwKChlbCkgPT4gZWw/LnF1ZXJ5U2VsZWN0b3IoXCIudGltZWxpbmUteWVhclwiKSlcbiAgICAgICAgLmZpbHRlcihCb29sZWFuKTtcbiAgICAgIGlmICh5ZWFycy5sZW5ndGggPCAyKSByZXR1cm47XG5cbiAgICAgIGNvbnN0IGxpc3RSZWN0ID0gbGlzdC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcblxuICAgICAgY29uc3QgZmlyc3RSZWN0ID0geWVhcnNbMF0uZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7XG4gICAgICBjb25zdCBsYXN0UmVjdCA9IHllYXJzW3llYXJzLmxlbmd0aCAtIDFdLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuICAgICAgY29uc3QgZmlyc3RZID0gZmlyc3RSZWN0LnRvcCAtIGxpc3RSZWN0LnRvcCArIGZpcnN0UmVjdC5oZWlnaHQgLyAyO1xuICAgICAgY29uc3QgbGFzdFkgPSBsYXN0UmVjdC50b3AgLSBsaXN0UmVjdC50b3AgKyBsYXN0UmVjdC5oZWlnaHQgLyAyO1xuXG4gICAgICAvLyBVcGRhdGUgc3BpbmUgcG9zaXRpb24gKyBzdG9yZSBwZXItbm9kZSBZIGZvciB0aGUgcmVuZGVyZWQgbm9kZXMuXG4gICAgICBsaXN0LnN0eWxlLnNldFByb3BlcnR5KFwiLS1zcGluZS10b3BcIiwgYCR7Zmlyc3RZfXB4YCk7XG4gICAgICBsaXN0LnN0eWxlLnNldFByb3BlcnR5KFwiLS1zcGluZS1ib3R0b21cIiwgYCR7bGlzdFJlY3QuaGVpZ2h0IC0gbGFzdFl9cHhgKTtcbiAgICAgIGNvbnN0IHlzID0geWVhcnMubWFwKCh5ZWFyRWwpID0+IHtcbiAgICAgICAgY29uc3QgciA9IHllYXJFbC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTtcbiAgICAgICAgcmV0dXJuIHIudG9wIC0gbGlzdFJlY3QudG9wICsgci5oZWlnaHQgLyAyO1xuICAgICAgfSk7XG4gICAgICBzZXROb2RlWXMoeXMpO1xuXG4gICAgICAvLyBNYXAgdGhlIHZpZXdwb3J0IHRvIHRoZSBsaW5lIHJhbmdlLiBTdGFydCBkcmF3aW5nIHdoZW4gdGhlIGZpcnN0XG4gICAgICAvLyBub2RlIHJlYWNoZXMgNzUlIGZyb20gdGhlIHRvcCBvZiB0aGUgdmlld3BvcnQ7IGZpbmlzaCB3aGVuIHRoZVxuICAgICAgLy8gbGFzdCBub2RlIGNyb3NzZXMgNTAlIGZyb20gdGhlIHRvcC5cbiAgICAgIGNvbnN0IHN0YXJ0ID0gZmlyc3RSZWN0LnRvcCAtIHdpbmRvdy5pbm5lckhlaWdodCAqIDAuNzU7XG4gICAgICBjb25zdCBlbmQgPSBsYXN0UmVjdC50b3AgLSB3aW5kb3cuaW5uZXJIZWlnaHQgKiAwLjU7XG4gICAgICBjb25zdCB0b3RhbCA9IE1hdGgubWF4KDEsIGVuZCAtIHN0YXJ0KTtcbiAgICAgIGNvbnN0IHAgPSBNYXRoLm1pbigxLCBNYXRoLm1heCgwLCAtc3RhcnQgLyB0b3RhbCkpO1xuICAgICAgc2V0UHJvZ3Jlc3MocCk7XG5cbiAgICAgIC8vIFVwZGF0ZSB3aGljaCBpdGVtcyBhcmUgXCJjb21wbGV0ZVwiIChsaW5lIGhhcyBwYXNzZWQgdGhlaXIgbm9kZSlcbiAgICAgIC8vIGFuZCB3aGljaCBvbmUgaXMgXCJhY3RpdmVcIiAoY2xvc2VzdCB0byB0aGUgbGVhZGluZyBlZGdlKS5cbiAgICAgIGNvbnN0IHZpZXdwb3J0Rm9jdXMgPSB3aW5kb3cuaW5uZXJIZWlnaHQgKiAwLjU1O1xuICAgICAgbGV0IGFjdGl2ZSA9IC0xO1xuICAgICAgY29uc3QgZG9uZSA9IG5ldyBTZXQoKTtcbiAgICAgIHllYXJzLmZvckVhY2goKHllYXJFbCwgaSkgPT4ge1xuICAgICAgICBjb25zdCByID0geWVhckVsLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpO1xuICAgICAgICBpZiAoci50b3AgPCB2aWV3cG9ydEZvY3VzKSB7XG4gICAgICAgICAgZG9uZS5hZGQoaSk7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKHIudG9wIDw9IHZpZXdwb3J0Rm9jdXMgKyAzMCAmJiByLmJvdHRvbSA+PSAwKSB7XG4gICAgICAgICAgYWN0aXZlID0gaTtcbiAgICAgICAgfVxuICAgICAgfSk7XG4gICAgICBzZXRDb21wbGV0ZWQoZG9uZSk7XG4gICAgICBzZXRBY3RpdmVJbmRleChhY3RpdmUpO1xuICAgIH07XG5cbiAgICBjb25zdCBvblNjcm9sbCA9ICgpID0+IHtcbiAgICAgIGlmIChyYWYpIHJldHVybjtcbiAgICAgIHJhZiA9IHdpbmRvdy5yZXF1ZXN0QW5pbWF0aW9uRnJhbWUoKCkgPT4ge1xuICAgICAgICByYWYgPSAwO1xuICAgICAgICBjb21wdXRlKCk7XG4gICAgICB9KTtcbiAgICB9O1xuXG4gICAgY29tcHV0ZSgpO1xuICAgIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKFwic2Nyb2xsXCIsIG9uU2Nyb2xsLCB7IHBhc3NpdmU6IHRydWUgfSk7XG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoXCJyZXNpemVcIiwgb25TY3JvbGwpO1xuICAgIHJldHVybiAoKSA9PiB7XG4gICAgICBpZiAocmFmKSB3aW5kb3cuY2FuY2VsQW5pbWF0aW9uRnJhbWUocmFmKTtcbiAgICAgIHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKFwic2Nyb2xsXCIsIG9uU2Nyb2xsKTtcbiAgICAgIHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKFwicmVzaXplXCIsIG9uU2Nyb2xsKTtcbiAgICB9O1xuICB9LCBbXSk7XG5cbiAgcmV0dXJuIChcbiAgICA8c2VjdGlvblxuICAgICAgaWQ9XCJleHBlcmllbmNlXCJcbiAgICAgIGNsYXNzTmFtZT1cInNlY3Rpb24gc2VjdGlvbi1kaXZpZGVyXCJcbiAgICAgIGFyaWEtbGFiZWw9XCJFeHBlcmllbmNlXCJcbiAgICA+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lci14XCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBncmlkLWNvbHMtMSBsZzpncmlkLWNvbHMtMTIgZ2FwLTEyIGxnOmdhcC0xNlwiPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibGc6Y29sLXNwYW4tNVwiPlxuICAgICAgICAgICAgPFNlY3Rpb25IZWFkaW5nXG4gICAgICAgICAgICAgIGV5ZWJyb3c9XCJFeHBlcmllbmNlXCJcbiAgICAgICAgICAgICAgdGl0bGU9e1xuICAgICAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgICAgICBFZHVjYXRpb24gJmFtcDtcbiAgICAgICAgICAgICAgICAgIDxiciAvPlxuICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC1bY29sb3I6dmFyKC0tdGV4dC1wcmltYXJ5KV1cIj5cbiAgICAgICAgICAgICAgICAgICAgam91cm5leVxuICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgIDwvPlxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIGRlc2NyaXB0aW9uPVwiQSBwYXRoIHNoYXBlZCBieSBjdXJpb3NpdHksIGZvcm1hbCBzdHVkeSwgYW5kIGEgbG9uZyBzdHJlYWsgb2Ygc2hpcHBpbmcgcmVhbCBzb2Z0d2FyZSBvdXRzaWRlIHRoZSBjbGFzc3Jvb20uXCJcbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImxnOmNvbC1zcGFuLTcgcmVsYXRpdmVcIj5cbiAgICAgICAgICAgIDx1bFxuICAgICAgICAgICAgICByZWY9e2xpc3RSZWZ9XG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cInJlbGF0aXZlIGZsZXggZmxleC1jb2wgZ2FwLTEyIG1kOmdhcC0xNlwiXG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIHsvKiBWZXJ0aWNhbCBzcGluZSArIG5lb24gcHJvZ3Jlc3MgbGluZSArIG5vZGVzIHNoYXJlIDx1bD4gY29vcmRzICovfVxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwidGltZWxpbmUtc3BpbmVcIlxuICAgICAgICAgICAgICAgIGFyaWEtaGlkZGVuXG4gICAgICAgICAgICAgICAgc3R5bGU9e3sgXCItLXByb2dyZXNzXCI6IGAke3Byb2dyZXNzICogMTAwfSVgIH19XG4gICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgIHtub2RlWXMubWFwKCh5LCBpKSA9PiB7XG4gICAgICAgICAgICAgICAgY29uc3QgaXNBY3RpdmUgPSBpID09PSBhY3RpdmVJbmRleDtcbiAgICAgICAgICAgICAgICBjb25zdCBpc0NvbXBsZXRlID0gY29tcGxldGVkLmhhcyhpKTtcbiAgICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgICAgPHNwYW5cbiAgICAgICAgICAgICAgICAgICAga2V5PXtgbm9kZS0ke2l9YH1cbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdGltZWxpbmUtbm9kZSAke1xuICAgICAgICAgICAgICAgICAgICAgIGlzQWN0aXZlID8gXCJpcy1hY3RpdmVcIiA6IFwiXCJcbiAgICAgICAgICAgICAgICAgICAgfSAke2lzQ29tcGxldGUgPyBcImlzLWNvbXBsZXRlXCIgOiBcIlwifWB9XG4gICAgICAgICAgICAgICAgICAgIGFyaWEtaGlkZGVuXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IHRvcDogYCR7eX1weGAgfX1cbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgICAgfSl9XG5cbiAgICAgICAgICAgICAge0VYUEVSSUVOQ0UubWFwKChpdGVtLCBpKSA9PiB7XG4gICAgICAgICAgICAgICAgY29uc3QgaXNBY3RpdmUgPSBpID09PSBhY3RpdmVJbmRleDtcbiAgICAgICAgICAgICAgICBjb25zdCBpc0NvbXBsZXRlID0gY29tcGxldGVkLmhhcyhpKTtcbiAgICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgICAgPFJldmVhbCBrZXk9e2l0ZW0ucGVyaW9kfSBkZWxheT17aSAqIDYwfT5cbiAgICAgICAgICAgICAgICAgICAgPG1vdGlvbi5saVxuICAgICAgICAgICAgICAgICAgICAgIHJlZj17KGVsKSA9PiAoaXRlbVJlZnMuY3VycmVudFtpXSA9IGVsKX1cbiAgICAgICAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDE4IH19XG4gICAgICAgICAgICAgICAgICAgICAgd2hpbGVJblZpZXc9e3sgb3BhY2l0eTogMSwgeTogMCB9fVxuICAgICAgICAgICAgICAgICAgICAgIHZpZXdwb3J0PXt7IG9uY2U6IHRydWUsIG1hcmdpbjogXCItODBweFwiIH19XG4gICAgICAgICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC42LCBlYXNlOiBFQVNFIH19XG4gICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdGltZWxpbmUgdGltZWxpbmUtaXRlbSAke1xuICAgICAgICAgICAgICAgICAgICAgICAgaXNBY3RpdmUgPyBcImlzLWFjdGl2ZVwiIDogXCJcIlxuICAgICAgICAgICAgICAgICAgICAgIH0gJHtpc0NvbXBsZXRlID8gXCJpcy1jb21wbGV0ZVwiIDogXCJcIn1gfVxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0aW1lbGluZS15ZWFyXCI+e2l0ZW0ucGVyaW9kfTwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgIDxhcnRpY2xlIGNsYXNzTmFtZT1cInRpbWVsaW5lLWNhcmRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz57aXRlbS5yb2xlfTwvaDM+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cD5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGltZWxpbmUtb3JnXCI+e2l0ZW0ub3JnfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAge1wiIMK3IFwifVxuICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0aW1lbGluZS1sb2NcIj57aXRlbS5sb2NhdGlvbn08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0aW1lbGluZS1ib2R5XCI+e2l0ZW0uYm9keX08L3A+XG4gICAgICAgICAgICAgICAgICAgICAgPC9hcnRpY2xlPlxuICAgICAgICAgICAgICAgICAgICA8L21vdGlvbi5saT5cbiAgICAgICAgICAgICAgICAgIDwvUmV2ZWFsPlxuICAgICAgICAgICAgICAgICk7XG4gICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICA8L3NlY3Rpb24+XG4gICk7XG59XG4iXSwiZmlsZSI6IkM6L1VzZXJzL25ldmlsL0Rlc2t0b3AvSk9TVTEwcy9EZXZTdHVmZi9Qcm9qZWN0cy9qb3N1LXBvcnRmb2xpby9zcmMvY29tcG9uZW50cy9FeHBlcmllbmNlLmpzeCJ9

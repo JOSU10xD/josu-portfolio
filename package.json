@@ -5,10 +5,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node scripts/vite.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postinstall": "node scripts/patch-expo-tsconfig.mjs",
+    "predev": "node scripts/patch-expo-tsconfig.mjs",
+    "prebuild": "node scripts/patch-expo-tsconfig.mjs"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.6",

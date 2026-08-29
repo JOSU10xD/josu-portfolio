@@ -12,7 +12,7 @@ import { NotFound } from "./Pages/NotFound";
  */
 function HashNormalizer() {
   useEffect(() => {
-    const path = window.location.pathname; // e.g. "/josu-portfolio/about" or "/about"
+    const path = window.location.pathname; // e.g. "/<base>/about" or "/about"
     const match = path.match(/\/(about|projects|contact|home|timeline)\/?$/i);
 
     if (match) {
