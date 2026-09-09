@@ -15,7 +15,7 @@ import Reveal from "./Reveal";
  * confirmation email to the recipient; once acknowledged, all
  * subsequent submissions are delivered.
  */
-const RECIPIENT_EMAIL = "ea56d66e77fa587f03dab6eadf57a9b8";
+const RECIPIENT_EMAIL = "nevilbiju.dev@gmail.com";
 const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`;
 const EASE = [0.22, 1, 0.36, 1];
 
