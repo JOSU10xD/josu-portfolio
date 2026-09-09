@@ -16,7 +16,7 @@ import Reveal from "./Reveal";
  * subsequent submissions are delivered.
  */
 const RECIPIENT_EMAIL = "nevilbiju.dev@gmail.com";
-const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`;
+const FORMSUBMIT_URL = `https://formsubmit.co/ajax/ea56d66e77fa587f03dab6eadf57a9b8`;
 const EASE = [0.22, 1, 0.36, 1];
 
 export default function Contact() {
