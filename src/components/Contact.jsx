@@ -54,7 +54,7 @@ export default function Contact() {
     }
     // Basic email shape check
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("That email address doesn't look right — please double-check it.");
+      setError("That email address doesn't look right. Please double-check it.");
       setStatus("error");
       submittingRef.current = false;
       window.setTimeout(() => setStatus("idle"), 5000);
@@ -71,7 +71,7 @@ export default function Contact() {
       // inbox row reads as the visitor's topic, not the static label.
       data.set(
         "_subject",
-        `Portfolio · ${subject} — from ${name}`
+        `Portfolio · ${subject} from ${name}`
       );
 
       const res = await fetch(FORMSUBMIT_URL, {
@@ -153,7 +153,7 @@ export default function Contact() {
                   .
                 </>
               }
-              description="Open to full-time roles, freelance engagements, and interesting collaborations. The fastest way to reach me is email — I usually reply within a day."
+              description="Open to full-time roles, freelance engagements, and interesting collaborations. The fastest way to reach me is email, usually replying within a day."
             />
 
             <Reveal delay={150} className="mt-8 flex flex-col gap-7">
@@ -214,7 +214,7 @@ export default function Contact() {
                 <input
                   type="hidden"
                   name="_subject"
-                  value="New message from portfolio — Nevil Biju"
+                  value="New message from portfolio: Nevil Biju"
                 />
                 <input
                   type="hidden"
@@ -324,7 +324,7 @@ export default function Contact() {
                       className="rounded-xl border border-emerald-400/30 bg-emerald-400/[0.06] px-4 py-3 text-[0.88rem] text-emerald-200/90"
                       role="status"
                     >
-                      Thanks — your message is on its way. I&rsquo;ll get back
+                      Thanks! Your message is on its way. I&rsquo;ll get back
                       to you shortly.
                     </motion.div>
                   )}

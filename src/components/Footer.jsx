@@ -10,7 +10,7 @@ export default function Footer() {
             <a
               href="#home"
               className="inline-flex items-center gap-2 text-[color:var(--text-primary)] no-underline"
-              aria-label="Nevil Biju — home"
+              aria-label="Nevil Biju - home"
             >
               <span
                 aria-hidden

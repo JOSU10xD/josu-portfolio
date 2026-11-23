@@ -15,19 +15,23 @@ import {
   SiMongodb,
   SiMysql,
   SiPostgresql,
+  SiSupabase,
   SiAmazonwebservices,
   SiDocker,
+  SiKubernetes,
   SiJenkins,
   SiNginx,
   SiLinux,
   SiElectron,
+  SiFlutter,
+  SiDart,
   SiReact as SiReactNative,
   SiExpo,
   SiGit,
   SiGithubactions,
   SiFigma,
   SiPostman,
-  SiFirebase,
+  SiVitest,
   SiVite,
 } from "react-icons/si";
 import { HiCode, HiCube, HiCloud, HiDeviceMobile, HiCog } from "react-icons/hi";
@@ -58,11 +62,11 @@ const CATEGORIES = [
       { name: "Node.js", icon: <SiNodedotjs /> },
       { name: "Express", icon: <SiExpress /> },
       { name: "Python", icon: <SiPython /> },
+      { name: "Supabase", icon: <SiSupabase /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
       { name: "REST APIs", icon: <SiPostman /> },
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "MySQL", icon: <SiMysql /> },
-      { name: "PostgreSQL", icon: <SiPostgresql /> },
-      { name: "Firebase", icon: <SiFirebase /> },
     ],
   },
   {
@@ -72,10 +76,11 @@ const CATEGORIES = [
     items: [
       { name: "AWS", icon: <SiAmazonwebservices /> },
       { name: "Docker", icon: <SiDocker /> },
+      { name: "Kubernetes", icon: <SiKubernetes /> },
       { name: "Jenkins", icon: <SiJenkins /> },
       { name: "GitHub Actions", icon: <SiGithubactions /> },
-      { name: "Nginx", icon: <SiNginx /> },
       { name: "Linux", icon: <SiLinux /> },
+      { name: "Nginx", icon: <SiNginx /> },
     ],
   },
   {
@@ -83,6 +88,8 @@ const CATEGORIES = [
     label: "Desktop & Mobile",
     icon: <HiDeviceMobile />,
     items: [
+      { name: "Flutter", icon: <SiFlutter /> },
+      { name: "Dart", icon: <SiDart /> },
       { name: "Electron", icon: <SiElectron /> },
       { name: "React Native", icon: <SiReactNative /> },
       { name: "Expo", icon: <SiExpo /> },
@@ -90,9 +97,10 @@ const CATEGORIES = [
   },
   {
     id: "tools",
-    label: "Tools",
+    label: "Testing & Tools",
     icon: <HiCog />,
     items: [
+      { name: "Vitest", icon: <SiVitest /> },
       { name: "Git", icon: <SiGit /> },
       { name: "Postman", icon: <SiPostman /> },
       { name: "Figma", icon: <SiFigma /> },
@@ -114,7 +122,7 @@ export default function TechStack() {
                   <span className="font-serif italic font-normal">for</span>.
                 </>
               }
-              description="A pragmatic toolbox. I pick technologies based on the problem, the team, and the constraints — not the trend cycle."
+              description="A pragmatic toolbox. I pick technologies based on the problem, the team, and the constraints, not the trend cycle."
             />
           </div>
 

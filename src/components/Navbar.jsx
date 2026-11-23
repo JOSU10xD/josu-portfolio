@@ -6,7 +6,7 @@ import { cn } from "../lib/utils";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Experience", href: "#projects" },
+  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -90,7 +90,7 @@ export const Navbar = () => {
           <a
             href="#home"
             className="group flex items-center gap-2.5 text-[color:var(--text-primary)] no-underline flex-shrink-0"
-            aria-label="Nevil Biju — home"
+            aria-label="Nevil Biju - home"
           >
             <span
               aria-hidden

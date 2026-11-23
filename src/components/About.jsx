@@ -13,24 +13,24 @@ import resumePdf from "@/assets/NevilBijuResume.pdf";
 
 const HIGHLIGHTS = [
   {
-    label: "Full Stack",
-    body: "Production web apps with React, Node.js, TypeScript and modern tooling.",
+    label: "B2B SaaS & Full Stack",
+    body: "Architecting reliable web applications with Next.js, React, TypeScript, Supabase, and PostgreSQL.",
   },
   {
     label: "Cloud & DevOps",
-    body: "AWS, Docker and CI/CD pipelines for reliable, automated delivery.",
+    body: "AWS infrastructure, Docker & Kubernetes containers, CI/CD pipelines, and automated quality gates.",
   },
   {
-    label: "Desktop / Electron",
-    body: "Cross-platform desktop experiences and native browser UIs.",
+    label: "Mobile & Algorithms",
+    body: "Cross-platform mobile apps with Flutter and React Native, featuring A* graph pathfinding.",
   },
   {
-    label: "Mobile",
-    body: "Cross-platform apps with React Native & Expo, maps and offline UX.",
+    label: "Desktop & Systems",
+    body: "Electron desktop applications, Chromium session management, and compiler transpilation tooling.",
   },
   {
-    label: "System Design",
-    body: "Architecting clean APIs, scalable services and resilient systems.",
+    label: "Testing & Architecture",
+    body: "Deterministic test suites with Vitest, integration workflows, and clean domain boundary modeling.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function About() {
                   <span className="text-[color:var(--text-primary)]">place</span>.
                 </>
               }
-              description="I'm a software engineer focused on full-stack development and cloud systems — designing interfaces, APIs and infrastructure that work well in production, not just in demos."
+              description="I'm a software engineer focused on full-stack development and cloud systems: designing interfaces, APIs and infrastructure that work well in production, not just in demos."
             />
 
             <Reveal delay={200} className="mt-8 flex flex-wrap gap-3">

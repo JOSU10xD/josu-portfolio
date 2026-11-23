@@ -41,12 +41,17 @@ export const Home = () => {
         return false;
       }
     })();
-    setIsMobile(window.innerWidth < 900);
+    const checkConstrained = () =>
+      window.innerWidth < 900 ||
+      (typeof navigator !== "undefined" &&
+        navigator.hardwareConcurrency &&
+        navigator.hardwareConcurrency <= 4);
+    setIsMobile(checkConstrained());
     setShouldRenderCanvas(!prefersReduced && hasWebGL);
 
     // Track viewport-class changes so a desktop user who resizes the
     // window to a narrow size picks up the lighter config (and vice-versa)
-    const onResize = () => setIsMobile(window.innerWidth < 900);
+    const onResize = () => setIsMobile(checkConstrained());
     window.addEventListener("resize", onResize, { passive: true });
     return () => window.removeEventListener("resize", onResize);
   }, []);

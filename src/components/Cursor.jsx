@@ -37,11 +37,42 @@ export default function Cursor() {
     let ringY = -100;
     let mx = -100;
     let my = -100;
-    let raf;
+    let raf = 0;
+    let animating = false;
+
+    const tick = () => {
+      // dot follows tightly, ring trails with easing
+      dotX += (mx - dotX) * 0.85;
+      dotY += (my - dotY) * 0.85;
+      ringX += (mx - ringX) * 0.18;
+      ringY += (my - ringY) * 0.18;
+      dot.style.transform = `translate3d(${dotX - 2.5}px, ${dotY - 2.5}px, 0)`;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+
+      // Idle check: stop animation loop when cursor settles to save CPU/battery
+      const dx = Math.abs(mx - ringX);
+      const dy = Math.abs(my - ringY);
+      if (dx < 0.15 && dy < 0.15) {
+        dot.style.transform = `translate3d(${mx - 2.5}px, ${my - 2.5}px, 0)`;
+        ring.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+        animating = false;
+        raf = 0;
+        return;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+
+    const startLoop = () => {
+      if (!animating) {
+        animating = true;
+        raf = requestAnimationFrame(tick);
+      }
+    };
 
     const onMove = (e) => {
       mx = e.clientX;
       my = e.clientY;
+      startLoop();
     };
 
     const isInteractive = (el) =>
@@ -59,24 +90,12 @@ export default function Cursor() {
       if (isInteractive(e.target)) ringRef.current?.classList.remove("is-hover");
     };
 
-    const tick = () => {
-      // dot follows tightly, ring trails with easing
-      dotX += (mx - dotX) * 0.85;
-      dotY += (my - dotY) * 0.85;
-      ringX += (mx - ringX) * 0.18;
-      ringY += (my - ringY) * 0.18;
-      dot.style.transform = `translate3d(${dotX - 2.5}px, ${dotY - 2.5}px, 0)`;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      raf = requestAnimationFrame(tick);
-    };
-
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseover", onOver);
-    window.addEventListener("mouseout", onOut);
-    raf = requestAnimationFrame(tick);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseover", onOver, { passive: true });
+    window.addEventListener("mouseout", onOut, { passive: true });
 
     return () => {
-      cancelAnimationFrame(raf);
+      if (raf) cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       window.removeEventListener("mouseout", onOut);

@@ -34,15 +34,14 @@ export default function Hero() {
 
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+    show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
   };
   const item = {
-    hidden: { opacity: 0, y: 22, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 16 },
     show: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.7, ease: EASE },
+      transition: { duration: 0.5, ease: EASE },
     },
   };
 
@@ -121,7 +120,7 @@ export default function Hero() {
             className="mt-8 md:mt-10 body-lg text-pretty max-w-2xl"
           >
             I build reliable software, polished interfaces and cloud-powered
-            systems &mdash; with a focus on performance, accessibility, and
+            systems, with a focus on performance, accessibility, and
             craft.
           </motion.p>
 

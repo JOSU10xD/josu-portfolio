@@ -1,7 +1,6 @@
 // src/components/TextType.jsx
 "use client";
 import { useEffect, useRef, useState, createElement } from "react";
-import { gsap } from "gsap";
 
 const TextType = ({
   text,
@@ -35,23 +34,6 @@ const TextType = ({
     const { min, max } = variableSpeed;
     return Math.random() * (max - min) + min;
   };
-
-  useEffect(() => {
-    let tween;
-    if (showCursor && cursorRef.current) {
-      gsap.set(cursorRef.current, { opacity: 1 });
-      tween = gsap.to(cursorRef.current, {
-        opacity: 0,
-        duration: cursorBlinkDuration,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-      });
-    }
-    return () => {
-      if (tween) tween.kill();
-    };
-  }, [showCursor, cursorBlinkDuration]);
 
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
@@ -127,7 +109,11 @@ const TextType = ({
     { ref: containerRef, className: `inline-block whitespace-pre-wrap tracking-tight ${className}` },
     <span className="inline">{displayedText}</span>,
     showCursor && (
-      <span ref={cursorRef} className={`ml-1 inline-block ${shouldHideCursor ? "hidden" : ""} ${cursorClassName}`}>
+      <span
+        ref={cursorRef}
+        className={`ml-1 inline-block anim-cursor-blink ${shouldHideCursor ? "hidden" : ""} ${cursorClassName}`}
+        style={{ animationDuration: `${cursorBlinkDuration * 2}s` }}
+      >
         {cursorCharacter}
       </span>
     )
